@@ -1,0 +1,3017 @@
+{
+  "country": "Kenya",
+  "survey_year": 2022,
+  "total_counties": 47,
+  "critical_count": 7,
+  "medium_count": 27,
+  "low_count": 13,
+  "indicators": {
+    "CH_VACC_C_BAS": {
+      "label": "Basic vaccination (12-23m)",
+      "category": "Child Health",
+      "higher_is_better": true
+    },
+    "CH_VACC_C_DP3": {
+      "label": "DPT3 vaccination",
+      "category": "Child Health",
+      "higher_is_better": true
+    },
+    "CH_VACC_C_MSL": {
+      "label": "Measles vaccination",
+      "category": "Child Health",
+      "higher_is_better": true
+    },
+    "CH_DIAT_C_ORS": {
+      "label": "Diarrhoea treated with ORS",
+      "category": "Child Health",
+      "higher_is_better": true
+    },
+    "CH_DIAR_C_DIA": {
+      "label": "Diarrhoea prevalence (children)",
+      "category": "Child Health",
+      "higher_is_better": false
+    },
+    "CH_FEVR_C_FEV": {
+      "label": "Fever prevalence (children)",
+      "category": "Child Health",
+      "higher_is_better": false
+    },
+    "CN_NUTS_C_WA2": {
+      "label": "Underweight (weight-for-age)",
+      "category": "Child Nutrition",
+      "higher_is_better": false
+    },
+    "CN_NUTS_C_HA2": {
+      "label": "Stunting (height-for-age)",
+      "category": "Child Nutrition",
+      "higher_is_better": false
+    },
+    "CN_NUTS_C_WH2": {
+      "label": "Wasting in children",
+      "category": "Child Nutrition",
+      "higher_is_better": false
+    },
+    "RH_DELP_C_DHF": {
+      "label": "Delivery in health facility",
+      "category": "Reproductive Health",
+      "higher_is_better": true
+    },
+    "RH_ANCN_W_N4P": {
+      "label": "Antenatal care visits (4+)",
+      "category": "Reproductive Health",
+      "higher_is_better": true
+    },
+    "RH_EBCC_W_ECC": {
+      "label": "Cervical cancer screening (%)",
+      "category": "Reproductive Health",
+      "higher_is_better": true
+    },
+    "FP_CUSA_W_MOD": {
+      "label": "Modern contraceptive use",
+      "category": "Family Planning",
+      "higher_is_better": true
+    },
+    "FP_NADA_W_UNT": {
+      "label": "Unmet need for family planning",
+      "category": "Family Planning",
+      "higher_is_better": false
+    },
+    "CM_ECMR_C_NNR": {
+      "label": "Neonatal mortality rate",
+      "category": "Infant & Child Mortality",
+      "higher_is_better": false
+    },
+    "WS_SRCE_H_IMP": {
+      "label": "Improved water source",
+      "category": "Water & Sanitation",
+      "higher_is_better": true
+    },
+    "WS_TLET_H_IMP": {
+      "label": "Improved sanitation",
+      "category": "Water & Sanitation",
+      "higher_is_better": true
+    },
+    "ED_LITR_W_LIT": {
+      "label": "Female literacy rate",
+      "category": "Education",
+      "higher_is_better": true
+    },
+    "ED_EDUC_W_SEC": {
+      "label": "Women with secondary education",
+      "category": "Education",
+      "higher_is_better": true
+    },
+    "FE_FRTR_W_TFR": {
+      "label": "Total fertility rate",
+      "category": "Fertility",
+      "higher_is_better": false
+    },
+    "FE_TNPG_W_CBR": {
+      "label": "Teenage childbearing (%)",
+      "category": "Fertility",
+      "higher_is_better": false
+    },
+    "ML_NETP_H_IT2": {
+      "label": "Households with ITN",
+      "category": "Malaria",
+      "higher_is_better": true
+    },
+    "HA_HIVP_B_HIV": {
+      "label": "HIV prevalence (Adults 15-49)",
+      "category": "HIV/AIDS",
+      "higher_is_better": false
+    }
+  },
+  "national_averages": {},
+  "counties": [
+    {
+      "name": "Baringo",
+      "gadm_name": "Baringo",
+      "lat": 0.7357,
+      "lng": 35.7863,
+      "score": 63.7,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.4,
+        "FE_TNPG_W_CBR": 19.7,
+        "FP_CUSA_W_MOD": 38.2,
+        "FP_NADA_W_UNT": 12.4,
+        "CM_ECMR_C_NNR": 33.0,
+        "RH_ANCN_W_N4P": 49.4,
+        "RH_DELP_C_DHF": 79.3,
+        "RH_EBCC_W_ECC": 5.1,
+        "CH_VACC_C_DP3": 96.2,
+        "CH_VACC_C_MSL": 88.5,
+        "CH_VACC_C_BAS": 84.8,
+        "CH_FEVR_C_FEV": 17.4,
+        "CH_DIAR_C_DIA": 12.6,
+        "CH_DIAT_C_ORS": 61.3,
+        "CN_NUTS_C_HA2": 21.2,
+        "CN_NUTS_C_WH2": 13.6,
+        "CN_NUTS_C_WA2": 19.9,
+        "ML_NETP_H_IT2": 37.6,
+        "ED_LITR_W_LIT": 87.6,
+        "WS_SRCE_H_IMP": 58.9,
+        "WS_TLET_H_IMP": 65.2
+      }
+    },
+    {
+      "name": "Bomet",
+      "gadm_name": "Bomet",
+      "lat": -0.7175,
+      "lng": 35.3113,
+      "score": 48.8,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.4,
+        "FE_TNPG_W_CBR": 8.4,
+        "FP_CUSA_W_MOD": 38.9,
+        "FP_NADA_W_UNT": 11.9,
+        "CM_ECMR_C_NNR": 17.0,
+        "RH_ANCN_W_N4P": 53.3,
+        "RH_DELP_C_DHF": 86.9,
+        "RH_EBCC_W_ECC": 3.8,
+        "CH_VACC_C_DP3": 89.8,
+        "CH_VACC_C_MSL": 92.7,
+        "CH_VACC_C_BAS": 83.9,
+        "CH_FEVR_C_FEV": 20.9,
+        "CH_DIAR_C_DIA": 14.2,
+        "CH_DIAT_C_ORS": 47.0,
+        "CN_NUTS_C_HA2": 22.1,
+        "CN_NUTS_C_WH2": 3.3,
+        "CN_NUTS_C_WA2": 9.8,
+        "ML_NETP_H_IT2": 77.3,
+        "ED_LITR_W_LIT": 95.9,
+        "WS_SRCE_H_IMP": 81.5,
+        "WS_TLET_H_IMP": 95.5
+      }
+    },
+    {
+      "name": "Bungoma",
+      "gadm_name": "Bungoma",
+      "lat": 0.7036,
+      "lng": 34.6964,
+      "score": 47.9,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.6,
+        "FE_TNPG_W_CBR": 17.9,
+        "FP_CUSA_W_MOD": 43.8,
+        "FP_NADA_W_UNT": 11.4,
+        "CM_ECMR_C_NNR": 25.0,
+        "RH_ANCN_W_N4P": 72.5,
+        "RH_DELP_C_DHF": 87.6,
+        "RH_EBCC_W_ECC": 8.3,
+        "CH_VACC_C_DP3": 97.3,
+        "CH_VACC_C_MSL": 91.3,
+        "CH_VACC_C_BAS": 88.2,
+        "CH_FEVR_C_FEV": 19.6,
+        "CH_DIAR_C_DIA": 18.3,
+        "CH_DIAT_C_ORS": 45.2,
+        "CN_NUTS_C_HA2": 19.0,
+        "CN_NUTS_C_WH2": 2.3,
+        "CN_NUTS_C_WA2": 9.6,
+        "ML_NETP_H_IT2": 70.6,
+        "ED_LITR_W_LIT": 90.6,
+        "WS_SRCE_H_IMP": 88.8,
+        "WS_TLET_H_IMP": 59.4
+      }
+    },
+    {
+      "name": "Busia",
+      "gadm_name": "Busia",
+      "lat": 0.4927,
+      "lng": 34.2254,
+      "score": 50.5,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.7,
+        "FE_TNPG_W_CBR": 16.1,
+        "FP_CUSA_W_MOD": 39.4,
+        "FP_NADA_W_UNT": 13.2,
+        "CM_ECMR_C_NNR": 22.0,
+        "RH_ANCN_W_N4P": 70.7,
+        "RH_DELP_C_DHF": 84.7,
+        "RH_EBCC_W_ECC": 6.7,
+        "CH_VACC_C_DP3": 96.5,
+        "CH_VACC_C_MSL": 90.5,
+        "CH_VACC_C_BAS": 81.9,
+        "CH_FEVR_C_FEV": 29.3,
+        "CH_DIAR_C_DIA": 16.2,
+        "CH_DIAT_C_ORS": 65.1,
+        "CN_NUTS_C_HA2": 15.0,
+        "CN_NUTS_C_WH2": 2.8,
+        "CN_NUTS_C_WA2": 6.3,
+        "ML_NETP_H_IT2": 67.4,
+        "ED_LITR_W_LIT": 86.5,
+        "WS_SRCE_H_IMP": 72.1,
+        "WS_TLET_H_IMP": 58.6
+      }
+    },
+    {
+      "name": "Elgeyo Marakwet",
+      "gadm_name": "Elgeyo-Marakwet",
+      "lat": 0.7777,
+      "lng": 35.582,
+      "score": 56.6,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.1,
+        "FE_TNPG_W_CBR": 12.1,
+        "FP_CUSA_W_MOD": 50.7,
+        "FP_NADA_W_UNT": 11.4,
+        "CM_ECMR_C_NNR": 27.0,
+        "RH_ANCN_W_N4P": 51.5,
+        "RH_DELP_C_DHF": 95.5,
+        "RH_EBCC_W_ECC": 6.9,
+        "CH_VACC_C_DP3": 83.4,
+        "CH_VACC_C_MSL": 88.3,
+        "CH_VACC_C_BAS": 69.8,
+        "CH_FEVR_C_FEV": 8.7,
+        "CH_DIAR_C_DIA": 10.3,
+        "CH_DIAT_C_ORS": 71.5,
+        "CN_NUTS_C_HA2": 21.8,
+        "CN_NUTS_C_WH2": 4.8,
+        "CN_NUTS_C_WA2": 13.9,
+        "ML_NETP_H_IT2": 10.1,
+        "ED_LITR_W_LIT": 96.6,
+        "WS_SRCE_H_IMP": 67.1,
+        "WS_TLET_H_IMP": 43.6
+      }
+    },
+    {
+      "name": "Embu",
+      "gadm_name": "Embu",
+      "lat": -0.6182,
+      "lng": 37.6181,
+      "score": 35.4,
+      "risk": "low",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.1,
+        "FE_TNPG_W_CBR": 14.0,
+        "FP_CUSA_W_MOD": 57.2,
+        "FP_NADA_W_UNT": 2.1,
+        "CM_ECMR_C_NNR": 24.0,
+        "RH_ANCN_W_N4P": 62.0,
+        "RH_DELP_C_DHF": 95.3,
+        "RH_EBCC_W_ECC": 9.1,
+        "CH_VACC_C_DP3": 97.2,
+        "CH_VACC_C_MSL": 93.5,
+        "CH_VACC_C_BAS": 90.7,
+        "CH_FEVR_C_FEV": 11.4,
+        "CH_DIAR_C_DIA": 8.9,
+        "CH_DIAT_C_ORS": 85.2,
+        "CN_NUTS_C_HA2": 19.9,
+        "CN_NUTS_C_WH2": 5.3,
+        "CN_NUTS_C_WA2": 11.3,
+        "ML_NETP_H_IT2": 24.1,
+        "ED_LITR_W_LIT": 98.3,
+        "WS_SRCE_H_IMP": 83.4,
+        "WS_TLET_H_IMP": 63.0
+      }
+    },
+    {
+      "name": "Garissa",
+      "gadm_name": "Garissa",
+      "lat": -0.0917,
+      "lng": 39.7595,
+      "score": 62.9,
+      "risk": "medium",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 0,
+      "indicators": {
+        "FE_FRTR_W_TFR": 5.3,
+        "FE_TNPG_W_CBR": 14.6,
+        "FP_CUSA_W_MOD": 8.3,
+        "FP_NADA_W_UNT": 6.2,
+        "CM_ECMR_C_NNR": 28.0,
+        "RH_ANCN_W_N4P": 31.2,
+        "RH_DELP_C_DHF": 61.4,
+        "RH_EBCC_W_ECC": 1.1,
+        "CH_VACC_C_DP3": 36.4,
+        "CH_VACC_C_MSL": 42.7,
+        "CH_VACC_C_BAS": 22.9,
+        "CH_FEVR_C_FEV": 6.5,
+        "CH_DIAR_C_DIA": 6.4,
+        "CH_DIAT_C_ORS": 63.3,
+        "CN_NUTS_C_HA2": 9.0,
+        "CN_NUTS_C_WH2": 15.3,
+        "CN_NUTS_C_WA2": 14.1,
+        "ML_NETP_H_IT2": 6.8,
+        "ED_LITR_W_LIT": 46.5,
+        "WS_SRCE_H_IMP": 85.5,
+        "WS_TLET_H_IMP": 80.5
+      }
+    },
+    {
+      "name": "Homa Bay",
+      "gadm_name": "HomaBay",
+      "lat": -0.5507,
+      "lng": 34.621,
+      "score": 54.3,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.7,
+        "FE_TNPG_W_CBR": 20.6,
+        "FP_CUSA_W_MOD": 45.5,
+        "FP_NADA_W_UNT": 11.9,
+        "CM_ECMR_C_NNR": 32.0,
+        "RH_ANCN_W_N4P": 68.8,
+        "RH_DELP_C_DHF": 91.5,
+        "RH_EBCC_W_ECC": 12.4,
+        "CH_VACC_C_DP3": 86.2,
+        "CH_VACC_C_MSL": 89.0,
+        "CH_VACC_C_BAS": 75.8,
+        "CH_FEVR_C_FEV": 36.4,
+        "CH_DIAR_C_DIA": 21.4,
+        "CH_DIAT_C_ORS": 40.7,
+        "CN_NUTS_C_HA2": 12.5,
+        "CN_NUTS_C_WH2": 1.8,
+        "CN_NUTS_C_WA2": 6.1,
+        "ML_NETP_H_IT2": 60.2,
+        "ED_LITR_W_LIT": 93.8,
+        "WS_SRCE_H_IMP": 67.7,
+        "WS_TLET_H_IMP": 51.6
+      }
+    },
+    {
+      "name": "Isiolo",
+      "gadm_name": "Isiolo",
+      "lat": 0.6263,
+      "lng": 38.1404,
+      "score": 64.2,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.5,
+        "FE_TNPG_W_CBR": 16.7,
+        "FP_CUSA_W_MOD": 20.6,
+        "FP_NADA_W_UNT": 17.2,
+        "CM_ECMR_C_NNR": 22.0,
+        "RH_ANCN_W_N4P": 52.9,
+        "RH_DELP_C_DHF": 83.7,
+        "RH_EBCC_W_ECC": 2.8,
+        "CH_VACC_C_DP3": 88.7,
+        "CH_VACC_C_MSL": 78.6,
+        "CH_VACC_C_BAS": 69.7,
+        "CH_FEVR_C_FEV": 17.3,
+        "CH_DIAR_C_DIA": 18.9,
+        "CH_DIAT_C_ORS": 76.7,
+        "CN_NUTS_C_HA2": 14.1,
+        "CN_NUTS_C_WH2": 7.2,
+        "CN_NUTS_C_WA2": 11.5,
+        "ML_NETP_H_IT2": 23.4,
+        "ED_LITR_W_LIT": 72.4,
+        "WS_SRCE_H_IMP": 88.0,
+        "WS_TLET_H_IMP": 64.6
+      }
+    },
+    {
+      "name": "Kajiado",
+      "gadm_name": "Kajiado",
+      "lat": -1.8941,
+      "lng": 36.8704,
+      "score": 52.9,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.5,
+        "FE_TNPG_W_CBR": 21.8,
+        "FP_CUSA_W_MOD": 45.1,
+        "FP_NADA_W_UNT": 7.8,
+        "CM_ECMR_C_NNR": 14.0,
+        "RH_ANCN_W_N4P": 81.2,
+        "RH_DELP_C_DHF": 84.6,
+        "RH_EBCC_W_ECC": 8.2,
+        "CH_VACC_C_DP3": 73.6,
+        "CH_VACC_C_MSL": 81.6,
+        "CH_VACC_C_BAS": 61.3,
+        "CH_FEVR_C_FEV": 21.1,
+        "CH_DIAR_C_DIA": 14.9,
+        "CH_DIAT_C_ORS": 41.9,
+        "CN_NUTS_C_HA2": 14.0,
+        "CN_NUTS_C_WH2": 7.6,
+        "CN_NUTS_C_WA2": 9.6,
+        "ML_NETP_H_IT2": 20.9,
+        "ED_LITR_W_LIT": 87.2,
+        "WS_SRCE_H_IMP": 92.3,
+        "WS_TLET_H_IMP": 84.2
+      }
+    },
+    {
+      "name": "Kakamega",
+      "gadm_name": "Kakamega",
+      "lat": 0.3042,
+      "lng": 34.6292,
+      "score": 36.8,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.7,
+        "FE_TNPG_W_CBR": 15.1,
+        "FP_CUSA_W_MOD": 46.6,
+        "FP_NADA_W_UNT": 10.4,
+        "CM_ECMR_C_NNR": 16.0,
+        "RH_ANCN_W_N4P": 73.3,
+        "RH_DELP_C_DHF": 96.3,
+        "RH_EBCC_W_ECC": 5.6,
+        "CH_VACC_C_DP3": 97.1,
+        "CH_VACC_C_MSL": 96.0,
+        "CH_VACC_C_BAS": 90.7,
+        "CH_FEVR_C_FEV": 23.6,
+        "CH_DIAR_C_DIA": 18.2,
+        "CH_DIAT_C_ORS": 54.6,
+        "CN_NUTS_C_HA2": 11.5,
+        "CN_NUTS_C_WH2": 1.5,
+        "CN_NUTS_C_WA2": 6.4,
+        "ML_NETP_H_IT2": 66.9,
+        "ED_LITR_W_LIT": 93.6,
+        "WS_SRCE_H_IMP": 87.5,
+        "WS_TLET_H_IMP": 46.8
+      }
+    },
+    {
+      "name": "Kericho",
+      "gadm_name": "Kericho",
+      "lat": -0.3468,
+      "lng": 35.2828,
+      "score": 42.0,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.2,
+        "FE_TNPG_W_CBR": 14.5,
+        "FP_CUSA_W_MOD": 45.2,
+        "FP_NADA_W_UNT": 14.2,
+        "CM_ECMR_C_NNR": 17.0,
+        "RH_ANCN_W_N4P": 58.6,
+        "RH_DELP_C_DHF": 90.9,
+        "RH_EBCC_W_ECC": 13.9,
+        "CH_VACC_C_DP3": 93.0,
+        "CH_VACC_C_MSL": 89.5,
+        "CH_VACC_C_BAS": 84.7,
+        "CH_FEVR_C_FEV": 4.7,
+        "CH_DIAR_C_DIA": 14.5,
+        "CH_DIAT_C_ORS": 58.5,
+        "CN_NUTS_C_HA2": 19.3,
+        "CN_NUTS_C_WH2": 2.5,
+        "CN_NUTS_C_WA2": 9.2,
+        "ML_NETP_H_IT2": 65.9,
+        "ED_LITR_W_LIT": 98.6,
+        "WS_SRCE_H_IMP": 71.4,
+        "WS_TLET_H_IMP": 49.2
+      }
+    },
+    {
+      "name": "Kiambu",
+      "gadm_name": "Kiambu",
+      "lat": -1.0539,
+      "lng": 36.9594,
+      "score": 37.5,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 2.9,
+        "FE_TNPG_W_CBR": 11.9,
+        "FP_CUSA_W_MOD": 49.9,
+        "FP_NADA_W_UNT": 6.6,
+        "CM_ECMR_C_NNR": 28.0,
+        "RH_ANCN_W_N4P": 66.8,
+        "RH_DELP_C_DHF": 97.7,
+        "RH_EBCC_W_ECC": 10.2,
+        "CH_VACC_C_DP3": 91.8,
+        "CH_VACC_C_MSL": 94.0,
+        "CH_VACC_C_BAS": 87.8,
+        "CH_FEVR_C_FEV": 17.1,
+        "CH_DIAR_C_DIA": 17.2,
+        "CH_DIAT_C_ORS": 34.6,
+        "CN_NUTS_C_HA2": 15.3,
+        "CN_NUTS_C_WH2": 3.2,
+        "CN_NUTS_C_WA2": 6.0,
+        "ML_NETP_H_IT2": 16.0,
+        "ED_LITR_W_LIT": 98.2,
+        "WS_SRCE_H_IMP": 96.6,
+        "WS_TLET_H_IMP": 93.1
+      }
+    },
+    {
+      "name": "Kilifi",
+      "gadm_name": "Kilifi",
+      "lat": -3.4109,
+      "lng": 39.8847,
+      "score": 54.9,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.4,
+        "FE_TNPG_W_CBR": 12.5,
+        "FP_CUSA_W_MOD": 32.0,
+        "FP_NADA_W_UNT": 12.6,
+        "CM_ECMR_C_NNR": 24.0,
+        "RH_ANCN_W_N4P": 77.3,
+        "RH_DELP_C_DHF": 84.5,
+        "RH_EBCC_W_ECC": 3.7,
+        "CH_VACC_C_DP3": 93.7,
+        "CH_VACC_C_MSL": 95.1,
+        "CH_VACC_C_BAS": 89.8,
+        "CH_FEVR_C_FEV": 16.4,
+        "CH_DIAR_C_DIA": 20.3,
+        "CH_DIAT_C_ORS": 59.9,
+        "CN_NUTS_C_HA2": 37.0,
+        "CN_NUTS_C_WH2": 7.2,
+        "CN_NUTS_C_WA2": 19.5,
+        "ML_NETP_H_IT2": 48.2,
+        "ED_LITR_W_LIT": 81.0,
+        "WS_SRCE_H_IMP": 81.4,
+        "WS_TLET_H_IMP": 65.0
+      }
+    },
+    {
+      "name": "Kirinyaga",
+      "gadm_name": "Kirinyaga",
+      "lat": -0.4384,
+      "lng": 37.4037,
+      "score": 26.5,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 2.8,
+        "FE_TNPG_W_CBR": 7.3,
+        "FP_CUSA_W_MOD": 49.9,
+        "FP_NADA_W_UNT": 5.9,
+        "CM_ECMR_C_NNR": 37.0,
+        "RH_ANCN_W_N4P": 67.6,
+        "RH_DELP_C_DHF": 97.3,
+        "RH_EBCC_W_ECC": 12.6,
+        "CH_VACC_C_DP3": 92.1,
+        "CH_VACC_C_MSL": 97.1,
+        "CH_VACC_C_BAS": 87.3,
+        "CH_FEVR_C_FEV": 5.6,
+        "CH_DIAR_C_DIA": 12.2,
+        "CH_DIAT_C_ORS": 53.3,
+        "CN_NUTS_C_HA2": 11.2,
+        "CN_NUTS_C_WH2": 2.2,
+        "CN_NUTS_C_WA2": 5.7,
+        "ML_NETP_H_IT2": 47.4,
+        "ED_LITR_W_LIT": 97.1,
+        "WS_SRCE_H_IMP": 80.9,
+        "WS_TLET_H_IMP": 95.8
+      }
+    },
+    {
+      "name": "Kisii",
+      "gadm_name": "Kisii",
+      "lat": -0.679,
+      "lng": 34.7661,
+      "score": 42.2,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.0,
+        "FE_TNPG_W_CBR": 14.2,
+        "FP_CUSA_W_MOD": 49.4,
+        "FP_NADA_W_UNT": 12.8,
+        "CM_ECMR_C_NNR": 21.0,
+        "RH_ANCN_W_N4P": 62.7,
+        "RH_DELP_C_DHF": 93.5,
+        "RH_EBCC_W_ECC": 9.5,
+        "CH_VACC_C_DP3": 95.7,
+        "CH_VACC_C_MSL": 94.6,
+        "CH_VACC_C_BAS": 89.7,
+        "CH_FEVR_C_FEV": 11.3,
+        "CH_DIAR_C_DIA": 9.7,
+        "CH_DIAT_C_ORS": 29.0,
+        "CN_NUTS_C_HA2": 16.3,
+        "CN_NUTS_C_WH2": 2.9,
+        "CN_NUTS_C_WA2": 7.8,
+        "ML_NETP_H_IT2": 67.4,
+        "ED_LITR_W_LIT": 96.5,
+        "WS_SRCE_H_IMP": 70.3,
+        "WS_TLET_H_IMP": 46.8
+      }
+    },
+    {
+      "name": "Kisumu",
+      "gadm_name": "Kisumu",
+      "lat": -0.168,
+      "lng": 34.9476,
+      "score": 37.9,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.5,
+        "FE_TNPG_W_CBR": 11.1,
+        "FP_CUSA_W_MOD": 42.6,
+        "FP_NADA_W_UNT": 10.1,
+        "CM_ECMR_C_NNR": 21.0,
+        "RH_ANCN_W_N4P": 63.3,
+        "RH_DELP_C_DHF": 96.1,
+        "RH_EBCC_W_ECC": 12.0,
+        "CH_VACC_C_DP3": 87.6,
+        "CH_VACC_C_MSL": 93.5,
+        "CH_VACC_C_BAS": 78.9,
+        "CH_FEVR_C_FEV": 19.4,
+        "CH_DIAR_C_DIA": 10.5,
+        "CH_DIAT_C_ORS": 49.3,
+        "CN_NUTS_C_HA2": 9.1,
+        "CN_NUTS_C_WH2": 3.0,
+        "CN_NUTS_C_WA2": 3.5,
+        "ML_NETP_H_IT2": 47.0,
+        "ED_LITR_W_LIT": 98.0,
+        "WS_SRCE_H_IMP": 83.1,
+        "WS_TLET_H_IMP": 70.4
+      }
+    },
+    {
+      "name": "Kitui",
+      "gadm_name": "Kitui",
+      "lat": -1.5965,
+      "lng": 38.1032,
+      "score": 53.9,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.2,
+        "FE_TNPG_W_CBR": 9.2,
+        "FP_CUSA_W_MOD": 44.2,
+        "FP_NADA_W_UNT": 11.1,
+        "CM_ECMR_C_NNR": 13.0,
+        "RH_ANCN_W_N4P": 68.2,
+        "RH_DELP_C_DHF": 79.5,
+        "RH_EBCC_W_ECC": 2.4,
+        "CH_VACC_C_DP3": 83.9,
+        "CH_VACC_C_MSL": 83.1,
+        "CH_VACC_C_BAS": 72.5,
+        "CH_FEVR_C_FEV": 10.0,
+        "CH_DIAR_C_DIA": 8.8,
+        "CH_DIAT_C_ORS": 63.1,
+        "CN_NUTS_C_HA2": 25.1,
+        "CN_NUTS_C_WH2": 4.9,
+        "CN_NUTS_C_WA2": 13.9,
+        "ML_NETP_H_IT2": 15.1,
+        "ED_LITR_W_LIT": 94.8,
+        "WS_SRCE_H_IMP": 43.1,
+        "WS_TLET_H_IMP": 66.0
+      }
+    },
+    {
+      "name": "Kwale",
+      "gadm_name": "Kwale",
+      "lat": -4.3597,
+      "lng": 39.4077,
+      "score": 60.2,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.2,
+        "FE_TNPG_W_CBR": 14.2,
+        "FP_CUSA_W_MOD": 24.3,
+        "FP_NADA_W_UNT": 15.4,
+        "CM_ECMR_C_NNR": 19.0,
+        "RH_ANCN_W_N4P": 71.9,
+        "RH_DELP_C_DHF": 84.1,
+        "RH_EBCC_W_ECC": 1.5,
+        "CH_VACC_C_DP3": 82.5,
+        "CH_VACC_C_MSL": 83.7,
+        "CH_VACC_C_BAS": 70.6,
+        "CH_FEVR_C_FEV": 5.9,
+        "CH_DIAR_C_DIA": 3.2,
+        "CN_NUTS_C_HA2": 22.7,
+        "CN_NUTS_C_WH2": 6.2,
+        "CN_NUTS_C_WA2": 13.7,
+        "ML_NETP_H_IT2": 47.5,
+        "ED_LITR_W_LIT": 81.7,
+        "WS_SRCE_H_IMP": 67.5,
+        "WS_TLET_H_IMP": 57.8
+      }
+    },
+    {
+      "name": "Laikipia",
+      "gadm_name": "Laikipia",
+      "lat": 0.2211,
+      "lng": 36.8587,
+      "score": 42.2,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.4,
+        "FE_TNPG_W_CBR": 9.1,
+        "FP_CUSA_W_MOD": 44.5,
+        "FP_NADA_W_UNT": 4.2,
+        "CM_ECMR_C_NNR": 20.0,
+        "RH_ANCN_W_N4P": 65.5,
+        "RH_DELP_C_DHF": 90.0,
+        "RH_EBCC_W_ECC": 9.7,
+        "CH_VACC_C_DP3": 91.9,
+        "CH_VACC_C_MSL": 90.5,
+        "CH_VACC_C_BAS": 83.7,
+        "CH_FEVR_C_FEV": 9.0,
+        "CH_DIAR_C_DIA": 12.4,
+        "CH_DIAT_C_ORS": 45.2,
+        "CN_NUTS_C_HA2": 12.6,
+        "CN_NUTS_C_WH2": 2.6,
+        "CN_NUTS_C_WA2": 6.6,
+        "ML_NETP_H_IT2": 15.9,
+        "ED_LITR_W_LIT": 91.5,
+        "WS_SRCE_H_IMP": 77.0,
+        "WS_TLET_H_IMP": 52.7
+      }
+    },
+    {
+      "name": "Lamu",
+      "gadm_name": "Lamu",
+      "lat": -2.0663,
+      "lng": 41.0583,
+      "score": 60.2,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.6,
+        "FE_TNPG_W_CBR": 13.3,
+        "FP_CUSA_W_MOD": 29.8,
+        "FP_NADA_W_UNT": 10.6,
+        "CM_ECMR_C_NNR": 26.0,
+        "RH_ANCN_W_N4P": 70.5,
+        "RH_DELP_C_DHF": 90.3,
+        "RH_EBCC_W_ECC": 3.7,
+        "CH_VACC_C_DP3": 85.1,
+        "CH_VACC_C_MSL": 86.4,
+        "CH_VACC_C_BAS": 72.3,
+        "CH_FEVR_C_FEV": 28.8,
+        "CH_DIAR_C_DIA": 25.6,
+        "CH_DIAT_C_ORS": 61.2,
+        "CN_NUTS_C_HA2": 16.1,
+        "CN_NUTS_C_WH2": 3.5,
+        "CN_NUTS_C_WA2": 12.5,
+        "ML_NETP_H_IT2": 43.3,
+        "ED_LITR_W_LIT": 84.1,
+        "WS_SRCE_H_IMP": 82.5,
+        "WS_TLET_H_IMP": 60.7
+      }
+    },
+    {
+      "name": "Machakos",
+      "gadm_name": "Machakos",
+      "lat": -1.2344,
+      "lng": 37.4921,
+      "score": 34.4,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 2.8,
+        "FE_TNPG_W_CBR": 11.3,
+        "FP_CUSA_W_MOD": 47.0,
+        "FP_NADA_W_UNT": 5.2,
+        "CM_ECMR_C_NNR": 26.0,
+        "RH_ANCN_W_N4P": 76.9,
+        "RH_DELP_C_DHF": 95.3,
+        "RH_EBCC_W_ECC": 10.3,
+        "CH_VACC_C_DP3": 92.3,
+        "CH_VACC_C_MSL": 98.0,
+        "CH_VACC_C_BAS": 87.8,
+        "CH_FEVR_C_FEV": 16.5,
+        "CH_DIAR_C_DIA": 15.3,
+        "CH_DIAT_C_ORS": 45.3,
+        "CN_NUTS_C_HA2": 16.2,
+        "CN_NUTS_C_WH2": 3.5,
+        "CN_NUTS_C_WA2": 8.1,
+        "ML_NETP_H_IT2": 38.8,
+        "ED_LITR_W_LIT": 99.1,
+        "WS_SRCE_H_IMP": 82.3,
+        "WS_TLET_H_IMP": 85.2
+      }
+    },
+    {
+      "name": "Makueni",
+      "gadm_name": "Makueni",
+      "lat": -2.0551,
+      "lng": 37.7848,
+      "score": 45.2,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.3,
+        "FE_TNPG_W_CBR": 11.1,
+        "FP_CUSA_W_MOD": 41.8,
+        "FP_NADA_W_UNT": 8.5,
+        "CM_ECMR_C_NNR": 26.0,
+        "RH_ANCN_W_N4P": 75.7,
+        "RH_DELP_C_DHF": 90.0,
+        "RH_EBCC_W_ECC": 3.1,
+        "CH_VACC_C_DP3": 85.5,
+        "CH_VACC_C_MSL": 93.3,
+        "CH_VACC_C_BAS": 82.0,
+        "CH_FEVR_C_FEV": 4.0,
+        "CH_DIAR_C_DIA": 3.8,
+        "CN_NUTS_C_HA2": 19.8,
+        "CN_NUTS_C_WH2": 4.0,
+        "CN_NUTS_C_WA2": 8.7,
+        "ML_NETP_H_IT2": 25.8,
+        "ED_LITR_W_LIT": 98.1,
+        "WS_SRCE_H_IMP": 64.7,
+        "WS_TLET_H_IMP": 69.7
+      }
+    },
+    {
+      "name": "Mandera",
+      "gadm_name": "Mandera",
+      "lat": 3.1695,
+      "lng": 40.7963,
+      "score": 71.5,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 0,
+      "indicators": {
+        "FE_FRTR_W_TFR": 7.7,
+        "FE_TNPG_W_CBR": 13.9,
+        "FP_CUSA_W_MOD": 1.4,
+        "FP_NADA_W_UNT": 12.6,
+        "CM_ECMR_C_NNR": 16.0,
+        "RH_ANCN_W_N4P": 40.4,
+        "RH_DELP_C_DHF": 50.4,
+        "RH_EBCC_W_ECC": 0.3,
+        "CH_VACC_C_DP3": 43.8,
+        "CH_VACC_C_MSL": 42.4,
+        "CH_VACC_C_BAS": 29.1,
+        "CH_FEVR_C_FEV": 13.1,
+        "CH_DIAR_C_DIA": 5.3,
+        "CH_DIAT_C_ORS": 58.5,
+        "CN_NUTS_C_HA2": 20.5,
+        "CN_NUTS_C_WH2": 17.3,
+        "CN_NUTS_C_WA2": 23.2,
+        "ML_NETP_H_IT2": 4.8,
+        "ED_LITR_W_LIT": 26.9,
+        "WS_SRCE_H_IMP": 73.4,
+        "WS_TLET_H_IMP": 69.1
+      }
+    },
+    {
+      "name": "Marsabit",
+      "gadm_name": "Marsabit",
+      "lat": 2.802,
+      "lng": 37.4831,
+      "score": 66.3,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 2,
+      "indicators": {
+        "FE_FRTR_W_TFR": 6.3,
+        "FE_TNPG_W_CBR": 28.2,
+        "FP_CUSA_W_MOD": 4.8,
+        "FP_NADA_W_UNT": 27.0,
+        "CM_ECMR_C_NNR": 4.0,
+        "RH_ANCN_W_N4P": 67.1,
+        "RH_DELP_C_DHF": 59.3,
+        "RH_EBCC_W_ECC": 0.3,
+        "CH_VACC_C_DP3": 84.7,
+        "CH_VACC_C_MSL": 79.2,
+        "CH_VACC_C_BAS": 68.8,
+        "CH_FEVR_C_FEV": 6.9,
+        "CH_DIAR_C_DIA": 6.9,
+        "CH_DIAT_C_ORS": 63.5,
+        "CN_NUTS_C_HA2": 18.9,
+        "CN_NUTS_C_WH2": 20.4,
+        "CN_NUTS_C_WA2": 25.9,
+        "ML_NETP_H_IT2": 7.4,
+        "ED_LITR_W_LIT": 34.2,
+        "WS_SRCE_H_IMP": 86.3,
+        "WS_TLET_H_IMP": 50.7
+      }
+    },
+    {
+      "name": "Meru",
+      "gadm_name": "Meru",
+      "lat": 0.0792,
+      "lng": 37.8095,
+      "score": 54.2,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.4,
+        "FE_TNPG_W_CBR": 23.6,
+        "FP_CUSA_W_MOD": 51.3,
+        "FP_NADA_W_UNT": 6.2,
+        "CM_ECMR_C_NNR": 20.0,
+        "RH_ANCN_W_N4P": 45.0,
+        "RH_DELP_C_DHF": 92.1,
+        "RH_EBCC_W_ECC": 10.2,
+        "CH_VACC_C_DP3": 92.3,
+        "CH_VACC_C_MSL": 97.4,
+        "CH_VACC_C_BAS": 81.9,
+        "CH_FEVR_C_FEV": 21.3,
+        "CH_DIAR_C_DIA": 16.1,
+        "CH_DIAT_C_ORS": 36.7,
+        "CN_NUTS_C_HA2": 25.2,
+        "CN_NUTS_C_WH2": 6.0,
+        "CN_NUTS_C_WA2": 10.8,
+        "ML_NETP_H_IT2": 16.8,
+        "ED_LITR_W_LIT": 86.2,
+        "WS_SRCE_H_IMP": 82.4,
+        "WS_TLET_H_IMP": 62.4
+      }
+    },
+    {
+      "name": "Migori",
+      "gadm_name": "Migori",
+      "lat": -0.9055,
+      "lng": 34.4493,
+      "score": 59.2,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.4,
+        "FE_TNPG_W_CBR": 21.8,
+        "FP_CUSA_W_MOD": 45.1,
+        "FP_NADA_W_UNT": 12.9,
+        "CM_ECMR_C_NNR": 37.0,
+        "RH_ANCN_W_N4P": 58.5,
+        "RH_DELP_C_DHF": 92.1,
+        "RH_EBCC_W_ECC": 8.3,
+        "CH_VACC_C_DP3": 91.3,
+        "CH_VACC_C_MSL": 93.1,
+        "CH_VACC_C_BAS": 85.6,
+        "CH_FEVR_C_FEV": 39.4,
+        "CH_DIAR_C_DIA": 22.8,
+        "CH_DIAT_C_ORS": 46.2,
+        "CN_NUTS_C_HA2": 14.8,
+        "CN_NUTS_C_WH2": 2.4,
+        "CN_NUTS_C_WA2": 5.0,
+        "ML_NETP_H_IT2": 54.2,
+        "ED_LITR_W_LIT": 86.6,
+        "WS_SRCE_H_IMP": 59.0,
+        "WS_TLET_H_IMP": 39.2
+      }
+    },
+    {
+      "name": "Mombasa",
+      "gadm_name": "Mombasa",
+      "lat": -4.0331,
+      "lng": 39.651,
+      "score": 45.6,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 2.9,
+        "FE_TNPG_W_CBR": 8.4,
+        "FP_CUSA_W_MOD": 29.7,
+        "FP_NADA_W_UNT": 12.3,
+        "CM_ECMR_C_NNR": 32.0,
+        "RH_ANCN_W_N4P": 65.3,
+        "RH_DELP_C_DHF": 95.5,
+        "RH_EBCC_W_ECC": 8.3,
+        "CH_VACC_C_DP3": 97.4,
+        "CH_VACC_C_MSL": 96.6,
+        "CH_VACC_C_BAS": 93.4,
+        "CH_FEVR_C_FEV": 20.6,
+        "CH_DIAR_C_DIA": 17.8,
+        "CH_DIAT_C_ORS": 47.1,
+        "CN_NUTS_C_HA2": 13.5,
+        "CN_NUTS_C_WH2": 4.6,
+        "CN_NUTS_C_WA2": 9.8,
+        "ML_NETP_H_IT2": 45.5,
+        "ED_LITR_W_LIT": 90.2,
+        "WS_SRCE_H_IMP": 58.4,
+        "WS_TLET_H_IMP": 95.8
+      }
+    },
+    {
+      "name": "Murang'a",
+      "gadm_name": "Murang'a",
+      "lat": -0.8213,
+      "lng": 37.0652,
+      "score": 32.6,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.5,
+        "FE_TNPG_W_CBR": 7.4,
+        "FP_CUSA_W_MOD": 47.0,
+        "FP_NADA_W_UNT": 5.9,
+        "CM_ECMR_C_NNR": 36.0,
+        "RH_ANCN_W_N4P": 58.3,
+        "RH_DELP_C_DHF": 96.2,
+        "RH_EBCC_W_ECC": 10.8,
+        "CH_VACC_C_DP3": 96.7,
+        "CH_VACC_C_MSL": 95.3,
+        "CH_VACC_C_BAS": 95.3,
+        "CH_FEVR_C_FEV": 16.1,
+        "CH_DIAR_C_DIA": 10.7,
+        "CH_DIAT_C_ORS": 39.3,
+        "CN_NUTS_C_HA2": 10.1,
+        "CN_NUTS_C_WH2": 1.7,
+        "CN_NUTS_C_WA2": 5.9,
+        "ML_NETP_H_IT2": 22.0,
+        "ED_LITR_W_LIT": 97.6,
+        "WS_SRCE_H_IMP": 83.5,
+        "WS_TLET_H_IMP": 84.2
+      }
+    },
+    {
+      "name": "Nairobi",
+      "gadm_name": "Nairobi",
+      "lat": -1.2953,
+      "lng": 36.8712,
+      "score": 33.1,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 2.6,
+        "FE_TNPG_W_CBR": 8.4,
+        "FP_CUSA_W_MOD": 40.8,
+        "FP_NADA_W_UNT": 8.2,
+        "CM_ECMR_C_NNR": 20.0,
+        "RH_ANCN_W_N4P": 80.5,
+        "RH_DELP_C_DHF": 99.4,
+        "RH_EBCC_W_ECC": 12.9,
+        "CH_VACC_C_DP3": 87.7,
+        "CH_VACC_C_MSL": 89.4,
+        "CH_VACC_C_BAS": 77.2,
+        "CH_FEVR_C_FEV": 15.0,
+        "CH_DIAR_C_DIA": 15.0,
+        "CH_DIAT_C_ORS": 43.6,
+        "CN_NUTS_C_HA2": 11.1,
+        "CN_NUTS_C_WH2": 2.5,
+        "CN_NUTS_C_WA2": 5.3,
+        "ML_NETP_H_IT2": 14.3,
+        "ED_LITR_W_LIT": 96.9,
+        "WS_SRCE_H_IMP": 100.0,
+        "WS_TLET_H_IMP": 93.9
+      }
+    },
+    {
+      "name": "Nakuru",
+      "gadm_name": "Nakuru",
+      "lat": -0.3709,
+      "lng": 36.0327,
+      "score": 41.7,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.4,
+        "FE_TNPG_W_CBR": 16.5,
+        "FP_CUSA_W_MOD": 46.6,
+        "FP_NADA_W_UNT": 7.8,
+        "CM_ECMR_C_NNR": 25.0,
+        "RH_ANCN_W_N4P": 73.4,
+        "RH_DELP_C_DHF": 94.0,
+        "RH_EBCC_W_ECC": 11.9,
+        "CH_VACC_C_DP3": 99.1,
+        "CH_VACC_C_MSL": 92.4,
+        "CH_VACC_C_BAS": 91.5,
+        "CH_FEVR_C_FEV": 19.6,
+        "CH_DIAR_C_DIA": 14.4,
+        "CH_DIAT_C_ORS": 42.5,
+        "CN_NUTS_C_HA2": 18.5,
+        "CN_NUTS_C_WH2": 3.0,
+        "CN_NUTS_C_WA2": 9.2,
+        "ML_NETP_H_IT2": 15.3,
+        "ED_LITR_W_LIT": 96.8,
+        "WS_SRCE_H_IMP": 82.3,
+        "WS_TLET_H_IMP": 78.4
+      }
+    },
+    {
+      "name": "Nandi",
+      "gadm_name": "Nandi",
+      "lat": 0.1195,
+      "lng": 35.058,
+      "score": 43.0,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.0,
+        "FE_TNPG_W_CBR": 9.7,
+        "FP_CUSA_W_MOD": 44.0,
+        "FP_NADA_W_UNT": 11.2,
+        "CM_ECMR_C_NNR": 24.0,
+        "RH_ANCN_W_N4P": 62.1,
+        "RH_DELP_C_DHF": 85.6,
+        "RH_EBCC_W_ECC": 4.3,
+        "CH_VACC_C_DP3": 95.8,
+        "CH_VACC_C_MSL": 93.9,
+        "CH_VACC_C_BAS": 89.8,
+        "CH_FEVR_C_FEV": 13.2,
+        "CH_DIAR_C_DIA": 9.8,
+        "CH_DIAT_C_ORS": 53.0,
+        "CN_NUTS_C_HA2": 15.1,
+        "CN_NUTS_C_WH2": 4.0,
+        "CN_NUTS_C_WA2": 9.0,
+        "ML_NETP_H_IT2": 69.0,
+        "ED_LITR_W_LIT": 97.5,
+        "WS_SRCE_H_IMP": 54.2,
+        "WS_TLET_H_IMP": 62.7
+      }
+    },
+    {
+      "name": "Narok",
+      "gadm_name": "Narok",
+      "lat": -1.1096,
+      "lng": 35.6262,
+      "score": 60.5,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.9,
+        "FE_TNPG_W_CBR": 26.8,
+        "FP_CUSA_W_MOD": 42.6,
+        "FP_NADA_W_UNT": 11.9,
+        "CM_ECMR_C_NNR": 16.0,
+        "RH_ANCN_W_N4P": 55.3,
+        "RH_DELP_C_DHF": 69.3,
+        "RH_EBCC_W_ECC": 3.7,
+        "CH_VACC_C_DP3": 90.8,
+        "CH_VACC_C_MSL": 82.9,
+        "CH_VACC_C_BAS": 74.9,
+        "CH_FEVR_C_FEV": 10.8,
+        "CH_DIAR_C_DIA": 16.1,
+        "CH_DIAT_C_ORS": 56.3,
+        "CN_NUTS_C_HA2": 21.5,
+        "CN_NUTS_C_WH2": 2.1,
+        "CN_NUTS_C_WA2": 10.7,
+        "ML_NETP_H_IT2": 54.0,
+        "ED_LITR_W_LIT": 80.5,
+        "WS_SRCE_H_IMP": 64.4,
+        "WS_TLET_H_IMP": 52.2
+      }
+    },
+    {
+      "name": "Nyamira",
+      "gadm_name": "Nyamira",
+      "lat": -0.6234,
+      "lng": 34.9536,
+      "score": 38.1,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 2.7,
+        "FE_TNPG_W_CBR": 15.5,
+        "FP_CUSA_W_MOD": 44.1,
+        "FP_NADA_W_UNT": 11.3,
+        "CM_ECMR_C_NNR": 27.0,
+        "RH_ANCN_W_N4P": 65.8,
+        "RH_DELP_C_DHF": 93.7,
+        "RH_EBCC_W_ECC": 9.2,
+        "CH_VACC_C_DP3": 95.5,
+        "CH_VACC_C_MSL": 92.5,
+        "CH_VACC_C_BAS": 82.7,
+        "CH_FEVR_C_FEV": 15.7,
+        "CH_DIAR_C_DIA": 10.3,
+        "CH_DIAT_C_ORS": 53.2,
+        "CN_NUTS_C_HA2": 13.5,
+        "CN_NUTS_C_WH2": 1.2,
+        "CN_NUTS_C_WA2": 3.4,
+        "ML_NETP_H_IT2": 80.0,
+        "ED_LITR_W_LIT": 99.0,
+        "WS_SRCE_H_IMP": 76.6,
+        "WS_TLET_H_IMP": 38.7
+      }
+    },
+    {
+      "name": "Nyandarua",
+      "gadm_name": "Nyandarua",
+      "lat": -0.4015,
+      "lng": 36.4999,
+      "score": 30.5,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.6,
+        "FE_TNPG_W_CBR": 4.9,
+        "FP_CUSA_W_MOD": 41.8,
+        "FP_NADA_W_UNT": 5.1,
+        "CM_ECMR_C_NNR": 20.0,
+        "RH_ANCN_W_N4P": 60.6,
+        "RH_DELP_C_DHF": 97.1,
+        "RH_EBCC_W_ECC": 11.7,
+        "CH_VACC_C_DP3": 98.0,
+        "CH_VACC_C_MSL": 99.2,
+        "CH_VACC_C_BAS": 94.9,
+        "CH_FEVR_C_FEV": 9.4,
+        "CH_DIAR_C_DIA": 6.4,
+        "CN_NUTS_C_HA2": 17.8,
+        "CN_NUTS_C_WH2": 1.9,
+        "CN_NUTS_C_WA2": 4.0,
+        "ML_NETP_H_IT2": 5.8,
+        "ED_LITR_W_LIT": 97.5,
+        "WS_SRCE_H_IMP": 93.1,
+        "WS_TLET_H_IMP": 50.0
+      }
+    },
+    {
+      "name": "Nyeri",
+      "gadm_name": "Nyeri",
+      "lat": -0.3942,
+      "lng": 36.9465,
+      "score": 29.6,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.1,
+        "FE_TNPG_W_CBR": 4.5,
+        "FP_CUSA_W_MOD": 51.2,
+        "FP_NADA_W_UNT": 4.2,
+        "CM_ECMR_C_NNR": 27.0,
+        "RH_ANCN_W_N4P": 82.2,
+        "RH_DELP_C_DHF": 99.1,
+        "RH_EBCC_W_ECC": 16.5,
+        "CH_VACC_C_DP3": 85.9,
+        "CH_VACC_C_MSL": 85.6,
+        "CH_VACC_C_BAS": 78.2,
+        "CH_FEVR_C_FEV": 15.2,
+        "CH_DIAR_C_DIA": 12.1,
+        "CH_DIAT_C_ORS": 73.1,
+        "CN_NUTS_C_HA2": 12.5,
+        "CN_NUTS_C_WH2": 2.7,
+        "CN_NUTS_C_WA2": 4.0,
+        "ML_NETP_H_IT2": 12.1,
+        "ED_LITR_W_LIT": 98.2,
+        "WS_SRCE_H_IMP": 91.5,
+        "WS_TLET_H_IMP": 79.2
+      }
+    },
+    {
+      "name": "Samburu",
+      "gadm_name": "Samburu",
+      "lat": 1.3069,
+      "lng": 36.982,
+      "score": 79.0,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 2,
+      "indicators": {
+        "FE_FRTR_W_TFR": 5.8,
+        "FE_TNPG_W_CBR": 46.4,
+        "FP_CUSA_W_MOD": 24.1,
+        "FP_NADA_W_UNT": 23.1,
+        "CM_ECMR_C_NNR": 19.0,
+        "RH_ANCN_W_N4P": 56.3,
+        "RH_DELP_C_DHF": 55.4,
+        "RH_EBCC_W_ECC": 4.8,
+        "CH_VACC_C_DP3": 87.2,
+        "CH_VACC_C_MSL": 73.1,
+        "CH_VACC_C_BAS": 65.8,
+        "CH_FEVR_C_FEV": 13.6,
+        "CH_DIAR_C_DIA": 16.0,
+        "CH_DIAT_C_ORS": 32.3,
+        "CN_NUTS_C_HA2": 31.4,
+        "CN_NUTS_C_WH2": 15.4,
+        "CN_NUTS_C_WA2": 30.2,
+        "ML_NETP_H_IT2": 7.4,
+        "ED_LITR_W_LIT": 45.3,
+        "WS_SRCE_H_IMP": 46.5,
+        "WS_TLET_H_IMP": 42.7
+      }
+    },
+    {
+      "name": "Siaya",
+      "gadm_name": "Siaya",
+      "lat": 0.1141,
+      "lng": 34.3625,
+      "score": 49.1,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 4.0,
+        "FE_TNPG_W_CBR": 20.3,
+        "FP_CUSA_W_MOD": 33.1,
+        "FP_NADA_W_UNT": 18.3,
+        "CM_ECMR_C_NNR": 24.0,
+        "RH_ANCN_W_N4P": 65.1,
+        "RH_DELP_C_DHF": 90.3,
+        "RH_EBCC_W_ECC": 8.8,
+        "CH_VACC_C_DP3": 93.9,
+        "CH_VACC_C_MSL": 94.1,
+        "CH_VACC_C_BAS": 88.1,
+        "CH_FEVR_C_FEV": 13.6,
+        "CH_DIAR_C_DIA": 5.2,
+        "CN_NUTS_C_HA2": 19.2,
+        "CN_NUTS_C_WH2": 1.7,
+        "CN_NUTS_C_WA2": 7.0,
+        "ML_NETP_H_IT2": 58.6,
+        "ED_LITR_W_LIT": 90.8,
+        "WS_SRCE_H_IMP": 58.5,
+        "WS_TLET_H_IMP": 57.1
+      }
+    },
+    {
+      "name": "Taita Taveta",
+      "gadm_name": "TaitaTaveta",
+      "lat": -3.1066,
+      "lng": 38.4867,
+      "score": 41.9,
+      "risk": "medium",
+      "cluster": "Nutrition crisis zone",
+      "cluster_desc": "Elevated stunting and underweight rates. Priority for nutrition programmes, food security, and maternal nutrition support.",
+      "cluster_id": 3,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.5,
+        "FE_TNPG_W_CBR": 18.4,
+        "FP_CUSA_W_MOD": 47.4,
+        "FP_NADA_W_UNT": 8.4,
+        "CM_ECMR_C_NNR": 19.0,
+        "RH_ANCN_W_N4P": 64.9,
+        "RH_DELP_C_DHF": 93.8,
+        "RH_EBCC_W_ECC": 5.6,
+        "CH_VACC_C_DP3": 85.8,
+        "CH_VACC_C_MSL": 96.5,
+        "CH_VACC_C_BAS": 84.7,
+        "CH_FEVR_C_FEV": 10.8,
+        "CH_DIAR_C_DIA": 8.7,
+        "CN_NUTS_C_HA2": 19.2,
+        "CN_NUTS_C_WH2": 4.1,
+        "CN_NUTS_C_WA2": 12.6,
+        "ML_NETP_H_IT2": 74.3,
+        "ED_LITR_W_LIT": 95.5,
+        "WS_SRCE_H_IMP": 82.5,
+        "WS_TLET_H_IMP": 80.0
+      }
+    },
+    {
+      "name": "Tana River",
+      "gadm_name": "TanaRiver",
+      "lat": -1.42,
+      "lng": 39.5481,
+      "score": 74.1,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 2,
+      "indicators": {
+        "FE_FRTR_W_TFR": 5.7,
+        "FE_TNPG_W_CBR": 16.4,
+        "FP_CUSA_W_MOD": 19.7,
+        "FP_NADA_W_UNT": 25.0,
+        "CM_ECMR_C_NNR": 23.0,
+        "RH_ANCN_W_N4P": 61.2,
+        "RH_DELP_C_DHF": 51.6,
+        "RH_EBCC_W_ECC": 3.7,
+        "CH_VACC_C_DP3": 80.8,
+        "CH_VACC_C_MSL": 83.1,
+        "CH_VACC_C_BAS": 73.5,
+        "CH_FEVR_C_FEV": 17.7,
+        "CH_DIAR_C_DIA": 16.1,
+        "CH_DIAT_C_ORS": 54.1,
+        "CN_NUTS_C_HA2": 21.1,
+        "CN_NUTS_C_WH2": 11.3,
+        "CN_NUTS_C_WA2": 16.8,
+        "ML_NETP_H_IT2": 34.3,
+        "ED_LITR_W_LIT": 50.6,
+        "WS_SRCE_H_IMP": 60.7,
+        "WS_TLET_H_IMP": 38.4
+      }
+    },
+    {
+      "name": "Tharaka-Nithi",
+      "gadm_name": "Tharaka-Nithi",
+      "lat": -0.2255,
+      "lng": 37.8827,
+      "score": 41.3,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.1,
+        "FE_TNPG_W_CBR": 9.9,
+        "FP_CUSA_W_MOD": 51.3,
+        "FP_NADA_W_UNT": 9.5,
+        "CM_ECMR_C_NNR": 12.0,
+        "RH_ANCN_W_N4P": 63.2,
+        "RH_DELP_C_DHF": 94.5,
+        "RH_EBCC_W_ECC": 9.8,
+        "CH_VACC_C_DP3": 96.3,
+        "CH_VACC_C_MSL": 96.3,
+        "CH_VACC_C_BAS": 94.9,
+        "CH_FEVR_C_FEV": 31.4,
+        "CH_DIAR_C_DIA": 17.0,
+        "CH_DIAT_C_ORS": 39.4,
+        "CN_NUTS_C_HA2": 20.5,
+        "CN_NUTS_C_WH2": 3.1,
+        "CN_NUTS_C_WA2": 7.7,
+        "ML_NETP_H_IT2": 34.7,
+        "ED_LITR_W_LIT": 93.3,
+        "WS_SRCE_H_IMP": 70.5,
+        "WS_TLET_H_IMP": 68.0
+      }
+    },
+    {
+      "name": "Trans-Nzoia",
+      "gadm_name": "TransNzoia",
+      "lat": 0.9978,
+      "lng": 35.0227,
+      "score": 47.8,
+      "risk": "medium",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.6,
+        "FE_TNPG_W_CBR": 16.3,
+        "FP_CUSA_W_MOD": 46.4,
+        "FP_NADA_W_UNT": 8.6,
+        "CM_ECMR_C_NNR": 23.0,
+        "RH_ANCN_W_N4P": 68.1,
+        "RH_DELP_C_DHF": 92.9,
+        "RH_EBCC_W_ECC": 9.1,
+        "CH_VACC_C_DP3": 87.4,
+        "CH_VACC_C_MSL": 93.9,
+        "CH_VACC_C_BAS": 77.6,
+        "CH_FEVR_C_FEV": 17.8,
+        "CH_DIAR_C_DIA": 16.9,
+        "CH_DIAT_C_ORS": 43.7,
+        "CN_NUTS_C_HA2": 21.3,
+        "CN_NUTS_C_WH2": 3.2,
+        "CN_NUTS_C_WA2": 11.1,
+        "ML_NETP_H_IT2": 69.3,
+        "ED_LITR_W_LIT": 92.1,
+        "WS_SRCE_H_IMP": 86.6,
+        "WS_TLET_H_IMP": 90.0
+      }
+    },
+    {
+      "name": "Turkana",
+      "gadm_name": "Turkana",
+      "lat": 2.4167,
+      "lng": 35.7755,
+      "score": 75.9,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 2,
+      "indicators": {
+        "FE_FRTR_W_TFR": 6.0,
+        "FE_TNPG_W_CBR": 18.5,
+        "FP_CUSA_W_MOD": 24.2,
+        "FP_NADA_W_UNT": 10.5,
+        "CM_ECMR_C_NNR": 21.0,
+        "RH_ANCN_W_N4P": 57.7,
+        "RH_DELP_C_DHF": 49.5,
+        "RH_EBCC_W_ECC": 4.3,
+        "CH_VACC_C_DP3": 84.1,
+        "CH_VACC_C_MSL": 68.8,
+        "CH_VACC_C_BAS": 60.1,
+        "CH_FEVR_C_FEV": 23.1,
+        "CH_DIAR_C_DIA": 17.6,
+        "CH_DIAT_C_ORS": 64.6,
+        "CN_NUTS_C_HA2": 23.0,
+        "CN_NUTS_C_WH2": 22.6,
+        "CN_NUTS_C_WA2": 31.7,
+        "ML_NETP_H_IT2": 18.8,
+        "ED_LITR_W_LIT": 35.8,
+        "WS_SRCE_H_IMP": 67.7,
+        "WS_TLET_H_IMP": 27.4
+      }
+    },
+    {
+      "name": "Uasin Gishu",
+      "gadm_name": "UasinGishu",
+      "lat": 0.5528,
+      "lng": 35.3054,
+      "score": 33.5,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.1,
+        "FE_TNPG_W_CBR": 10.7,
+        "FP_CUSA_W_MOD": 49.1,
+        "FP_NADA_W_UNT": 8.9,
+        "CM_ECMR_C_NNR": 17.0,
+        "RH_ANCN_W_N4P": 71.9,
+        "RH_DELP_C_DHF": 94.3,
+        "RH_EBCC_W_ECC": 11.5,
+        "CH_VACC_C_DP3": 94.6,
+        "CH_VACC_C_MSL": 97.6,
+        "CH_VACC_C_BAS": 89.5,
+        "CH_FEVR_C_FEV": 24.7,
+        "CH_DIAR_C_DIA": 17.4,
+        "CH_DIAT_C_ORS": 61.0,
+        "CN_NUTS_C_HA2": 14.2,
+        "CN_NUTS_C_WH2": 4.0,
+        "CN_NUTS_C_WA2": 6.4,
+        "ML_NETP_H_IT2": 56.8,
+        "ED_LITR_W_LIT": 95.9,
+        "WS_SRCE_H_IMP": 86.1,
+        "WS_TLET_H_IMP": 79.4
+      }
+    },
+    {
+      "name": "Vihiga",
+      "gadm_name": "Vihiga",
+      "lat": 0.0898,
+      "lng": 34.7343,
+      "score": 35.4,
+      "risk": "low",
+      "cluster": "Mixed deprivation",
+      "cluster_desc": "Multiple moderate deprivation signals across indicators. Requires multi-sectoral intervention approach.",
+      "cluster_id": 1,
+      "indicators": {
+        "FE_FRTR_W_TFR": 3.5,
+        "FE_TNPG_W_CBR": 7.7,
+        "FP_CUSA_W_MOD": 36.6,
+        "FP_NADA_W_UNT": 11.6,
+        "CM_ECMR_C_NNR": 16.0,
+        "RH_ANCN_W_N4P": 79.4,
+        "RH_DELP_C_DHF": 96.2,
+        "RH_EBCC_W_ECC": 4.7,
+        "CH_VACC_C_DP3": 95.9,
+        "CH_VACC_C_MSL": 100.0,
+        "CH_VACC_C_BAS": 95.9,
+        "CH_FEVR_C_FEV": 16.2,
+        "CH_DIAR_C_DIA": 15.1,
+        "CH_DIAT_C_ORS": 32.4,
+        "CN_NUTS_C_HA2": 16.6,
+        "CN_NUTS_C_WH2": 2.4,
+        "CN_NUTS_C_WA2": 9.2,
+        "ML_NETP_H_IT2": 75.8,
+        "ED_LITR_W_LIT": 96.4,
+        "WS_SRCE_H_IMP": 85.6,
+        "WS_TLET_H_IMP": 78.7
+      }
+    },
+    {
+      "name": "Wajir",
+      "gadm_name": "Wajir",
+      "lat": 1.7949,
+      "lng": 39.881,
+      "score": 77.0,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 0,
+      "indicators": {
+        "FE_FRTR_W_TFR": 6.8,
+        "FE_TNPG_W_CBR": 10.8,
+        "FP_CUSA_W_MOD": 2.2,
+        "FP_NADA_W_UNT": 7.6,
+        "CM_ECMR_C_NNR": 37.0,
+        "RH_ANCN_W_N4P": 44.9,
+        "RH_DELP_C_DHF": 53.6,
+        "RH_EBCC_W_ECC": 1.1,
+        "CH_VACC_C_DP3": 66.5,
+        "CH_VACC_C_MSL": 74.8,
+        "CH_VACC_C_BAS": 48.6,
+        "CH_FEVR_C_FEV": 24.0,
+        "CH_DIAR_C_DIA": 27.3,
+        "CH_DIAT_C_ORS": 46.1,
+        "CN_NUTS_C_HA2": 12.4,
+        "CN_NUTS_C_WH2": 22.8,
+        "CN_NUTS_C_WA2": 16.2,
+        "ML_NETP_H_IT2": 15.5,
+        "ED_LITR_W_LIT": 34.9,
+        "WS_SRCE_H_IMP": 77.6,
+        "WS_TLET_H_IMP": 31.7
+      }
+    },
+    {
+      "name": "West Pokot",
+      "gadm_name": "WestPokot",
+      "lat": 1.6048,
+      "lng": 35.4101,
+      "score": 78.1,
+      "risk": "critical",
+      "cluster": "Healthcare access gap",
+      "cluster_desc": "Low vaccination and facility delivery rates. Priority for mobile health units and community health worker deployment.",
+      "cluster_id": 2,
+      "indicators": {
+        "FE_FRTR_W_TFR": 6.9,
+        "FE_TNPG_W_CBR": 34.9,
+        "FP_CUSA_W_MOD": 21.3,
+        "FP_NADA_W_UNT": 23.4,
+        "CM_ECMR_C_NNR": 27.0,
+        "RH_ANCN_W_N4P": 35.0,
+        "RH_DELP_C_DHF": 59.8,
+        "RH_EBCC_W_ECC": 1.6,
+        "CH_VACC_C_DP3": 73.9,
+        "CH_VACC_C_MSL": 62.2,
+        "CH_VACC_C_BAS": 48.6,
+        "CH_FEVR_C_FEV": 8.3,
+        "CH_DIAR_C_DIA": 8.0,
+        "CH_DIAT_C_ORS": 47.1,
+        "CN_NUTS_C_HA2": 33.5,
+        "CN_NUTS_C_WH2": 11.0,
+        "CN_NUTS_C_WA2": 27.1,
+        "ML_NETP_H_IT2": 41.5,
+        "ED_LITR_W_LIT": 65.2,
+        "WS_SRCE_H_IMP": 43.4,
+        "WS_TLET_H_IMP": 32.2
+      }
+    }
+  ],
+  "subcounties": {
+    "Baringo": {
+      "805": {
+        "score": 67.4,
+        "risk": "critical"
+      },
+      "BaringoCentral": {
+        "score": 51.2,
+        "risk": "medium"
+      },
+      "BaringoNorth": {
+        "score": 72.7,
+        "risk": "critical"
+      },
+      "BaringoSouth": {
+        "score": 75.0,
+        "risk": "critical"
+      },
+      "EldamaRavine": {
+        "score": 40.3,
+        "risk": "medium"
+      },
+      "Mogotio": {
+        "score": 48.1,
+        "risk": "medium"
+      },
+      "Tiaty": {
+        "score": 65.2,
+        "risk": "critical"
+      }
+    },
+    "Bomet": {
+      "BometCentral": {
+        "score": 45.0,
+        "risk": "medium"
+      },
+      "BometEast": {
+        "score": 48.6,
+        "risk": "medium"
+      },
+      "Chepalungu": {
+        "score": 38.6,
+        "risk": "low"
+      },
+      "Konoin": {
+        "score": 59.4,
+        "risk": "medium"
+      },
+      "Sotik": {
+        "score": 58.1,
+        "risk": "medium"
+      }
+    },
+    "Bungoma": {
+      "Bumula": {
+        "score": 48.7,
+        "risk": "medium"
+      },
+      "Kabuchai": {
+        "score": 61.4,
+        "risk": "medium"
+      },
+      "Kanduyi": {
+        "score": 53.5,
+        "risk": "medium"
+      },
+      "Kimilili": {
+        "score": 37.6,
+        "risk": "low"
+      },
+      "Likuyani": {
+        "score": 52.3,
+        "risk": "medium"
+      },
+      "Lugari": {
+        "score": 36.4,
+        "risk": "low"
+      },
+      "Mt.Elgon": {
+        "score": 58.4,
+        "risk": "medium"
+      },
+      "Sirisia": {
+        "score": 47.3,
+        "risk": "medium"
+      },
+      "Tongaren": {
+        "score": 45.7,
+        "risk": "medium"
+      },
+      "WebuteWest": {
+        "score": 39.7,
+        "risk": "low"
+      },
+      "WebuyeEast": {
+        "score": 62.6,
+        "risk": "medium"
+      }
+    },
+    "Busia": {
+      "Budalangi": {
+        "score": 48.6,
+        "risk": "medium"
+      },
+      "Butula": {
+        "score": 45.4,
+        "risk": "medium"
+      },
+      "Funyula": {
+        "score": 46.3,
+        "risk": "medium"
+      },
+      "Matayos": {
+        "score": 56.9,
+        "risk": "medium"
+      },
+      "Nambale": {
+        "score": 54.9,
+        "risk": "medium"
+      },
+      "TesoNorth": {
+        "score": 55.5,
+        "risk": "medium"
+      },
+      "TesoSouth": {
+        "score": 55.7,
+        "risk": "medium"
+      }
+    },
+    "Elgeyo-Marakwet": {
+      "KeiyoNorth": {
+        "score": 82.3,
+        "risk": "critical"
+      },
+      "KeiyoSouth": {
+        "score": 51.7,
+        "risk": "medium"
+      },
+      "MarakwetEast": {
+        "score": 50.5,
+        "risk": "medium"
+      },
+      "MarakwetWest": {
+        "score": 46.8,
+        "risk": "medium"
+      }
+    },
+    "Embu": {
+      "Manyatta": {
+        "score": 42.8,
+        "risk": "medium"
+      },
+      "MbeereNorth": {
+        "score": 48.9,
+        "risk": "medium"
+      },
+      "MbeereSouth": {
+        "score": 34.0,
+        "risk": "low"
+      },
+      "Runyenjes": {
+        "score": 25.3,
+        "risk": "low"
+      }
+    },
+    "Garissa": {
+      "Balambala": {
+        "score": 53.0,
+        "risk": "medium"
+      },
+      "Daadab": {
+        "score": 70.7,
+        "risk": "critical"
+      },
+      "Fafi": {
+        "score": 71.8,
+        "risk": "critical"
+      },
+      "GarissaTownship": {
+        "score": 69.4,
+        "risk": "critical"
+      },
+      "Ijara": {
+        "score": 54.9,
+        "risk": "medium"
+      },
+      "Lagdera": {
+        "score": 65.7,
+        "risk": "critical"
+      }
+    },
+    "HomaBay": {
+      "HomaBayTown": {
+        "score": 55.7,
+        "risk": "medium"
+      },
+      "KabondoKasipul": {
+        "score": 56.9,
+        "risk": "medium"
+      },
+      "Karachuonyo": {
+        "score": 64.8,
+        "risk": "medium"
+      },
+      "Kasipul": {
+        "score": 57.0,
+        "risk": "medium"
+      },
+      "Mbita": {
+        "score": 62.4,
+        "risk": "medium"
+      },
+      "Ndhiwa": {
+        "score": 55.1,
+        "risk": "medium"
+      },
+      "Rangwe": {
+        "score": 57.8,
+        "risk": "medium"
+      },
+      "Suba": {
+        "score": 61.9,
+        "risk": "medium"
+      },
+      "unknown6": {
+        "score": 36.8,
+        "risk": "low"
+      }
+    },
+    "Isiolo": {
+      "IsioloNorth": {
+        "score": 60.4,
+        "risk": "medium"
+      },
+      "IsioloSouth": {
+        "score": 58.6,
+        "risk": "medium"
+      }
+    },
+    "Kajiado": {
+      "KajiadoCentral": {
+        "score": 45.2,
+        "risk": "medium"
+      },
+      "KajiadoEast": {
+        "score": 49.6,
+        "risk": "medium"
+      },
+      "KajiadoNorth": {
+        "score": 70.8,
+        "risk": "critical"
+      },
+      "KajiadoSouth": {
+        "score": 42.5,
+        "risk": "medium"
+      },
+      "KajiadoWest": {
+        "score": 64.5,
+        "risk": "medium"
+      }
+    },
+    "Kakamega": {
+      "Butere": {
+        "score": 16.6,
+        "risk": "low"
+      },
+      "Ikolomani": {
+        "score": 32.8,
+        "risk": "low"
+      },
+      "Khwisero": {
+        "score": 38.8,
+        "risk": "low"
+      },
+      "Lugari": {
+        "score": 43.8,
+        "risk": "medium"
+      },
+      "Lurambi": {
+        "score": 45.3,
+        "risk": "medium"
+      },
+      "Malava": {
+        "score": 46.3,
+        "risk": "medium"
+      },
+      "Matungu": {
+        "score": 32.6,
+        "risk": "low"
+      },
+      "MumiasEast": {
+        "score": 31.3,
+        "risk": "low"
+      },
+      "MumiasWest": {
+        "score": 47.1,
+        "risk": "medium"
+      },
+      "Navakholo": {
+        "score": 34.5,
+        "risk": "low"
+      },
+      "Shinyalu": {
+        "score": 21.5,
+        "risk": "low"
+      }
+    },
+    "Kericho": {
+      "Ainamoi": {
+        "score": 28.4,
+        "risk": "low"
+      },
+      "Belgut": {
+        "score": 31.0,
+        "risk": "low"
+      },
+      "Bureti": {
+        "score": 48.0,
+        "risk": "medium"
+      },
+      "KipkelionEast": {
+        "score": 43.7,
+        "risk": "medium"
+      },
+      "KipkelionWest": {
+        "score": 50.3,
+        "risk": "medium"
+      },
+      "Sigowet/Soin": {
+        "score": 36.9,
+        "risk": "low"
+      }
+    },
+    "Kiambu": {
+      "GatunduNorth": {
+        "score": 39.4,
+        "risk": "low"
+      },
+      "GatunduSouth": {
+        "score": 45.0,
+        "risk": "medium"
+      },
+      "Githunguri": {
+        "score": 33.8,
+        "risk": "low"
+      },
+      "Juja": {
+        "score": 43.0,
+        "risk": "medium"
+      },
+      "Kabete": {
+        "score": 29.6,
+        "risk": "low"
+      },
+      "Kiambaa": {
+        "score": 33.1,
+        "risk": "low"
+      },
+      "Kiambu": {
+        "score": 32.9,
+        "risk": "low"
+      },
+      "Kikuyu": {
+        "score": 23.1,
+        "risk": "low"
+      },
+      "Lari": {
+        "score": 43.3,
+        "risk": "medium"
+      },
+      "Limuru": {
+        "score": 31.9,
+        "risk": "low"
+      },
+      "Ruiru": {
+        "score": 37.6,
+        "risk": "low"
+      },
+      "ThikaTown": {
+        "score": 43.3,
+        "risk": "medium"
+      }
+    },
+    "Kilifi": {
+      "Ganze": {
+        "score": 60.3,
+        "risk": "medium"
+      },
+      "Kaloleni": {
+        "score": 62.9,
+        "risk": "medium"
+      },
+      "KilifiNorth": {
+        "score": 53.7,
+        "risk": "medium"
+      },
+      "KilifiSouth": {
+        "score": 49.8,
+        "risk": "medium"
+      },
+      "Magarini": {
+        "score": 53.9,
+        "risk": "medium"
+      },
+      "Malindi": {
+        "score": 34.7,
+        "risk": "low"
+      },
+      "Rabai": {
+        "score": 37.5,
+        "risk": "low"
+      }
+    },
+    "Kirinyaga": {
+      "Gichugu": {
+        "score": 10.6,
+        "risk": "low"
+      },
+      "KirinyagaCentral": {
+        "score": 14.5,
+        "risk": "low"
+      },
+      "Mwea": {
+        "score": 31.3,
+        "risk": "low"
+      },
+      "Ndia": {
+        "score": 15.6,
+        "risk": "low"
+      }
+    },
+    "Kisii": {
+      "Bobasi": {
+        "score": 37.7,
+        "risk": "low"
+      },
+      "BomachogeBorabu": {
+        "score": 57.8,
+        "risk": "medium"
+      },
+      "BomachogeChache": {
+        "score": 37.9,
+        "risk": "low"
+      },
+      "Bonchari": {
+        "score": 51.1,
+        "risk": "medium"
+      },
+      "KitutuChacheNorth": {
+        "score": 31.0,
+        "risk": "low"
+      },
+      "KitutuChacheSouth": {
+        "score": 39.7,
+        "risk": "low"
+      },
+      "NyaribariChache": {
+        "score": 30.8,
+        "risk": "low"
+      },
+      "NyaribariMasaba": {
+        "score": 38.1,
+        "risk": "low"
+      },
+      "SouthMugirango": {
+        "score": 52.3,
+        "risk": "medium"
+      }
+    },
+    "Kisumu": {
+      "KisumuCentral": {
+        "score": 17.2,
+        "risk": "low"
+      },
+      "KisumuEast": {
+        "score": 43.1,
+        "risk": "medium"
+      },
+      "KisumuWest": {
+        "score": 40.8,
+        "risk": "medium"
+      },
+      "Muhoroni": {
+        "score": 30.8,
+        "risk": "low"
+      },
+      "Nyakach": {
+        "score": 20.5,
+        "risk": "low"
+      },
+      "Nyando": {
+        "score": 38.8,
+        "risk": "low"
+      },
+      "Seme": {
+        "score": 31.5,
+        "risk": "low"
+      }
+    },
+    "Kitui": {
+      "KituiCentral": {
+        "score": 56.7,
+        "risk": "medium"
+      },
+      "KituiEast": {
+        "score": 54.2,
+        "risk": "medium"
+      },
+      "KituiRural": {
+        "score": 73.1,
+        "risk": "critical"
+      },
+      "KituiSouth": {
+        "score": 51.0,
+        "risk": "medium"
+      },
+      "KituiWest": {
+        "score": 41.6,
+        "risk": "medium"
+      },
+      "MwingiCentral": {
+        "score": 56.1,
+        "risk": "medium"
+      },
+      "MwingiNorth": {
+        "score": 56.5,
+        "risk": "medium"
+      },
+      "MwingiWest": {
+        "score": 70.2,
+        "risk": "critical"
+      }
+    },
+    "Kwale": {
+      "Kinango": {
+        "score": 70.2,
+        "risk": "critical"
+      },
+      "Lungalunga": {
+        "score": 64.5,
+        "risk": "medium"
+      },
+      "Matuga": {
+        "score": 77.8,
+        "risk": "critical"
+      },
+      "Msambweni": {
+        "score": 45.9,
+        "risk": "medium"
+      }
+    },
+    "Laikipia": {
+      "LaikipiaEast": {
+        "score": 34.5,
+        "risk": "low"
+      },
+      "LaikipiaNorth": {
+        "score": 31.1,
+        "risk": "low"
+      },
+      "LaikipiaWest": {
+        "score": 37.5,
+        "risk": "low"
+      }
+    },
+    "Lamu": {
+      "LamuEast": {
+        "score": 43.7,
+        "risk": "medium"
+      },
+      "LamuWest": {
+        "score": 67.8,
+        "risk": "critical"
+      }
+    },
+    "Machakos": {
+      "Kangundo": {
+        "score": 31.7,
+        "risk": "low"
+      },
+      "Kathiani": {
+        "score": 16.8,
+        "risk": "low"
+      },
+      "MachakosTown": {
+        "score": 22.2,
+        "risk": "low"
+      },
+      "Masinga": {
+        "score": 38.2,
+        "risk": "low"
+      },
+      "Matungulu": {
+        "score": 44.5,
+        "risk": "medium"
+      },
+      "Mavoko": {
+        "score": 58.4,
+        "risk": "medium"
+      },
+      "Mwala": {
+        "score": 69.4,
+        "risk": "critical"
+      },
+      "unknown7": {
+        "score": 39.4,
+        "risk": "low"
+      },
+      "Yatta": {
+        "score": 22.5,
+        "risk": "low"
+      }
+    },
+    "Makueni": {
+      "Kaiti": {
+        "score": 19.6,
+        "risk": "low"
+      },
+      "KibweziEast": {
+        "score": 48.4,
+        "risk": "medium"
+      },
+      "KibweziWest": {
+        "score": 35.4,
+        "risk": "low"
+      },
+      "Kilome": {
+        "score": 40.2,
+        "risk": "medium"
+      },
+      "Makueni": {
+        "score": 37.9,
+        "risk": "low"
+      },
+      "Mbooni": {
+        "score": 43.5,
+        "risk": "medium"
+      }
+    },
+    "Mandera": {
+      "Banissa": {
+        "score": 84.3,
+        "risk": "critical"
+      },
+      "Lafey": {
+        "score": 73.4,
+        "risk": "critical"
+      },
+      "ManderaEast": {
+        "score": 69.6,
+        "risk": "critical"
+      },
+      "ManderaNorth": {
+        "score": 59.1,
+        "risk": "medium"
+      },
+      "ManderaSouth": {
+        "score": 51.4,
+        "risk": "medium"
+      },
+      "ManderaWest": {
+        "score": 65.7,
+        "risk": "critical"
+      },
+      "unknown1": {
+        "score": 70.9,
+        "risk": "critical"
+      }
+    },
+    "Marsabit": {
+      "Laisamis": {
+        "score": 87.5,
+        "risk": "critical"
+      },
+      "Moyale": {
+        "score": 67.9,
+        "risk": "critical"
+      },
+      "NorthHorr": {
+        "score": 78.1,
+        "risk": "critical"
+      },
+      "Saku": {
+        "score": 60.3,
+        "risk": "medium"
+      }
+    },
+    "Meru": {
+      "Buuri": {
+        "score": 40.0,
+        "risk": "low"
+      },
+      "CentralImenti": {
+        "score": 42.6,
+        "risk": "medium"
+      },
+      "IgembeCentral": {
+        "score": 45.5,
+        "risk": "medium"
+      },
+      "IgembeNorth": {
+        "score": 79.7,
+        "risk": "critical"
+      },
+      "IgembeSouth": {
+        "score": 44.3,
+        "risk": "medium"
+      },
+      "NorthImenti": {
+        "score": 64.3,
+        "risk": "medium"
+      },
+      "SouthImenti": {
+        "score": 43.4,
+        "risk": "medium"
+      },
+      "TiganiaEast": {
+        "score": 65.4,
+        "risk": "critical"
+      },
+      "TiganiaWest": {
+        "score": 58.8,
+        "risk": "medium"
+      },
+      "unknown5": {
+        "score": 52.3,
+        "risk": "medium"
+      }
+    },
+    "Migori": {
+      "Awendo": {
+        "score": 58.7,
+        "risk": "medium"
+      },
+      "KuriaEast": {
+        "score": 51.3,
+        "risk": "medium"
+      },
+      "KuriaWest": {
+        "score": 64.6,
+        "risk": "medium"
+      },
+      "Nyatike": {
+        "score": 53.7,
+        "risk": "medium"
+      },
+      "Rongo": {
+        "score": 44.5,
+        "risk": "medium"
+      },
+      "SunaEast": {
+        "score": 43.9,
+        "risk": "medium"
+      },
+      "SunaWest": {
+        "score": 61.3,
+        "risk": "medium"
+      },
+      "Uriri": {
+        "score": 78.1,
+        "risk": "critical"
+      }
+    },
+    "Mombasa": {
+      "Changamwe": {
+        "score": 47.5,
+        "risk": "medium"
+      },
+      "Jomvu": {
+        "score": 44.2,
+        "risk": "medium"
+      },
+      "Kisauni": {
+        "score": 49.0,
+        "risk": "medium"
+      },
+      "Likoni": {
+        "score": 61.3,
+        "risk": "medium"
+      },
+      "Mvita": {
+        "score": 48.2,
+        "risk": "medium"
+      },
+      "Nyali": {
+        "score": 40.7,
+        "risk": "medium"
+      }
+    },
+    "Murang'a": {
+      "Gatanga": {
+        "score": 45.9,
+        "risk": "medium"
+      },
+      "Kandara": {
+        "score": 37.7,
+        "risk": "low"
+      },
+      "Kangema": {
+        "score": 51.0,
+        "risk": "medium"
+      },
+      "Kigumo": {
+        "score": 34.8,
+        "risk": "low"
+      },
+      "Kiharu": {
+        "score": 17.9,
+        "risk": "low"
+      },
+      "Maragwa": {
+        "score": 16.2,
+        "risk": "low"
+      },
+      "Mathioya": {
+        "score": 52.4,
+        "risk": "medium"
+      }
+    },
+    "Nairobi": {
+      "DagorettiNorth": {
+        "score": 53.8,
+        "risk": "medium"
+      },
+      "DagorettiSouth": {
+        "score": 30.9,
+        "risk": "low"
+      },
+      "EmbakasiCentral": {
+        "score": 28.5,
+        "risk": "low"
+      },
+      "EmbakasiEast": {
+        "score": 50.6,
+        "risk": "medium"
+      },
+      "EmbakasiNorth": {
+        "score": 19.8,
+        "risk": "low"
+      },
+      "EmbakasiSouth": {
+        "score": 22.4,
+        "risk": "low"
+      },
+      "EmbakasiWest": {
+        "score": 40.8,
+        "risk": "medium"
+      },
+      "Kamukunji": {
+        "score": 28.4,
+        "risk": "low"
+      },
+      "Kasarani": {
+        "score": 33.0,
+        "risk": "low"
+      },
+      "Kibra": {
+        "score": 31.1,
+        "risk": "low"
+      },
+      "Langata": {
+        "score": 37.2,
+        "risk": "low"
+      },
+      "Makadara": {
+        "score": 50.0,
+        "risk": "medium"
+      },
+      "Mathare": {
+        "score": 34.2,
+        "risk": "low"
+      },
+      "Roysambu": {
+        "score": 40.8,
+        "risk": "medium"
+      },
+      "Ruaraka": {
+        "score": 8.5,
+        "risk": "low"
+      },
+      "Starehe": {
+        "score": 32.5,
+        "risk": "low"
+      },
+      "Westlands": {
+        "score": 23.0,
+        "risk": "low"
+      }
+    },
+    "Nakuru": {
+      "Bahati": {
+        "score": 27.1,
+        "risk": "low"
+      },
+      "Gilgil": {
+        "score": 31.2,
+        "risk": "low"
+      },
+      "KuresoiNorth": {
+        "score": 37.7,
+        "risk": "low"
+      },
+      "KuresoiSouth": {
+        "score": 52.7,
+        "risk": "medium"
+      },
+      "Molo": {
+        "score": 25.8,
+        "risk": "low"
+      },
+      "Naivasha": {
+        "score": 42.1,
+        "risk": "medium"
+      },
+      "NakuruTownEast": {
+        "score": 35.9,
+        "risk": "low"
+      },
+      "NakuruTownWest": {
+        "score": 37.8,
+        "risk": "low"
+      },
+      "Njoro": {
+        "score": 53.7,
+        "risk": "medium"
+      },
+      "Rongai": {
+        "score": 48.2,
+        "risk": "medium"
+      },
+      "Subukia": {
+        "score": 57.7,
+        "risk": "medium"
+      }
+    },
+    "Nandi": {
+      "Aldai": {
+        "score": 41.1,
+        "risk": "medium"
+      },
+      "Chesumei": {
+        "score": 34.6,
+        "risk": "low"
+      },
+      "Emgwen": {
+        "score": 40.3,
+        "risk": "medium"
+      },
+      "Mosop": {
+        "score": 45.9,
+        "risk": "medium"
+      },
+      "NandiHills": {
+        "score": 45.1,
+        "risk": "medium"
+      },
+      "Tinderet": {
+        "score": 30.0,
+        "risk": "low"
+      }
+    },
+    "Narok": {
+      "EmuruaDikirr": {
+        "score": 61.6,
+        "risk": "medium"
+      },
+      "Kilgoris": {
+        "score": 63.2,
+        "risk": "medium"
+      },
+      "NarokEast": {
+        "score": 90.7,
+        "risk": "critical"
+      },
+      "NarokNorth": {
+        "score": 83.0,
+        "risk": "critical"
+      },
+      "NarokSouth": {
+        "score": 50.3,
+        "risk": "medium"
+      },
+      "NarokWest": {
+        "score": 57.1,
+        "risk": "medium"
+      }
+    },
+    "Nyamira": {
+      "Borabu": {
+        "score": 20.5,
+        "risk": "low"
+      },
+      "KitutuMasaba": {
+        "score": 31.0,
+        "risk": "low"
+      },
+      "NorthMugirango": {
+        "score": 41.9,
+        "risk": "medium"
+      },
+      "WestMugirango": {
+        "score": 52.6,
+        "risk": "medium"
+      }
+    },
+    "Nyandarua": {
+      "Kinangop": {
+        "score": 21.8,
+        "risk": "low"
+      },
+      "Kipipiri": {
+        "score": 22.7,
+        "risk": "low"
+      },
+      "Ndaragwa": {
+        "score": 4.7,
+        "risk": "low"
+      },
+      "OlJorok": {
+        "score": 28.5,
+        "risk": "low"
+      },
+      "OlKalou": {
+        "score": 17.8,
+        "risk": "low"
+      }
+    },
+    "Nyeri": {
+      "Kieni": {
+        "score": 23.2,
+        "risk": "low"
+      },
+      "Mathira": {
+        "score": 19.1,
+        "risk": "low"
+      },
+      "Mukurweini": {
+        "score": 28.5,
+        "risk": "low"
+      },
+      "NyeriTown": {
+        "score": 8.5,
+        "risk": "low"
+      },
+      "Othaya": {
+        "score": 12.0,
+        "risk": "low"
+      },
+      "Tetu": {
+        "score": 55.2,
+        "risk": "medium"
+      }
+    },
+    "Samburu": {
+      "SamburuEast": {
+        "score": 63.6,
+        "risk": "medium"
+      },
+      "SamburuNorth": {
+        "score": 65.8,
+        "risk": "critical"
+      },
+      "SamburuWest": {
+        "score": 100,
+        "risk": "critical"
+      }
+    },
+    "Siaya": {
+      "AlegoUsonga": {
+        "score": 84.0,
+        "risk": "critical"
+      },
+      "Bondo": {
+        "score": 35.0,
+        "risk": "low"
+      },
+      "Gem": {
+        "score": 44.7,
+        "risk": "medium"
+      },
+      "Rarieda": {
+        "score": 53.2,
+        "risk": "medium"
+      },
+      "Ugenya": {
+        "score": 69.8,
+        "risk": "critical"
+      },
+      "Ugunja": {
+        "score": 37.3,
+        "risk": "low"
+      }
+    },
+    "TaitaTaveta": {
+      "Mwatate": {
+        "score": 39.0,
+        "risk": "low"
+      },
+      "Taveta": {
+        "score": 51.2,
+        "risk": "medium"
+      },
+      "Voi": {
+        "score": 47.1,
+        "risk": "medium"
+      },
+      "Wundanyi": {
+        "score": 37.4,
+        "risk": "low"
+      }
+    },
+    "TanaRiver": {
+      "Bura": {
+        "score": 72.5,
+        "risk": "critical"
+      },
+      "Galole": {
+        "score": 57.6,
+        "risk": "medium"
+      },
+      "Garsen": {
+        "score": 71.2,
+        "risk": "critical"
+      }
+    },
+    "Tharaka-Nithi": {
+      "Chuka/Igambang'Ombe": {
+        "score": 38.1,
+        "risk": "low"
+      },
+      "IgembeSouth": {
+        "score": 44.1,
+        "risk": "medium"
+      },
+      "Maara": {
+        "score": 34.6,
+        "risk": "low"
+      },
+      "Tharaka": {
+        "score": 47.0,
+        "risk": "medium"
+      }
+    },
+    "TransNzoia": {
+      "Cherangany": {
+        "score": 60.0,
+        "risk": "medium"
+      },
+      "Endebess": {
+        "score": 49.7,
+        "risk": "medium"
+      },
+      "Kiminini": {
+        "score": 52.0,
+        "risk": "medium"
+      },
+      "Kwanza": {
+        "score": 48.4,
+        "risk": "medium"
+      },
+      "Saboti": {
+        "score": 47.8,
+        "risk": "medium"
+      },
+      "unknown4": {
+        "score": 39.1,
+        "risk": "low"
+      }
+    },
+    "Turkana": {
+      "Loima": {
+        "score": 79.7,
+        "risk": "critical"
+      },
+      "TurkanaCentral": {
+        "score": 74.7,
+        "risk": "critical"
+      },
+      "TurkanaEast": {
+        "score": 100,
+        "risk": "critical"
+      },
+      "TurkanaNorth": {
+        "score": 94.8,
+        "risk": "critical"
+      },
+      "TurkanaSouth": {
+        "score": 80.5,
+        "risk": "critical"
+      },
+      "TurkanaWest": {
+        "score": 66.7,
+        "risk": "critical"
+      },
+      "unknown2": {
+        "score": 62.6,
+        "risk": "medium"
+      }
+    },
+    "UasinGishu": {
+      "Ainabkoi": {
+        "score": 47.8,
+        "risk": "medium"
+      },
+      "Kapseret": {
+        "score": 36.7,
+        "risk": "low"
+      },
+      "Kesses": {
+        "score": 39.3,
+        "risk": "low"
+      },
+      "Moiben": {
+        "score": 12.6,
+        "risk": "low"
+      },
+      "Soy": {
+        "score": 44.6,
+        "risk": "medium"
+      },
+      "Turbo": {
+        "score": 39.0,
+        "risk": "low"
+      }
+    },
+    "Vihiga": {
+      "Emuhaya": {
+        "score": 22.1,
+        "risk": "low"
+      },
+      "Hamisi": {
+        "score": 29.7,
+        "risk": "low"
+      },
+      "Luanda": {
+        "score": 38.6,
+        "risk": "low"
+      },
+      "Sabatia": {
+        "score": 36.0,
+        "risk": "low"
+      },
+      "Vihiga": {
+        "score": 31.9,
+        "risk": "low"
+      }
+    },
+    "Wajir": {
+      "Eldas": {
+        "score": 75.8,
+        "risk": "critical"
+      },
+      "Tarbaj": {
+        "score": 74.0,
+        "risk": "critical"
+      },
+      "WajirEast": {
+        "score": 78.8,
+        "risk": "critical"
+      },
+      "WajirNorth": {
+        "score": 94.7,
+        "risk": "critical"
+      },
+      "WajirSouth": {
+        "score": 46.2,
+        "risk": "medium"
+      },
+      "WajirWest": {
+        "score": 74.2,
+        "risk": "critical"
+      }
+    },
+    "WestPokot": {
+      "Kacheliba": {
+        "score": 80.2,
+        "risk": "critical"
+      },
+      "Kapenguria": {
+        "score": 81.7,
+        "risk": "critical"
+      },
+      "PokotSouth": {
+        "score": 73.6,
+        "risk": "critical"
+      },
+      "Sigor": {
+        "score": 57.0,
+        "risk": "medium"
+      },
+      "unknown3": {
+        "score": 82.0,
+        "risk": "critical"
+      }
+    }
+  }
+}
