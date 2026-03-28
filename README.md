@@ -47,11 +47,7 @@ npx serve "c:/Users/todor/Desktop/2026hackaton"
 ├── kenya_data.json             # County scores, indicators, sub-county data
 ├── kenya_counties.geojson      # County border shapes (GADM level 1)
 ├── kenya_subcounties.geojson   # Constituency border shapes (GADM level 2)
-├── build_data.py               # Data pipeline: DHS API → scores → JSON
-├── demo_knbs_data.py           # Demo: KNBS census data via HDX
-├── demo_worldpop_data.py       # Demo: WorldPop population raster
-├── kenya_pop.tif               # WorldPop population raster (300MB, not used by dashboard)
-└── HealthEquityAI_Hackathon.pptx
+
 ```
 
 ---
