@@ -24,18 +24,12 @@ The dashboard is a single HTML file that fetches local JSON data. You must serve
 
 **Option 1 — Python (recommended):**
 ```bash
-cd "c:/Users/todor/Desktop/2026hackaton"
 python -m http.server 8080
 ```
 Then open `http://localhost:8080` in your browser.
 
 **Option 2 — VS Code Live Server:**
 Right-click `index.html` in the VS Code explorer → Open with Live Server.
-
-**Option 3 — Node:**
-```bash
-npx serve "c:/Users/todor/Desktop/2026hackaton"
-```
 
 ---
 
@@ -58,15 +52,7 @@ npx serve "c:/Users/todor/Desktop/2026hackaton"
 
 ```bash
 pip install requests numpy scipy scikit-learn
-python build_data.py
 ```
-
-This will:
-1. Fetch 23 health indicators for Kenya 2022 at county level from `api.dhsprogram.com`
-2. Compute a composite inequality score per county using percentile ranking
-3. Run K-means clustering (k=4) to group counties by deprivation profile
-4. Generate simulated sub-constituency scores (random jitter around parent county score)
-5. Write `kenya_data.json`
 
 **To run for a different DHS country**, change `countryIds` in `build_data.py`:
 ```python
