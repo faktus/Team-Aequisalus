@@ -483,11 +483,12 @@
       background: var(--bg2);
       border: 1px solid var(--border2);
       color: var(--text2);
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 10px;
+      padding: 9px 16px;
+      border-radius: 7px;
+      font-size: 13px;
       cursor: pointer;
       font-family: var(--font-body);
+      font-weight: 500;
       box-shadow: var(--shadow-sm);
       transition: all .15s;
       white-space: nowrap;
@@ -883,6 +884,390 @@
       animation: fadeUp .2s ease .08s both;
     }
 
+    /* ── SDOH SECTION ── */
+    .sdoh-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .sdoh-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .sdoh-card-lbl {
+      font-family: var(--font-mono);
+      font-size: 7.5px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .sdoh-card-val {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .sdoh-card-unit {
+      font-size: 9px;
+      color: var(--text3);
+      font-family: var(--font-mono);
+    }
+
+    .sdoh-card-bar-track {
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      margin-top: 2px;
+    }
+
+    .sdoh-card-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width .5s ease;
+    }
+
+    .sdoh-context-note {
+      font-size: 9px;
+      color: var(--text3);
+      font-style: italic;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ── FULL REPORT MODAL ── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 14px;
+      width: min(860px, calc(100vw - 40px));
+      max-height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+      transform: translateY(16px);
+      transition: transform .22s ease;
+      overflow: hidden;
+    }
+
+    .modal-backdrop.open .modal {
+      transform: translateY(0);
+    }
+
+    .modal-topbar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .modal-county-name {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .modal-score-badge {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .modal-score-num {
+      font-family: var(--font-mono);
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .modal-score-unit {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text3);
+    }
+
+    .modal-close {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: var(--bg3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text2);
+      flex-shrink: 0;
+      transition: all .15s;
+    }
+
+    .modal-close:hover {
+      background: var(--red-lt);
+      color: var(--red);
+      border-color: rgba(192,57,43,.2);
+    }
+
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-col {
+      padding: 18px 22px;
+    }
+
+    .modal-col + .modal-col {
+      border-left: 1px solid var(--border);
+    }
+
+    .modal-section-title {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-ind-category {
+      margin-bottom: 14px;
+    }
+
+    .modal-ind-cat-label {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .modal-ind-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-ind-row:last-child {
+      border-bottom: none;
+    }
+
+    .modal-ind-name {
+      font-size: 12px;
+      color: var(--text);
+      flex: 1;
+      line-height: 1.3;
+    }
+
+    .modal-ind-track {
+      width: 80px;
+      height: 5px;
+      border-radius: 3px;
+      background: rgba(0,0,0,0.07);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .modal-ind-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .modal-ind-val {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      width: 48px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .modal-ind-bench {
+      font-size: 10px;
+      color: var(--text3);
+      width: 54px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .modal-sdoh-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .modal-sdoh-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .modal-sdoh-lbl {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 4px;
+    }
+
+    .modal-sdoh-val {
+      font-family: var(--font-mono);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .modal-sdoh-unit {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text3);
+    }
+
+    .modal-sdoh-bar-track {
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(0,0,0,0.07);
+      margin-top: 5px;
+    }
+
+    .modal-sdoh-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .modal-ai-box {
+      background: rgba(45, 212, 168, 0.04);
+      border: 1px solid rgba(45, 212, 168, 0.14);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .modal-ai-header {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .modal-ai-content {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+
+    .modal-ai-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .modal-footer {
+      padding: 12px 22px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .modal-btn {
+      padding: 8px 18px;
+      border-radius: 7px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .15s;
+      border: 1px solid var(--border2);
+      background: var(--bg3);
+      color: var(--text2);
+    }
+
+    .modal-btn:hover {
+      background: var(--bg4);
+      color: var(--text);
+    }
+
+    .modal-btn.primary {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    .modal-btn.primary:hover {
+      filter: brightness(1.08);
+    }
+
+    .modal-cluster-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 6px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .modal-cluster-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .modal-cluster-desc {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar {
       width: 4px;
@@ -908,7 +1293,7 @@
 
     <!-- TOPBAR -->
     <header class="topbar">
-      <div class="logo">HealthEquity<span> AI</span></div>
+      <div class="logo">HealthLens<span> AI</span></div>
       <div class="top-sep"></div>
       <div class="top-badge">KENYA · DHS 2022</div>
       <div class="top-badge warn" id="badgeModel">MISTRAL AI</div>
@@ -1037,6 +1422,12 @@
           <div class="cluster-desc" id="clusterDesc">—</div>
         </div>
         <div class="divider"></div>
+        <div class="panel-section" id="sdohSection" style="display:none;">
+          <div class="psec-title">Social &amp; Economic Factors</div>
+          <div class="sdoh-grid" id="sdohGrid"><!-- populated by JS --></div>
+          <div class="sdoh-context-note" id="sdohNote"></div>
+        </div>
+        <div class="divider"></div>
         <div class="panel-section">
           <div class="psec-title">AI recommendation — Mistral</div>
           <div class="ai-box" id="aiBox">
@@ -1052,9 +1443,60 @@
             </div>
           </div>
         </div>
-        <button class="btn-primary" id="btnReport">Generate full intervention report</button>
+        <button class="btn-primary" id="btnReport">View full statistics &amp; report →</button>
       </div>
     </aside>
+  </div>
+
+  <!-- FULL REPORT MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-topbar">
+        <div>
+          <div class="modal-county-name" id="modalCountyName">—</div>
+          <div style="font-size:11px;color:var(--text3);margin-top:2px;" id="modalCountySub">—</div>
+        </div>
+        <div class="modal-score-badge">
+          <div class="modal-score-num" id="modalScoreNum">—</div>
+          <div class="modal-score-unit">/100</div>
+        </div>
+        <div class="risk-badge" id="modalRiskBadge" style="margin-left:8px;">—</div>
+        <button class="modal-close" id="modalClose" title="Close (Esc)">×</button>
+      </div>
+      <div class="modal-body">
+        <!-- Left col: health indicators + cluster -->
+        <div class="modal-col">
+          <div class="modal-section-title">Health Indicators · DHS Kenya 2022</div>
+          <div id="modalIndGroups"><!-- populated by JS --></div>
+          <div class="modal-section-title" style="margin-top:16px;">Cluster Classification</div>
+          <div class="modal-cluster-tag" id="modalClusterTag">
+            <div class="modal-cluster-dot" id="modalClusterDot"></div>
+            <span id="modalClusterName">—</span>
+          </div>
+          <div class="modal-cluster-desc" id="modalClusterDesc">—</div>
+        </div>
+        <!-- Right col: SDOH + AI -->
+        <div class="modal-col">
+          <div class="modal-section-title" id="modalSdohTitle">Social &amp; Economic Factors</div>
+          <div class="modal-sdoh-grid" id="modalSdohGrid"><!-- populated by JS --></div>
+          <div class="sdoh-context-note" id="modalSdohNote" style="margin-bottom:14px;"></div>
+          <div class="modal-section-title">AI Recommendation · Mistral</div>
+          <div class="modal-ai-box">
+            <div class="modal-ai-header">
+              <div class="ai-pulse"></div>
+              <span style="font-family:var(--font-mono);font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;">Generated for this county</span>
+            </div>
+            <div class="modal-ai-content" id="modalAiContent">
+              <div class="ai-loading"><div class="ai-spinner"></div>Loading…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn primary" id="modalPrintBtn">Print / Save PDF</button>
+        <button class="modal-btn" id="modalCloseBtn">Close</button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1138,6 +1580,7 @@
       const categories = {};
 
       Object.entries(DATA.indicators).forEach(([id, meta]) => {
+        if (meta.category === 'Social & Economic') return; // shown in dedicated SDOH section
         if (!categories[meta.category]) categories[meta.category] = [];
         categories[meta.category].push({ id, ...meta });
       });
@@ -1322,6 +1765,96 @@
 
     }
 
+    // ── RENDER SDOH SECTION ────────────────────────────────────────────
+    function renderSDOHSection(sdoh, countyName) {
+      const section = document.getElementById('sdohSection');
+      const grid = document.getElementById('sdohGrid');
+      const note = document.getElementById('sdohNote');
+
+      if (!sdoh) {
+        section.style.display = 'none';
+        return;
+      }
+      section.style.display = '';
+
+      const metrics = [
+        {
+          key: 'poverty_rate', label: 'Poverty rate', unit: '%',
+          maxVal: 100, higherBad: true,
+          description: pct => pct >= 60 ? 'Extreme deprivation' : pct >= 40 ? 'High deprivation' : 'Moderate',
+        },
+        {
+          key: 'gini', label: 'Gini coefficient', unit: '',
+          maxVal: 60, higherBad: true,
+          description: g => g >= 45 ? 'Very unequal' : g >= 38 ? 'Unequal' : 'Moderate',
+        },
+        {
+          key: 'food_insecurity', label: 'Food insecurity', unit: '%',
+          maxVal: 100, higherBad: true,
+          description: pct => pct >= 55 ? 'Crisis level' : pct >= 35 ? 'High' : 'Moderate',
+        },
+        {
+          key: 'social_capital', label: 'Social capital', unit: '/100',
+          maxVal: 100, higherBad: false,
+          description: s => s >= 65 ? 'Strong cohesion' : s >= 48 ? 'Moderate' : 'Fragmented',
+        },
+        {
+          key: 'unemployment', label: 'Unemployment', unit: '%',
+          maxVal: 30, higherBad: true,
+          description: pct => pct >= 18 ? 'Very high' : pct >= 10 ? 'High' : 'Moderate',
+        },
+        {
+          key: 'urban_pct', label: 'Urban population', unit: '%',
+          maxVal: 100, higherBad: null,
+          description: pct => pct >= 60 ? 'Primarily urban' : pct >= 25 ? 'Mixed' : 'Predominantly rural',
+        },
+      ];
+
+      let html = '';
+      metrics.forEach(m => {
+        const val = sdoh[m.key];
+        if (val === undefined) return;
+
+        const barPct = Math.min((val / m.maxVal) * 100, 100);
+        let color;
+        if (m.higherBad === null) {
+          color = 'var(--text3)';
+        } else if (m.higherBad) {
+          color = barPct >= 65 ? 'var(--red)' : barPct >= 40 ? 'var(--amber)' : 'var(--teal)';
+        } else {
+          color = barPct >= 65 ? 'var(--teal)' : barPct >= 45 ? 'var(--amber)' : 'var(--red)';
+        }
+
+        const displayVal = Number.isInteger(val) ? val : val.toFixed(1);
+        html += `<div class="sdoh-card">
+          <div class="sdoh-card-lbl">${m.label}</div>
+          <div>
+            <span class="sdoh-card-val" style="color:${color};">${displayVal}</span><span class="sdoh-card-unit"> ${m.unit}</span>
+          </div>
+          <div class="sdoh-card-bar-track">
+            <div class="sdoh-card-bar-fill" style="width:${barPct.toFixed(1)}%;background:${color};"></div>
+          </div>
+        </div>`;
+      });
+
+      grid.innerHTML = html;
+
+      // Contextual note based on poverty + social capital combo
+      const pov = sdoh.poverty_rate;
+      const sc = sdoh.social_capital;
+      if (pov >= 60 && sc <= 35) {
+        note.textContent = 'High deprivation combined with low social cohesion — interventions need community trust-building as a prerequisite.';
+      } else if (pov >= 50 && sdoh.food_insecurity >= 50) {
+        note.textContent = 'Compounding poverty and food insecurity suggests systemic livelihood barriers beyond health sector reach alone.';
+      } else if (sc >= 65 && pov <= 30) {
+        note.textContent = 'Strong social capital and lower poverty create a resilient base — health programmes likely to achieve faster uptake.';
+      } else if (sdoh.gini >= 45) {
+        note.textContent = 'High income inequality may mask pockets of severe deprivation within relatively better-scoring aggregate figures.';
+      } else {
+        note.textContent = 'Social and economic factors compound health risks — integrate livelihood and community programmes alongside clinical interventions.';
+      }
+    }
+
     // ── SELECT COUNTY ──────────────────────────────────────────────────
     function selectCounty(name) {
       const county = DATA.counties.find(c => c.name === name);
@@ -1347,9 +1880,9 @@
       badge.textContent = county.risk;
       badge.className = 'risk-badge ' + riskClass(county.risk);
 
-      // Build indicator bars
+      // Build indicator bars (health indicators only, not SDOH)
       let barsHtml = '';
-      const activeInds = [...activeIndicators].filter(id => DATA.indicators[id]);
+      const activeInds = [...activeIndicators].filter(id => DATA.indicators[id] && DATA.indicators[id].category !== 'Social & Economic');
       activeInds.forEach(id => {
         const meta = DATA.indicators[id];
         const val = county.indicators[id];
@@ -1392,6 +1925,9 @@
       cn.textContent = county.cluster;
       cn.style.color = cc.text;
       document.getElementById('clusterDesc').textContent = county.cluster_desc;
+
+      // SDOH section
+      renderSDOHSection(county.sdoh || null, county.name);
 
       // AI recommendation
       generateAIRecommendation(county);
@@ -1444,7 +1980,7 @@
       // Indicator bars — use parent county indicators as reference since subcounty may not have them
       const indicators = subData.indicators || parentCounty.indicators;
       let barsHtml = '';
-      const activeInds = [...activeIndicators].filter(id => DATA.indicators[id]);
+      const activeInds = [...activeIndicators].filter(id => DATA.indicators[id] && DATA.indicators[id].category !== 'Social & Economic');
       activeInds.forEach(id => {
         const meta = DATA.indicators[id];
         const val = indicators[id];
@@ -1481,6 +2017,9 @@
       cn.style.color = cc.text;
       document.getElementById('clusterDesc').textContent = `${subName} falls within the ${parentCounty.cluster} cluster. Score: ${subData.score.toFixed(1)}/100 (${subData.risk} risk). ${parentCounty.cluster_desc}`;
 
+      // SDOH section — inherit from parent county
+      renderSDOHSection(parentCounty.sdoh || null, parentCounty.name);
+
       // AI recommendation using the sub-county context
       generateAIRecommendationForSub(subName, subData, parentCounty);
 
@@ -1500,15 +2039,25 @@
 
       const indSummary = Object.entries(county.indicators).map(([id, val]) => {
         const meta = DATA.indicators[id];
-        if (!meta) return '';
+        if (!meta || meta.category === 'Social & Economic') return '';
         return `${meta.label}: ${val}`;
       }).filter(Boolean).join('\n');
+
+      const sdoh = county.sdoh;
+      const sdohContext = sdoh ? `
+Social & Economic Context:
+- Poverty rate: ${sdoh.poverty_rate}%
+- Gini coefficient: ${sdoh.gini}
+- Food insecurity: ${sdoh.food_insecurity}%
+- Social capital index: ${sdoh.social_capital}/100
+- Unemployment: ${sdoh.unemployment}%
+- Urban population: ${sdoh.urban_pct}%` : '';
 
       const prompt = `You are a public health advisor. Analyze the health inequality data for ${county.name} County, Kenya (DHS 2022).
 
 Inequality score: ${county.score.toFixed(1)}/100 (${county.risk} risk)
 Cluster: ${county.cluster}
-
+${sdohContext}
 Key health indicators:
 ${indSummary}
 
@@ -1652,7 +2201,13 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
           document.querySelectorAll('.sid-item[data-filter]').forEach(i => i.classList.remove('active'));
           item.classList.add('active');
           riskFilter = item.dataset.filter;
-          renderMap();
+          // Exit any active county drill-down so filter is visible on the full map
+          if (selectedCounty) {
+            clearCountySelection();
+            map.flyTo([0.5, 37.8], 6, { duration: 0.6 });
+          } else {
+            renderMap();
+          }
         });
       });
     }
@@ -1669,10 +2224,288 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
       });
 
       document.getElementById('btnReport').addEventListener('click', () => {
-        if (selectedCounty) {
-          alert(`Full intervention report for ${selectedCounty.name} would be generated here.\n\nThis would produce a PDF with:\n• Detailed indicator analysis\n• Cluster peer comparison\n• AI-generated action plan\n• Resource allocation recommendations`);
-        }
+        if (selectedCounty) openFullReport(selectedCounty);
       });
+
+      // Modal close handlers
+      document.getElementById('modalClose').addEventListener('click', closeModal);
+      document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+      document.getElementById('modalPrintBtn').addEventListener('click', printFullReport);
+      document.getElementById('modalBackdrop').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('modalBackdrop')) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    }
+
+    // ── FULL REPORT MODAL ───────────────────────────────────────────────
+    function openFullReport(county) {
+      const backdrop = document.getElementById('modalBackdrop');
+      const cssVar = county.risk === 'critical' ? 'var(--red)' : county.risk === 'medium' ? 'var(--amber)' : 'var(--teal)';
+
+      // Topbar
+      document.getElementById('modalCountyName').textContent = county.name + ' County';
+      document.getElementById('modalCountySub').textContent = `${riskLabel(county.risk)} · ${county.cluster} · DHS Kenya 2022`;
+      document.getElementById('modalScoreNum').textContent = county.score.toFixed(1);
+      document.getElementById('modalScoreNum').style.color = cssVar;
+      const mb = document.getElementById('modalRiskBadge');
+      mb.textContent = county.risk;
+      mb.className = 'risk-badge ' + riskClass(county.risk);
+
+      // Health indicators grouped by category
+      const catMap = {};
+      Object.entries(DATA.indicators).forEach(([id, meta]) => {
+        if (meta.category === 'Social & Economic') return;
+        if (!catMap[meta.category]) catMap[meta.category] = [];
+        catMap[meta.category].push({ id, ...meta });
+      });
+
+      let indHtml = '';
+      Object.entries(catMap).sort((a, b) => a[0].localeCompare(b[0])).forEach(([cat, inds]) => {
+        indHtml += `<div class="modal-ind-category">
+          <div class="modal-ind-cat-label">${cat}</div>`;
+        inds.forEach(ind => {
+          const val = county.indicators[ind.id];
+          if (val === undefined || val === null) return;
+          const pct = Math.min(val, 100);
+          const natAvg = DATA.national_averages[ind.id];
+          let color = cssVar;
+          if (natAvg !== undefined) {
+            const gap = ind.higher_is_better ? (val - natAvg) : (natAvg - val);
+            color = gap >= 0 ? 'var(--teal)' : gap < -10 ? 'var(--red)' : 'var(--amber)';
+          }
+          const benchText = natAvg !== undefined ? `Avg: ${natAvg.toFixed(1)}` : '';
+          indHtml += `<div class="modal-ind-row">
+            <div class="modal-ind-name">${ind.label}</div>
+            <div class="modal-ind-track"><div class="modal-ind-fill" style="width:${pct}%;background:${color};"></div></div>
+            <div class="modal-ind-val" style="color:${color};">${val.toFixed(1)}</div>
+            <div class="modal-ind-bench">${benchText}</div>
+          </div>`;
+        });
+        indHtml += '</div>';
+      });
+      document.getElementById('modalIndGroups').innerHTML = indHtml;
+
+      // Cluster
+      const clusterColors = {
+        'Healthcare access gap': { bg: 'var(--red-lt)', dot: 'var(--red)', text: 'var(--red)', border: 'rgba(192,57,43,.2)' },
+        'Infrastructure deprivation': { bg: 'var(--amber-lt)', dot: 'var(--amber)', text: 'var(--amber)', border: 'rgba(184,92,26,.2)' },
+        'Nutrition crisis zone': { bg: '#fef3e1', dot: '#d4880e', text: '#b27400', border: 'rgba(180,120,0,.2)' },
+        'Education & empowerment gap': { bg: '#f0e8ff', dot: '#7c3aed', text: '#6d28d9', border: 'rgba(109,40,217,.2)' },
+        'Mixed deprivation': { bg: 'var(--bg3)', dot: 'var(--text3)', text: 'var(--text2)', border: 'var(--border2)' },
+      };
+      const cc = clusterColors[county.cluster] || clusterColors['Mixed deprivation'];
+      const tag = document.getElementById('modalClusterTag');
+      tag.style.background = cc.bg;
+      tag.style.border = `1px solid ${cc.border}`;
+      const cd = document.getElementById('modalClusterDot');
+      cd.style.background = cc.dot;
+      const cn = document.getElementById('modalClusterName');
+      cn.textContent = county.cluster;
+      cn.style.color = cc.text;
+      document.getElementById('modalClusterDesc').textContent = county.cluster_desc;
+
+      // SDOH
+      const sdoh = county.sdoh;
+      const sdohMetrics = [
+        { key: 'poverty_rate', label: 'Poverty rate', unit: '%', maxVal: 100, higherBad: true },
+        { key: 'gini', label: 'Gini coeff.', unit: '', maxVal: 60, higherBad: true },
+        { key: 'food_insecurity', label: 'Food insecurity', unit: '%', maxVal: 100, higherBad: true },
+        { key: 'social_capital', label: 'Social capital', unit: '/100', maxVal: 100, higherBad: false },
+        { key: 'unemployment', label: 'Unemployment', unit: '%', maxVal: 30, higherBad: true },
+        { key: 'urban_pct', label: 'Urban pop.', unit: '%', maxVal: 100, higherBad: null },
+      ];
+      let sdohHtml = '';
+      if (sdoh) {
+        sdohMetrics.forEach(m => {
+          const val = sdoh[m.key];
+          if (val === undefined) return;
+          const barPct = Math.min((val / m.maxVal) * 100, 100);
+          let color;
+          if (m.higherBad === null) color = 'var(--text3)';
+          else if (m.higherBad) color = barPct >= 65 ? 'var(--red)' : barPct >= 40 ? 'var(--amber)' : 'var(--teal)';
+          else color = barPct >= 65 ? 'var(--teal)' : barPct >= 45 ? 'var(--amber)' : 'var(--red)';
+          const displayVal = Number.isInteger(val) ? val : val.toFixed(1);
+          sdohHtml += `<div class="modal-sdoh-card">
+            <div class="modal-sdoh-lbl">${m.label}</div>
+            <div><span class="modal-sdoh-val" style="color:${color};">${displayVal}</span><span class="modal-sdoh-unit"> ${m.unit}</span></div>
+            <div class="modal-sdoh-bar-track"><div class="modal-sdoh-bar-fill" style="width:${barPct.toFixed(1)}%;background:${color};"></div></div>
+          </div>`;
+        });
+      }
+      document.getElementById('modalSdohGrid').innerHTML = sdohHtml || '<div style="color:var(--text3);font-size:11px;">No SDOH data available.</div>';
+
+      // Sync AI content from panel — and keep syncing if it's still generating
+      const panelAi = document.getElementById('aiText');
+      const modalAi = document.getElementById('modalAiContent');
+      modalAi.innerHTML = panelAi.innerHTML;
+      if (_aiSyncObserver) _aiSyncObserver.disconnect();
+      _aiSyncObserver = new MutationObserver(() => { modalAi.innerHTML = panelAi.innerHTML; });
+      _aiSyncObserver.observe(panelAi, { childList: true, subtree: true, characterData: true });
+
+      backdrop.classList.add('open');
+    }
+
+    let _aiSyncObserver = null;
+
+    function closeModal() {
+      document.getElementById('modalBackdrop').classList.remove('open');
+      if (_aiSyncObserver) { _aiSyncObserver.disconnect(); _aiSyncObserver = null; }
+    }
+
+    function printFullReport() {
+      const modal = document.getElementById('modal');
+      const county = selectedCounty;
+      if (!county) return;
+
+      const printWin = window.open('', '_blank', 'width=900,height=700');
+      printWin.document.write(`<!DOCTYPE html><html><head>
+        <meta charset="UTF-8">
+        <title>Health Report — ${county.name} County</title>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <style>
+          *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+          body { font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; color: #1a1a18; background: #fff; padding: 32px 40px; }
+          h1 { font-size: 22px; font-weight: 600; margin-bottom: 4px; }
+          .sub { font-size: 11px; color: #6b6b65; margin-bottom: 24px; }
+          .badge { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 9px; padding: 3px 9px; border-radius: 20px; font-weight: 500; text-transform: uppercase; margin-left: 10px; }
+          .badge-critical { background: #fdecea; color: #c0392b; border: 1px solid rgba(192,57,43,.2); }
+          .badge-medium { background: #fdf0e6; color: #b85c1a; border: 1px solid rgba(184,92,26,.2); }
+          .badge-low { background: #e8f5f1; color: #0d7a5f; border: 1px solid rgba(45,212,168,.2); }
+          .score-line { display: flex; align-items: baseline; gap: 6px; margin-bottom: 28px; }
+          .score-big { font-family: 'IBM Plex Mono', monospace; font-size: 38px; font-weight: 500; }
+          .score-unit { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #9e9e96; }
+          .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+          .section-title { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: #9e9e96; text-transform: uppercase; letter-spacing: .12em; border-bottom: 1px solid #e5e2db; padding-bottom: 5px; margin-bottom: 12px; margin-top: 20px; }
+          .cat-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: #0d7a5f; text-transform: uppercase; letter-spacing: .1em; margin: 10px 0 4px; font-weight: 500; }
+          .ind-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid #f0ede8; }
+          .ind-name { font-size: 11px; flex: 1; }
+          .track { width: 70px; height: 4px; border-radius: 2px; background: #e5e2db; overflow: hidden; flex-shrink: 0; }
+          .fill { height: 100%; border-radius: 2px; }
+          .val { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; width: 42px; text-align: right; flex-shrink: 0; }
+          .bench { font-size: 10px; color: #9e9e96; width: 50px; text-align: right; flex-shrink: 0; }
+          .sdoh-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+          .sdoh-card { background: #f5f3ef; border: 1px solid #e5e2db; border-radius: 7px; padding: 9px 11px; }
+          .sdoh-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 7.5px; color: #9e9e96; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 3px; }
+          .sdoh-val { font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 500; line-height: 1.1; }
+          .sdoh-unit { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: #9e9e96; }
+          .sdoh-bar { height: 3px; border-radius: 2px; background: #e5e2db; margin-top: 4px; }
+          .sdoh-bar-fill { height: 100%; border-radius: 2px; }
+          .cluster-tag { display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; padding: 5px 10px; margin-bottom: 8px; font-size: 12px; font-weight: 500; }
+          .cluster-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+          .cluster-desc { font-size: 11px; color: #6b6b65; line-height: 1.5; margin-bottom: 16px; }
+          .ai-box { background: rgba(45,212,168,.04); border: 1px solid rgba(45,212,168,.15); border-radius: 8px; padding: 14px 16px; }
+          .ai-box p, .ai-box div { font-size: 12px; color: #6b6b65; line-height: 1.65; }
+          .ai-box strong { color: #1a1a18; font-weight: 600; }
+          .note { font-size: 9px; color: #9e9e96; font-style: italic; margin-top: 8px; line-height: 1.4; }
+          @media print { body { padding: 16px 20px; } }
+        </style>
+      </head><body>`);
+
+      const cssVar = county.risk === 'critical' ? '#c0392b' : county.risk === 'medium' ? '#b85c1a' : '#0d7a5f';
+      const badgeClass = 'badge-' + county.risk;
+
+      printWin.document.write(`
+        <h1>${county.name} County <span class="badge ${badgeClass}">${county.risk}</span></h1>
+        <div class="sub">DHS Kenya 2022 · ${county.cluster} · HealthEquity AI</div>
+        <div class="score-line">
+          <div class="score-big" style="color:${cssVar};">${county.score.toFixed(1)}</div>
+          <div class="score-unit">/100 inequality score</div>
+        </div>
+        <div class="cols">
+          <div>`);
+
+      // Health indicators
+      printWin.document.write('<div class="section-title">Health Indicators</div>');
+      const catMap = {};
+      Object.entries(DATA.indicators).forEach(([id, meta]) => {
+        if (meta.category === 'Social & Economic') return;
+        if (!catMap[meta.category]) catMap[meta.category] = [];
+        catMap[meta.category].push({ id, ...meta });
+      });
+      Object.entries(catMap).sort((a, b) => a[0].localeCompare(b[0])).forEach(([cat, inds]) => {
+        printWin.document.write(`<div class="cat-label">${cat}</div>`);
+        inds.forEach(ind => {
+          const val = county.indicators[ind.id];
+          if (val === undefined || val === null) return;
+          const natAvg = DATA.national_averages[ind.id];
+          let color = cssVar;
+          if (natAvg !== undefined) {
+            const gap = ind.higher_is_better ? (val - natAvg) : (natAvg - val);
+            color = gap >= 0 ? '#0d7a5f' : gap < -10 ? '#c0392b' : '#b85c1a';
+          }
+          const benchText = natAvg !== undefined ? `Avg: ${natAvg.toFixed(1)}` : '';
+          printWin.document.write(`<div class="ind-row">
+            <div class="ind-name">${ind.label}</div>
+            <div class="track"><div class="fill" style="width:${Math.min(val,100)}%;background:${color};"></div></div>
+            <div class="val" style="color:${color};">${val.toFixed(1)}</div>
+            <div class="bench">${benchText}</div>
+          </div>`);
+        });
+      });
+
+      // Cluster
+      const clusterColors = {
+        'Healthcare access gap': { bg: '#fdecea', dot: '#c0392b', text: '#c0392b', border: 'rgba(192,57,43,.2)' },
+        'Infrastructure deprivation': { bg: '#fdf0e6', dot: '#b85c1a', text: '#b85c1a', border: 'rgba(184,92,26,.2)' },
+        'Nutrition crisis zone': { bg: '#fef3e1', dot: '#d4880e', text: '#b27400', border: 'rgba(180,120,0,.2)' },
+        'Education & empowerment gap': { bg: '#f0e8ff', dot: '#7c3aed', text: '#6d28d9', border: 'rgba(109,40,217,.2)' },
+        'Mixed deprivation': { bg: '#f0ede8', dot: '#9e9e96', text: '#6b6b65', border: '#e5e2db' },
+      };
+      const cc = clusterColors[county.cluster] || clusterColors['Mixed deprivation'];
+      printWin.document.write(`
+        <div class="section-title" style="margin-top:20px;">Cluster Classification</div>
+        <div class="cluster-tag" style="background:${cc.bg};border:1px solid ${cc.border};">
+          <div class="cluster-dot" style="background:${cc.dot};"></div>
+          <span style="color:${cc.text};">${county.cluster}</span>
+        </div>
+        <div class="cluster-desc">${county.cluster_desc}</div>
+      `);
+
+      printWin.document.write('</div><div>');
+
+      // SDOH
+      if (county.sdoh) {
+        const sdoh = county.sdoh;
+        const sdohMetrics = [
+          { key: 'poverty_rate', label: 'Poverty rate', unit: '%', maxVal: 100, higherBad: true },
+          { key: 'gini', label: 'Gini coeff.', unit: '', maxVal: 60, higherBad: true },
+          { key: 'food_insecurity', label: 'Food insecurity', unit: '%', maxVal: 100, higherBad: true },
+          { key: 'social_capital', label: 'Social capital', unit: '/100', maxVal: 100, higherBad: false },
+          { key: 'unemployment', label: 'Unemployment', unit: '%', maxVal: 30, higherBad: true },
+          { key: 'urban_pct', label: 'Urban pop.', unit: '%', maxVal: 100, higherBad: null },
+        ];
+        printWin.document.write('<div class="section-title">Social &amp; Economic Factors</div><div class="sdoh-grid">');
+        sdohMetrics.forEach(m => {
+          const val = sdoh[m.key];
+          if (val === undefined) return;
+          const barPct = Math.min((val / m.maxVal) * 100, 100);
+          let color;
+          if (m.higherBad === null) color = '#9e9e96';
+          else if (m.higherBad) color = barPct >= 65 ? '#c0392b' : barPct >= 40 ? '#b85c1a' : '#0d7a5f';
+          else color = barPct >= 65 ? '#0d7a5f' : barPct >= 45 ? '#b85c1a' : '#c0392b';
+          const displayVal = Number.isInteger(val) ? val : val.toFixed(1);
+          printWin.document.write(`<div class="sdoh-card">
+            <div class="sdoh-lbl">${m.label}</div>
+            <div><span class="sdoh-val" style="color:${color};">${displayVal}</span><span class="sdoh-unit"> ${m.unit}</span></div>
+            <div class="sdoh-bar"><div class="sdoh-bar-fill" style="width:${barPct.toFixed(1)}%;background:${color};"></div></div>
+          </div>`);
+        });
+        printWin.document.write('</div>');
+      }
+
+      // AI recommendation
+      const aiHtml = document.getElementById('modalAiContent').innerHTML;
+      printWin.document.write(`
+        <div class="section-title">AI Recommendation · Mistral</div>
+        <div class="ai-box">${aiHtml}</div>
+      `);
+
+      printWin.document.write('</div></div>');
+      printWin.document.write('</body></html>');
+      printWin.document.close();
+      printWin.onload = () => printWin.print();
     }
 
     function clearCountySelection() {
