@@ -99,13 +99,6 @@ Fetched from the Kenya DHS 2022 survey across 47 counties:
 
 The Mistral API key is hardcoded in `index.html` at the top of the `<script>` block:
 
-```js
-const MISTRAL_API_KEY = "your-key-here";
-```
-
-If the API call fails or the key is missing, the dashboard falls back to a template-based recommendation engine that generates structured intervention plans from the indicator data without any API call.
-
----
 
 ## Clustering
 
