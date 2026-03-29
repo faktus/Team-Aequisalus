@@ -1,4 +1,4 @@
-# HealthEquity AI
+# EquityLens AI
 
 **Detecting health inequality hotspots with machine learning and actionable insights.**
 
@@ -8,7 +8,7 @@ Built at the 2026 Hackathon (March 27–29) by a cross-disciplinary team of Medi
 
 ## What it does
 
-HealthEquity AI is an AI-powered decision-support platform that transforms routine health survey data into an interactive inequality map. It detects which counties and constituencies are falling behind, clusters them by deprivation profile, and generates targeted intervention recommendations using the Mistral AI API.
+EquityLens AI is an AI-powered decision-support platform that transforms routine health survey data into an interactive inequality map. It detects which counties and constituencies are falling behind, clusters them by deprivation profile, and generates targeted intervention recommendations using the Mistral AI API.
 
 **Core workflow: Detect → Analyse → Act**
 
@@ -20,16 +20,20 @@ HealthEquity AI is an AI-powered decision-support platform that transforms routi
 
 ## Running the dashboard
 
-The dashboard is a single HTML file that fetches local JSON data. You must serve it via a local HTTP server — double-clicking the file will not work (browser blocks local `fetch()` calls).
+The dashboard is a single HTML file. The live demo is deployed at:
 
-**Option 1 — Python (recommended):**
-```bash
-python -m http.server 8080
-```
-Then open `http://localhost:8080` in your browser.
+**https://equitylens-ai-demo.netlify.app/**
 
-**Option 2 — VS Code Live Server:**
+To run locally, open `index.html` via a local HTTP server (browser blocks `fetch()` from `file://`):
+
+**Option 1 — VS Code Live Server (recommended):**
 Right-click `index.html` in the VS Code explorer → Open with Live Server.
+
+**Option 2 — Node:**
+```bash
+npx serve .
+```
+Then open `http://localhost:3000` in your browser.
 
 ---
 
@@ -38,28 +42,9 @@ Right-click `index.html` in the VS Code explorer → Open with Live Server.
 ```
 2026hackaton/
 ├── index.html                  # Full dashboard (HTML + CSS + JS, single file)
-├── kenya_data.json             # County scores, indicators, sub-county data
+├── kenya_data.json             # County scores, indicators, SDOH data, sub-county data
 ├── kenya_counties.geojson      # County border shapes (GADM level 1)
-├── kenya_subcounties.geojson   # Constituency border shapes (GADM level 2)
-
-```
-
----
-
-## Regenerating the data
-
-`kenya_data.json` is pre-built and committed. To regenerate it from the live DHS API:
-
-```bash
-pip install requests numpy scipy scikit-learn
-```
-
-**To run for a different DHS country**, change `countryIds` in `build_data.py`:
-```python
-params = {
-    "countryIds": "NG",   # Nigeria, SN = Senegal, ET = Ethiopia, etc.
-    ...
-}
+└── kenya_subcounties.geojson   # Constituency border shapes (GADM level 2)
 ```
 
 ---
@@ -69,6 +54,7 @@ params = {
 | Source | What | URL |
 |---|---|---|
 | DHS Program API | 23 health indicators, Kenya 2022, county level | `api.dhsprogram.com` |
+| KNBS 2019 / World Bank | Social determinants of health (poverty, Gini, food insecurity, unemployment, urban %) | `knbs.or.ke` |
 | GADM | County and constituency GeoJSON boundaries | `gadm.org` |
 | Mistral AI | AI intervention recommendations | `api.mistral.ai` |
 
@@ -93,12 +79,21 @@ Fetched from the Kenya DHS 2022 survey across 47 counties:
 | Malaria | Households with ITN |
 | HIV/AIDS | HIV prevalence (adults 15-49) |
 
+Social & Economic indicators (KNBS 2019): Poverty rate, Gini coefficient, Food insecurity rate, Social capital index, Unemployment rate, Urban population %.
+
 ---
 
 ## AI configuration
 
 The Mistral API key is hardcoded in `index.html` at the top of the `<script>` block:
 
+```js
+const MISTRAL_API_KEY = "CmQ08lHmUNBTYFsbYOb4sqpMSVGRLncc";
+```
+
+If the API call fails or the key is missing, the dashboard falls back to a template-based recommendation engine that generates structured intervention plans from the indicator data without any API call.
+
+---
 
 ## Clustering
 
@@ -123,6 +118,8 @@ Counties are grouped into 4 clusters by K-means on the full indicator matrix:
 - **Sub-county heatmap** — constituency-level score overlay with map tiles visible underneath
 - **Constituency report** — click any constituency in the heatmap to load its data and AI recommendation
 - **AI recommendation panel** — Mistral-generated intervention plan, falls back to template if API unavailable
+- **Intervention simulation** — click any AI priority card to see a 2022–2030 score trajectory vs no-action baseline, visualised on the map
+- **Full statistics modal** — health indicators vs national averages, SDOH panel, print/PDF support
 - **Back to Kenya** — returns to full-country view
 
 ---
@@ -132,7 +129,6 @@ Counties are grouped into 4 clusters by K-means on the full indicator matrix:
 | Layer | Technology |
 |---|---|
 | Map | Leaflet.js 1.9.4 + OpenStreetMap tiles |
-| Data pipeline | Python, requests, numpy, scipy, scikit-learn |
 | AI layer | Mistral API (`mistral-large-latest`) |
 | Frontend | Vanilla JS, no framework |
 | Fonts | IBM Plex Sans, IBM Plex Mono, Lora (Google Fonts) |
@@ -140,5 +136,7 @@ Counties are grouped into 4 clusters by K-means on the full indicator matrix:
 ---
 
 ## Team
+
+Todor Enchev, Rithika Ravishankar, Simon Ernest, Shahd Jadalla, Muhsin Ahamed
 
 Medicine / Public Health · Data Science & ML · Policy & Management
