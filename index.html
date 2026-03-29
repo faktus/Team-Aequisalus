@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HealthEquity AI — Kenya Dashboard</title>
+  <title>EquityLens AI — Kenya Dashboard</title>
   <meta name="description"
     content="AI-powered health inequality detection dashboard for Kenya's 47 counties using DHS 2022 data">
   <link
@@ -70,7 +70,7 @@
     .shell {
       display: grid;
       grid-template-rows: 48px 1fr;
-      grid-template-columns: 260px 1fr 310px;
+      grid-template-columns: 260px 1fr;
       height: 100vh;
     }
 
@@ -476,7 +476,155 @@
       right: 10px;
       display: flex;
       gap: 5px;
-      z-index: 500;
+      z-index: 501;
+      transition: right .32s cubic-bezier(.25,.8,.25,1);
+    }
+    .map-overlay-tr.panel-open {
+      right: 490px;
+    }
+
+    /* ── SIMULATION MAP OVERLAY ── */
+    .sim-map-overlay {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 600;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 14px 20px 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      min-width: 380px;
+      max-width: 520px;
+      backdrop-filter: blur(6px);
+    }
+
+    .smo-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .smo-title {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text3);
+    }
+
+    .smo-county {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .smo-type-pill {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .smo-scores {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 12px;
+      background: var(--bg3);
+      border-radius: 8px;
+      padding: 8px 14px;
+      justify-content: space-between;
+    }
+
+    .smo-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .smo-lbl {
+      font-family: var(--font-mono);
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--text3);
+    }
+
+    .smo-num {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .smo-sep {
+      font-size: 18px;
+      color: var(--text3);
+      margin: 0 6px;
+      padding-bottom: 14px;
+    }
+
+    .smo-delta {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .smo-scrubber-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .smo-year {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text3);
+      flex-shrink: 0;
+      min-width: 30px;
+    }
+
+    .smo-scrubber {
+      flex: 1;
+      height: 5px;
+      cursor: pointer;
+      accent-color: var(--teal);
+    }
+
+    .smo-year-current {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      flex-shrink: 0;
+      min-width: 38px;
+      text-align: center;
+    }
+
+    .smo-exit {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--text3);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      margin-top: 8px;
+      display: block;
+      text-align: center;
+      letter-spacing: .04em;
+    }
+
+    .smo-exit:hover {
+      color: var(--teal);
     }
 
     .map-btn {
@@ -574,12 +722,72 @@
 
     /* ── RIGHT PANEL ── */
     .panel {
+      position: fixed;
+      top: 48px;
+      right: 0;
+      width: 480px;
+      height: calc(100vh - 48px);
       background: var(--bg2);
       border-left: 1px solid var(--border);
+      box-shadow: -10px 0 40px rgba(0,0,0,0.22);
       display: flex;
       flex-direction: column;
       overflow-y: auto;
+      z-index: 500;
+      transform: translateX(100%);
+      transition: transform .32s cubic-bezier(.25,.8,.25,1);
     }
+    .panel.open {
+      transform: translateX(0);
+    }
+
+    /* Floating button shown on map when panel is closed and county selected */
+    .panel-open-btn {
+      position: fixed;
+      bottom: 88px;
+      right: 20px;
+      z-index: 490;
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      display: none;
+      align-items: center;
+      gap: 8px;
+      transition: all .15s;
+    }
+    .panel-open-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .panel-open-btn.visible { display: flex; }
+
+    /* Close button strip at top of panel */
+    .panel-close-strip {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 8px 14px 0;
+      flex-shrink: 0;
+    }
+    .panel-close-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: var(--bg3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: var(--text2);
+      transition: all .15s;
+    }
+    .panel-close-btn:hover { background: var(--red-lt); color: var(--red); border-color: rgba(192,57,43,.2); }
 
     .panel-head {
       padding: 14px 16px;
@@ -588,14 +796,14 @@
 
     .panel-title {
       font-family: var(--font-head);
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 600;
       color: var(--text);
       margin-bottom: 2px;
     }
 
     .panel-sub {
-      font-size: 10px;
+      font-size: 13px;
       color: var(--text3);
     }
 
@@ -622,7 +830,7 @@
     }
 
     .score-lbl {
-      font-size: 9px;
+      font-size: 11px;
       color: var(--text3);
       margin-top: 3px;
       font-family: var(--font-mono);
@@ -660,22 +868,22 @@
     .sbar-row {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 5px;
+      gap: 8px;
+      margin-bottom: 7px;
     }
 
     .sbar-name {
-      font-size: 9px;
+      font-size: 12px;
       color: var(--text2);
-      width: 120px;
+      width: 140px;
       flex-shrink: 0;
-      line-height: 1.2;
+      line-height: 1.3;
     }
 
     .sbar-track {
       flex: 1;
-      height: 4px;
-      border-radius: 2px;
+      height: 6px;
+      border-radius: 3px;
       background: rgba(0, 0, 0, 0.07);
       overflow: hidden;
     }
@@ -688,9 +896,10 @@
 
     .sbar-val {
       font-family: var(--font-mono);
-      font-size: 9px;
+      font-size: 12px;
+      font-weight: 500;
       color: var(--text2);
-      width: 36px;
+      width: 40px;
       text-align: right;
     }
 
@@ -706,7 +915,7 @@
 
     .psec-title {
       font-family: var(--font-mono);
-      font-size: 8px;
+      font-size: 10px;
       color: var(--text3);
       text-transform: uppercase;
       letter-spacing: .12em;
@@ -730,12 +939,12 @@
     }
 
     .cluster-name-text {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 500;
     }
 
     .cluster-desc {
-      font-size: 10px;
+      font-size: 13px;
       color: var(--text2);
       line-height: 1.6;
     }
@@ -783,9 +992,9 @@
     }
 
     .ai-text {
-      font-size: 11px;
+      font-size: 14px;
       color: var(--text2);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .ai-text strong {
@@ -798,7 +1007,7 @@
       align-items: center;
       gap: 8px;
       padding: 12px 0;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text3);
     }
 
@@ -904,7 +1113,7 @@
 
     .sdoh-card-lbl {
       font-family: var(--font-mono);
-      font-size: 7.5px;
+      font-size: 10px;
       color: var(--text3);
       text-transform: uppercase;
       letter-spacing: .08em;
@@ -913,13 +1122,13 @@
 
     .sdoh-card-val {
       font-family: var(--font-mono);
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 500;
       line-height: 1.1;
     }
 
     .sdoh-card-unit {
-      font-size: 9px;
+      font-size: 11px;
       color: var(--text3);
       font-family: var(--font-mono);
     }
@@ -939,7 +1148,7 @@
     }
 
     .sdoh-context-note {
-      font-size: 9px;
+      font-size: 11px;
       color: var(--text3);
       font-style: italic;
       margin-top: 6px;
@@ -978,7 +1187,32 @@
       transform: translateY(16px);
       transition: transform .22s ease;
       overflow: hidden;
+      position: relative;
     }
+
+    .modal-sim-popup {
+      position: absolute;
+      inset: 0;
+      background: var(--bg2);
+      z-index: 20;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform .3s cubic-bezier(.25,.8,.25,1);
+      pointer-events: none;
+    }
+    .modal-sim-popup.open { transform: translateY(0); pointer-events: all; }
+    .msp-body { flex: 1; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; }
+    .msp-col { padding: 16px 20px; }
+    .msp-col + .msp-col { border-left: 1px solid var(--border); }
+    .msp-section-label { font-family: var(--font-mono); font-size: 8px; color: var(--text3); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 8px; }
+    .msp-legend { display: flex; gap: 16px; font-size: 10px; color: var(--text3); margin: 6px 0 10px; align-items: center; }
+    .msp-legend-line { display: inline-block; width: 18px; height: 2px; vertical-align: middle; margin-right: 4px; border-radius: 1px; }
+    .msp-year-ticks { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 8px; color: var(--text3); margin-bottom: 2px; }
+    .msp-back-btn { background: var(--bg3); border: 1px solid var(--border2); border-radius: 7px; padding: 6px 14px; font-family: var(--font-body); font-size: 12px; font-weight: 500; color: var(--text2); cursor: pointer; transition: all .15s; }
+    .msp-back-btn:hover { background: var(--bg4); color: var(--text); }
 
     .modal-backdrop.open .modal {
       transform: translateY(0);
@@ -1128,9 +1362,58 @@
     .modal-ind-bench {
       font-size: 10px;
       color: var(--text3);
-      width: 54px;
+      width: 44px;
       text-align: right;
       flex-shrink: 0;
+    }
+
+    .modal-ind-nat {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text3);
+      width: 44px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .modal-ind-delta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      width: 62px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .modal-ind-track {
+      position: relative;
+    }
+
+    .modal-nat-marker {
+      position: absolute;
+      top: -2px;
+      bottom: -2px;
+      width: 2px;
+      background: var(--text3);
+      border-radius: 1px;
+      opacity: 0.5;
+    }
+
+    .modal-col-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 0 6px;
+      border-bottom: 1px solid var(--border2);
+      margin-bottom: 4px;
+    }
+
+    .modal-col-header-label {
+      font-family: var(--font-mono);
+      font-size: 7.5px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: .08em;
     }
 
     .modal-sdoh-grid {
@@ -1285,6 +1568,40 @@
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(0, 0, 0, 0.2);
     }
+
+    /* ── INTERVENTION SIMULATION ── */
+    .sim-back { font-family: var(--font-mono); font-size: 10px; color: var(--teal); cursor: pointer; margin-bottom: 8px; }
+    .sim-type-badge { font-family: var(--font-mono); font-size: 9px; text-transform: uppercase; background: var(--teal-lt); color: var(--teal); border-radius: 4px; padding: 2px 7px; display: inline-block; }
+    .sim-priority-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+    .sim-chart-wrap { position: relative; margin-bottom: 10px; }
+    .sim-chart-legend { display: flex; gap: 10px; margin-top: 4px; font-size: 10px; color: var(--text3); }
+    .sim-legend-dot { width: 20px; height: 2px; display: inline-block; border-radius: 1px; margin-right: 4px; vertical-align: middle; }
+    .sim-scrubber-wrap { margin-bottom: 10px; }
+    .sim-year-ticks { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 9px; color: var(--text3); margin-bottom: 2px; }
+    .sim-scrubber { width: 100%; accent-color: var(--teal); cursor: pointer; height: 4px; }
+    .sim-score-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 6px; align-items: center; margin-bottom: 10px; background: var(--bg3); border-radius: 8px; padding: 8px 10px; border: 1px solid var(--border); }
+    .sim-score-col { display: flex; flex-direction: column; gap: 2px; }
+    .sim-score-col.right { text-align: right; align-items: flex-end; }
+    .sim-score-lbl { font-family: var(--font-mono); font-size: 8px; color: var(--text3); text-transform: uppercase; letter-spacing: .1em; }
+    .sim-score-num { font-family: var(--font-mono); font-size: 18px; font-weight: 500; line-height: 1; }
+    .sim-arrow { font-size: 14px; color: var(--text3); }
+    .sim-delta-box { text-align: center; font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--teal); }
+    .sim-section-mini { font-family: var(--font-mono); font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 5px; margin-top: 8px; }
+    .sim-ind-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid var(--border); }
+    .sim-ind-row:last-child { border-bottom: none; }
+    .sim-ind-name { font-size: 12px; color: var(--text2); flex: 1; }
+    .sim-ind-track { width: 60px; height: 4px; border-radius: 2px; background: rgba(0,0,0,.07); overflow: hidden; flex-shrink: 0; }
+    .sim-ind-fill { height: 100%; border-radius: 2px; transition: width .4s ease; }
+    .sim-ind-val { font-family: var(--font-mono); font-size: 11px; font-weight: 500; width: 36px; text-align: right; flex-shrink: 0; }
+    .sim-ind-delta { font-family: var(--font-mono); font-size: 10px; width: 36px; text-align: right; flex-shrink: 0; }
+    .pri-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 7px; padding: 9px 11px; margin-bottom: 7px; cursor: pointer; transition: all .15s; }
+    .pri-card:hover { border-color: var(--teal); background: var(--teal-lt); }
+    .pri-card-top { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; }
+    .pri-card-num { font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--teal); }
+    .pri-card-title { font-size: 13px; font-weight: 500; color: var(--text); flex: 1; }
+    .pri-card-arrow { font-size: 12px; color: var(--text3); }
+    .pri-card-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+    .pri-card-footer { margin-top: 5px; font-family: var(--font-mono); font-size: 9px; color: var(--teal); display: flex; align-items: center; gap: 4px; }
   </style>
 </head>
 
@@ -1293,7 +1610,7 @@
 
     <!-- TOPBAR -->
     <header class="topbar">
-      <div class="logo">HealthLens<span> AI</span></div>
+      <div class="logo">EquityLens<span> AI</span></div>
       <div class="top-sep"></div>
       <div class="top-badge">KENYA · DHS 2022</div>
       <div class="top-badge warn" id="badgeModel">MISTRAL AI</div>
@@ -1384,10 +1701,48 @@
         <div class="legend-gradient"></div>
         <div class="legend-labels"><span>Low</span><span>Medium</span><span>Critical</span></div>
       </div>
+
+      <!-- SIMULATION MAP OVERLAY (shown during intervention simulation) -->
+      <div class="sim-map-overlay" id="simMapOverlay" style="display:none;">
+        <div class="smo-header">
+          <div>
+            <div class="smo-title">Intervention simulation</div>
+            <div class="smo-county" id="smoCountyName">—</div>
+          </div>
+          <div class="smo-type-pill" id="smoTypePill">—</div>
+        </div>
+        <div class="smo-scores">
+          <div class="smo-col">
+            <div class="smo-lbl">No action</div>
+            <div class="smo-num" id="smoBaseNum" style="color:var(--red);">—</div>
+          </div>
+          <div class="smo-sep">→</div>
+          <div class="smo-col">
+            <div class="smo-lbl">With intervention</div>
+            <div class="smo-num" id="smoInterNum">—</div>
+          </div>
+          <div class="smo-delta" id="smoDelta">—</div>
+        </div>
+        <div class="smo-scrubber-row">
+          <span class="smo-year">2022</span>
+          <input type="range" class="smo-scrubber" id="simScrubberMap" min="0" max="8" value="8" step="1">
+          <div class="smo-year-current" id="smoYearCurrent">2030</div>
+          <span class="smo-year" style="text-align:right;">2030</span>
+        </div>
+        <span class="smo-exit" id="smoExit">← back to county view</span>
+      </div>
+      <!-- Floating button to reopen panel when closed -->
+      <button class="panel-open-btn" id="panelOpenBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        County data
+      </button>
     </div>
 
     <!-- RIGHT PANEL -->
     <aside class="panel" id="panel">
+      <div class="panel-close-strip">
+        <button class="panel-close-btn" id="panelCloseBtn" title="Close panel">×</button>
+      </div>
       <div class="panel-empty" id="panelEmpty">
         <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -1441,6 +1796,38 @@
                 Select a county to generate AI recommendations
               </div>
             </div>
+          </div>
+          <div id="simPanel" style="display:none; margin-top:8px;">
+            <div class="sim-back" id="simBack">← Back to recommendations</div>
+            <div class="sim-type-badge" id="simTypeBadge">—</div>
+            <div class="sim-priority-title" id="simPriorityTitle">—</div>
+            <div class="sim-chart-wrap">
+              <svg id="simChart" width="100%" viewBox="0 0 268 130" preserveAspectRatio="none" style="display:block;"></svg>
+              <div class="sim-chart-legend">
+                <div style="display:flex;align-items:center;"><div class="sim-legend-dot" style="border-top:2px dashed var(--red);height:0;background:none;width:20px;display:inline-block;vertical-align:middle;margin-right:4px;"></div>No action</div>
+                <div style="display:flex;align-items:center;gap:4px;"><div class="sim-legend-dot" id="simLegendColor" style="background:var(--teal);"></div>With intervention</div>
+              </div>
+            </div>
+            <div class="sim-scrubber-wrap">
+              <div class="sim-year-ticks"><span>2022</span><span>2024</span><span>2026</span><span>2028</span><span>2030</span></div>
+              <input type="range" class="sim-scrubber" id="simScrubber" min="0" max="8" value="8" step="1">
+            </div>
+            <div class="sim-score-row">
+              <div class="sim-score-col">
+                <div class="sim-score-lbl">No action</div>
+                <div class="sim-score-num" id="simBaseNum" style="color:var(--red);">—</div>
+              </div>
+              <div style="text-align:center;">
+                <div class="sim-arrow">→</div>
+                <div class="sim-delta-box" id="simDeltaNum">—</div>
+              </div>
+              <div class="sim-score-col right">
+                <div class="sim-score-lbl">With intervention</div>
+                <div class="sim-score-num" id="simInterNum" style="color:var(--teal);">—</div>
+              </div>
+            </div>
+            <div class="sim-section-mini">Indicators affected · <span id="simYearLabel">2030</span></div>
+            <div id="simIndRows"></div>
           </div>
         </div>
         <button class="btn-primary" id="btnReport">View full statistics &amp; report →</button>
@@ -1496,6 +1883,47 @@
         <button class="modal-btn primary" id="modalPrintBtn">Print / Save PDF</button>
         <button class="modal-btn" id="modalCloseBtn">Close</button>
       </div>
+
+      <!-- SIMULATION POPUP — slides up over the modal when a priority card is clicked -->
+      <div class="modal-sim-popup" id="modalSimPopup">
+        <div class="modal-topbar">
+          <div style="flex:1;">
+            <div style="font-family:var(--font-mono);font-size:8px;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px;">Intervention simulation · 2022 → 2030</div>
+            <div id="mspTitle" style="font-size:17px;font-family:var(--font-head);font-weight:600;color:var(--teal);">—</div>
+          </div>
+          <button class="msp-back-btn" id="mspClose">← Back to report</button>
+        </div>
+        <div class="msp-body">
+          <div class="msp-col">
+            <div class="msp-section-label">Score trajectory</div>
+            <div id="mspChartWrap" style="margin-bottom:4px;"></div>
+            <div class="msp-legend">
+              <span><span class="msp-legend-line" style="background:#c0392b;opacity:.6;border-top:2px dashed #c0392b;"></span>No action</span>
+              <span id="mspLegendLabel"><span class="msp-legend-line" id="mspLegendLine" style="background:var(--teal);"></span>With intervention</span>
+            </div>
+            <div class="msp-year-ticks"><span>2022</span><span>2024</span><span>2026</span><span>2028</span><span>2030</span></div>
+            <input type="range" min="0" max="8" value="8" class="msp-scrubber" id="mspScrubber" style="width:100%;accent-color:var(--teal);cursor:pointer;">
+            <div class="sim-score-row" style="margin-top:12px;">
+              <div class="sim-score-col">
+                <div class="sim-score-lbl">No action</div>
+                <div class="sim-score-num" id="mspBaseNum" style="color:var(--red);">—</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+                <div class="sim-arrow">→</div>
+                <div class="sim-delta-box" id="mspDelta">—</div>
+              </div>
+              <div class="sim-score-col right">
+                <div class="sim-score-lbl">With intervention</div>
+                <div class="sim-score-num" id="mspInterNum">—</div>
+              </div>
+            </div>
+          </div>
+          <div class="msp-col">
+            <div class="msp-section-label" id="mspIndTitle">Affected indicators · 2030</div>
+            <div id="mspIndRows"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1503,13 +1931,14 @@
     // ==========================================
     // 🔑 PASTE MISTRAL API KEY HERE 🔑
     // ==========================================
-    const MISTRAL_API_KEY = "CmQ08lHmUNBTYFsbYOb4sqpMSVGRLncc";
+    const MISTRAL_API_KEY = "";
 
     // ════════════════════════════════════════════════════════════════════
     // HealthEquity AI — Kenya Dashboard (Dark + Heatmap)
     // ════════════════════════════════════════════════════════════════════
 
     let DATA = null;
+    let indicatorRanges = {};
     let geoLayer = null;
     let subGeoLayer = null;
     let map = null;
@@ -1517,6 +1946,79 @@
     let activeIndicators = new Set();
     let riskFilter = 'all';
     let showSubcounties = false;
+    let _simData = null;
+    let simMapColor = null; // non-null during simulation — overrides the transparent style
+
+    const EFFECTS = {
+      vaccination: {
+        label: "Vaccination campaign", color: "#0d7a5f",
+        keywords: ["vaccination","vaccine","immunis","immuniz","vaccin","measles","dpt"],
+        indicators: {
+          "CH_VACC_C_BAS": {annual_gain:3.2, cap:97, direction:1},
+          "CH_VACC_C_DP3": {annual_gain:2.8, cap:98, direction:1},
+          "CH_VACC_C_MSL": {annual_gain:3.0, cap:97, direction:1}
+        }
+      },
+      nutrition: {
+        label: "Nutrition programme", color: "#d4880e",
+        keywords: ["nutrition","stunting","underweight","wasting","feeding","food","malnutrition"],
+        indicators: {
+          "CN_NUTS_C_WA2": {annual_gain:1.8, cap:2, direction:-1},
+          "CN_NUTS_C_HA2": {annual_gain:2.1, cap:5, direction:-1},
+          "CN_NUTS_C_WH2": {annual_gain:1.2, cap:1, direction:-1}
+        }
+      },
+      wash: {
+        label: "WASH intervention", color: "#2980b9",
+        keywords: ["water","sanitation","wash","latrine","hygiene","borehole","toilet"],
+        indicators: {
+          "WS_SRCE_H_IMP": {annual_gain:2.8, cap:98, direction:1},
+          "WS_TLET_H_IMP": {annual_gain:3.1, cap:98, direction:1}
+        }
+      },
+      maternal: {
+        label: "Maternal & facility care", color: "#8e44ad",
+        keywords: ["facility","delivery","antenatal","anc","maternal","birth","postnatal","midwi","cervical"],
+        indicators: {
+          "RH_DELP_C_DHF": {annual_gain:2.8, cap:99, direction:1},
+          "RH_ANCN_W_N4P": {annual_gain:2.5, cap:95, direction:1},
+          "RH_EBCC_W_ECC": {annual_gain:1.8, cap:60, direction:1}
+        }
+      },
+      family_planning: {
+        label: "Family planning", color: "#c0392b",
+        keywords: ["family planning","contraceptive","fertility","teen","unmet need","family"],
+        indicators: {
+          "FP_CUSA_W_MOD": {annual_gain:2.2, cap:85, direction:1},
+          "FP_NADA_W_UNT": {annual_gain:1.5, cap:3, direction:-1},
+          "FE_TNPG_W_CBR": {annual_gain:1.2, cap:3, direction:-1}
+        }
+      },
+      education: {
+        label: "Education & literacy", color: "#7c3aed",
+        keywords: ["literacy","education","school","empowerment","secondary","women"],
+        indicators: {
+          "ED_LITR_W_LIT": {annual_gain:1.8, cap:99, direction:1},
+          "ED_EDUC_W_SEC": {annual_gain:1.5, cap:90, direction:1}
+        }
+      },
+      malaria: {
+        label: "Malaria & ITN distribution", color: "#00897b",
+        keywords: ["malaria","itn","insecticide","net","bed net","mosquito"],
+        indicators: {
+          "ML_NETP_H_IT2": {annual_gain:4.5, cap:95, direction:1},
+          "CH_FEVR_C_FEV": {annual_gain:1.5, cap:5, direction:-1}
+        }
+      },
+      neonatal: {
+        label: "Neonatal & newborn care", color: "#e67e22",
+        keywords: ["neonatal","newborn","mortality","infant","resuscitation","postnatal care"],
+        indicators: {
+          "CM_ECMR_C_NNR": {annual_gain:2.1, cap:8, direction:-1},
+          "RH_DELP_C_DHF": {annual_gain:1.5, cap:99, direction:1}
+        }
+      }
+    };
 
     // ── COLOR UTILS ────────────────────────────────────────────────────
     function scoreColor(score) {
@@ -1547,6 +2049,51 @@
     }
 
     // ── LOAD DATA ──────────────────────────────────────────────────────
+    // ── LIVE PREDICTION ENGINE ──────────────────────────────────────────
+    function computeIndicatorRanges() {
+      Object.keys(DATA.indicators).forEach(iid => {
+        if (DATA.indicators[iid].category === 'Social & Economic') return;
+        const vals = DATA.counties.map(c => c.indicators[iid]).filter(v => v != null && !isNaN(v));
+        if (!vals.length) return;
+        const min = Math.min(...vals), max = Math.max(...vals);
+        indicatorRanges[iid] = { min, max, range: Math.max(max - min, 0.1) };
+      });
+    }
+
+    function computeBaselineTrajectory(county) {
+      let drift = county.risk === 'critical' ? 0.35 : county.risk === 'medium' ? 0.15 : -0.40;
+      if (county.sdoh?.poverty_rate > 65) drift += 0.15;
+      if (county.sdoh?.social_capital < 40) drift += 0.20;
+      return Array.from({length: 9}, (_, y) => Math.max(5, Math.min(100, county.score + drift * y)));
+    }
+
+    function computeInterventionTrajectory(county, interventionType) {
+      const effect = EFFECTS[interventionType];
+      if (!effect) return null;
+      const effInds = effect.indicators;
+      const affected = Object.keys(effInds);
+      const trajectories = {};
+      affected.forEach(iid => { trajectories[iid] = [county.indicators[iid] ?? null]; });
+      let cumDelta = 0;
+      const scores = [county.score];
+      for (let y = 1; y <= 8; y++) {
+        let yearDelta = 0;
+        affected.forEach(iid => {
+          const cfg = effInds[iid];
+          const prev = trajectories[iid][y - 1];
+          if (prev == null || !indicatorRanges[iid]) { trajectories[iid].push(prev); return; }
+          const newVal = cfg.direction === 1
+            ? Math.min(prev + cfg.annual_gain, cfg.cap)
+            : Math.max(prev - cfg.annual_gain, cfg.cap);
+          trajectories[iid].push(newVal);
+          yearDelta += Math.abs(newVal - prev) * (100 / indicatorRanges[iid].range) / 23;
+        });
+        cumDelta += yearDelta;
+        scores.push(Math.max(5, county.score - cumDelta));
+      }
+      return { label: effect.label, color: effect.color, scores, affected, trajectories };
+    }
+
     async function loadData() {
       const [dataResp, geoResp, subGeoResp] = await Promise.all([
         fetch('kenya_data.json'),
@@ -1556,6 +2103,7 @@
       DATA = await dataResp.json();
       window.geoData = await geoResp.json();
       window.subGeoData = await subGeoResp.json();
+      computeIndicatorRanges();
 
       // Update topbar stats
       document.getElementById('statTotal').textContent = DATA.total_counties;
@@ -1649,6 +2197,9 @@
 
           // Selected county: transparent so map tiles show through
           if (selectedCounty && county.gadm_name === selectedCounty.gadm_name) {
+            if (simMapColor) {
+              return { fillColor: simMapColor, fillOpacity: 0.72, color: '#ffffff', weight: 2.5, dashArray: '' };
+            }
             return { fillColor: 'transparent', fillOpacity: 0, color: '#333333', weight: 2, dashArray: '' };
           }
 
@@ -1684,6 +2235,7 @@
           layer.on('click', function (e) {
             L.DomEvent.stopPropagation(e);
             selectedCounty = county;
+            window._selectedGeoLayer = layer;
             const bounds = layer.getBounds();
             loadCountyPanel(county);
             showSubcounties = true;
@@ -1867,6 +2419,11 @@
     function loadCountyPanel(county) {
       document.getElementById('panelEmpty').style.display = 'none';
       document.getElementById('panelContent').style.display = '';
+      if (window._openPanel) window._openPanel();
+
+      // If sim panel was open, close it and restore aiBox
+      document.getElementById('simPanel').style.display = 'none';
+      document.getElementById('aiBox').style.display = '';
 
       const cssVar = county.risk === 'critical' ? 'var(--red)' : county.risk === 'medium' ? 'var(--amber)' : 'var(--teal)';
 
@@ -1946,6 +2503,7 @@
     function loadSubCountyPanel(subName, subData, parentCounty) {
       document.getElementById('panelEmpty').style.display = 'none';
       document.getElementById('panelContent').style.display = '';
+      if (window._openPanel) window._openPanel();
 
       if (!subData) {
         document.getElementById('countyName').textContent = subName;
@@ -2040,7 +2598,10 @@
       const indSummary = Object.entries(county.indicators).map(([id, val]) => {
         const meta = DATA.indicators[id];
         if (!meta || meta.category === 'Social & Economic') return '';
-        return `${meta.label}: ${val}`;
+        if (val === null || val === undefined || isNaN(val)) return '';
+        const unit = meta.unit || '';
+        const display = Number.isInteger(val) ? val : parseFloat(val).toFixed(1);
+        return `${meta.label}: ${display}${unit}`;
       }).filter(Boolean).join('\n');
 
       const sdoh = county.sdoh;
@@ -2076,15 +2637,16 @@ Format each as: **Priority N — Title** followed by the recommendation text. Ke
             body: JSON.stringify({
               model: 'mistral-large-latest',
               messages: [{ role: 'user', content: prompt }],
-              max_tokens: 500,
-              temperature: 0.7,
+              max_tokens: 900,
+              temperature: 0.4,
             }),
           });
 
           if (response.ok) {
             const data = await response.json();
-            aiText.innerHTML = formatAIText(data.choices[0].message.content);
+            aiText.innerHTML = formatAIText(data.choices[0].message.content, county);
             document.getElementById('badgeModel').textContent = 'MISTRAL AI · LIVE';
+            attachPriCardListeners(aiText, county);
             return;
           }
         } catch (e) {
@@ -2094,7 +2656,18 @@ Format each as: **Priority N — Title** followed by the recommendation text. Ke
 
       // Template fallback
       document.getElementById('badgeModel').textContent = 'AI · TEMPLATE';
-      aiText.innerHTML = formatAIText(generateTemplateRecommendation(county));
+      aiText.innerHTML = formatAIText(generateTemplateRecommendation(county), county);
+      attachPriCardListeners(aiText, county);
+    }
+
+    function attachPriCardListeners(container, county) {
+      container.querySelectorAll('.pri-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const intType = card.dataset.intType;
+          const title = card.dataset.title;
+          simulateIntervention(county, intType, title);
+        });
+      });
     }
 
     function generateTemplateRecommendation(county) {
@@ -2190,8 +2763,278 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
       );
     }
 
-    function formatAIText(text) {
-      return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+
+    function detectInterventionType(text) {
+      const lower = text.toLowerCase();
+      for (const [key, def] of Object.entries(EFFECTS)) {
+        for (const kw of def.keywords) {
+          if (lower.includes(kw)) return key;
+        }
+      }
+      return null;
+    }
+
+    function formatAIText(text, county) {
+      if (!county) {
+        return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+      }
+
+      // Try to split into priority blocks
+      const blocks = text.split(/(?=\*\*Priority\s+\d)/i).filter(b => b.trim());
+      if (blocks.length < 2) {
+        return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+      }
+
+      let html = '';
+      blocks.forEach((block, idx) => {
+        // Extract title (first **...** block)
+        const titleMatch = block.match(/\*\*(.*?)\*\*/);
+        const title = titleMatch ? titleMatch[1] : '';
+        const desc = block.replace(/\*\*(.*?)\*\*/g, '').trim().replace(/\n/g, ' ');
+
+        const numMatch = title.match(/Priority\s+(\d+)/i);
+        const num = numMatch ? numMatch[1] : (idx + 1);
+        const shortTitle = title.replace(/Priority\s+\d+\s*[—\-–]\s*/i, '').trim();
+
+        const intType = detectInterventionType(title + ' ' + desc);
+
+        if (intType && EFFECTS[intType]) {
+          const color = EFFECTS[intType].color;
+          html += `<div class="pri-card" data-int-type="${intType}" data-county="${county.name}" data-title="${shortTitle.replace(/"/g,'&quot;')}">
+            <div class="pri-card-top">
+              <div class="pri-card-num">Priority ${num}</div>
+              <div class="pri-card-title">${shortTitle}</div>
+              <div class="pri-card-arrow">›</div>
+            </div>
+            <div class="pri-card-desc">${desc}</div>
+            <div class="pri-card-footer" style="color:${color};">▶ Simulate impact</div>
+          </div>`;
+        } else {
+          html += `<div style="margin-bottom:8px;"><strong>Priority ${num}${shortTitle ? ' — ' + shortTitle : ''}</strong><br><span style="font-size:11px;color:var(--text2);">${desc}</span></div>`;
+        }
+      });
+      return html;
+    }
+
+    // ── INTERVENTION SIMULATION ────────────────────────────────────────
+    function simulateIntervention(county, interventionType, priorityTitle) {
+      const intResult = computeInterventionTrajectory(county, interventionType);
+      if (!intResult) return;
+
+      const baselineScores = computeBaselineTrajectory(county);
+      const data = intResult;
+      const color = EFFECTS[interventionType].color;
+      const label = EFFECTS[interventionType].label;
+      _simData = { county, type: interventionType, data, color, baselineScores };
+
+      // Sidebar sim panel
+      document.getElementById('aiBox').style.display = 'none';
+      document.getElementById('simPanel').style.display = '';
+      document.getElementById('simTypeBadge').textContent = label;
+      document.getElementById('simTypeBadge').style.background = color + '22';
+      document.getElementById('simTypeBadge').style.color = color;
+      document.getElementById('simPriorityTitle').textContent = priorityTitle;
+      document.getElementById('simLegendColor').style.background = color;
+      document.getElementById('simScrubber').value = '8';
+
+      // Map overlay
+      document.getElementById('smoCountyName').textContent = county.name + ' County';
+      document.getElementById('smoTypePill').textContent = label;
+      document.getElementById('smoTypePill').style.background = color + '22';
+      document.getElementById('smoTypePill').style.color = color;
+      document.getElementById('smoTypePill').style.border = '1px solid ' + color + '44';
+      document.getElementById('simScrubberMap').value = '8';
+      document.getElementById('simMapOverlay').style.display = '';
+
+      // Set initial sim color and rebuild map so style function uses it
+      simMapColor = scoreColor(data.scores[8]);
+      if (subGeoLayer) { map.removeLayer(subGeoLayer); subGeoLayer = null; }
+      showSubcounties = false;
+      renderMap();
+
+      // Zoom out just enough to see the county clearly with neighbors visible
+      if (window._selectedGeoLayer) {
+        const bounds = window._selectedGeoLayer.getBounds();
+        map.flyToBounds(bounds, { padding: [120, 120], duration: 0.8 });
+      }
+
+      updateSimYear(8);
+    }
+
+    function updateSimYear(yearIdx) {
+      if (!_simData) return;
+      const { county, type, data, color, baselineScores } = _simData;
+      const year = 2022 + yearIdx;
+      const baselineScore = baselineScores[yearIdx];
+      const intScore = data.scores[yearIdx];
+      const delta = baselineScore - intScore;
+
+      const deltaStr = delta > 0 ? '−' + delta.toFixed(1) + ' pts' : delta < 0 ? '+' + Math.abs(delta).toFixed(1) + ' pts' : '0 pts';
+      const deltaColor = delta > 0 ? color : delta < 0 ? 'var(--red)' : 'var(--text3)';
+
+      // Sidebar panel
+      document.getElementById('simYearLabel').textContent = year;
+      document.getElementById('simBaseNum').textContent = baselineScore.toFixed(1);
+      document.getElementById('simInterNum').textContent = intScore.toFixed(1);
+      document.getElementById('simInterNum').style.color = color;
+      document.getElementById('simDeltaNum').textContent = deltaStr;
+      document.getElementById('simDeltaNum').style.color = deltaColor;
+
+      // Map overlay
+      document.getElementById('smoYearCurrent').textContent = year;
+      document.getElementById('smoBaseNum').textContent = baselineScore.toFixed(1);
+      document.getElementById('smoInterNum').textContent = intScore.toFixed(1);
+      document.getElementById('smoInterNum').style.color = color;
+      const smoDelta = document.getElementById('smoDelta');
+      smoDelta.textContent = deltaStr;
+      smoDelta.style.color = deltaColor;
+      smoDelta.style.background = deltaColor === color ? color + '18' : 'var(--red-lt)';
+      smoDelta.style.border = '1px solid ' + deltaColor + '44';
+
+      // Indicator rows
+      const affected = data.affected;
+      let rowsHtml = '';
+      affected.forEach(iid => {
+        const meta = DATA.indicators[iid];
+        const label = meta ? meta.label : iid;
+        const v0 = county.indicators[iid];
+        const vNow = data.trajectories[iid] ? data.trajectories[iid][yearIdx] : v0;
+        if (v0 === undefined || v0 === null) return;
+
+        const cfg = EFFECTS[type].indicators[iid];
+        const isImproving = cfg && cfg.direction === 1;
+        const fillPct = Math.min(Math.max(vNow, 0), 100);
+        const diff = vNow - v0;
+        const diffStr = diff >= 0 ? '+' + diff.toFixed(1) : diff.toFixed(1);
+        const diffColor = (isImproving ? diff >= 0 : diff <= 0) ? color : 'var(--red)';
+
+        rowsHtml += `<div class="sim-ind-row">
+          <div class="sim-ind-name">${label}</div>
+          <div class="sim-ind-track"><div class="sim-ind-fill" style="width:${fillPct}%;background:${color};"></div></div>
+          <div class="sim-ind-val" style="color:${color};">${vNow.toFixed(1)}</div>
+          <div class="sim-ind-delta" style="color:${diffColor};">${diffStr}</div>
+        </div>`;
+      });
+      document.getElementById('simIndRows').innerHTML = rowsHtml;
+
+      drawSimChart(yearIdx);
+
+      // Update map county color live — simMapColor keeps style function in sync too
+      simMapColor = scoreColor(intScore);
+      if (window._selectedGeoLayer) {
+        window._selectedGeoLayer.setStyle({
+          fillColor: simMapColor,
+          fillOpacity: 0.72,
+          color: '#ffffff',
+          weight: 2.5,
+        });
+      }
+    }
+
+    // ── SHARED CHART BUILDER ────────────────────────────────────────────
+    function buildSimChartSVG(baselineScores, intScores, color, activeYearIdx, w, h) {
+      w = w || 268; h = h || 130;
+      const allVals = [...baselineScores, ...intScores];
+      const minY = Math.min(...allVals) - 3;
+      const maxY = Math.max(...allVals) + 3;
+      const plotX0 = 10, plotX1 = w - 10, plotY0 = 12, plotY1 = h - 18;
+      const plotW = plotX1 - plotX0, plotH = plotY1 - plotY0;
+      const mapX = i => plotX0 + i * (plotW / 8);
+      const mapY = v => plotY0 + (maxY - v) / (maxY - minY) * plotH;
+
+      let poly = '', base = '', inter = '';
+      for (let i = 0; i <= 8; i++) poly  += `${mapX(i).toFixed(1)},${mapY(baselineScores[i]).toFixed(1)} `;
+      for (let i = 8; i >= 0; i--) poly  += `${mapX(i).toFixed(1)},${mapY(intScores[i]).toFixed(1)} `;
+      for (let i = 0; i <= 8; i++) base  += `${mapX(i).toFixed(1)},${mapY(baselineScores[i]).toFixed(1)} `;
+      for (let i = 0; i <= 8; i++) inter += `${mapX(i).toFixed(1)},${mapY(intScores[i]).toFixed(1)} `;
+
+      const ax  = mapX(activeYearIdx).toFixed(1);
+      const byA = mapY(baselineScores[activeYearIdx]).toFixed(1);
+      const iyA = mapY(intScores[activeYearIdx]).toFixed(1);
+
+      return `<svg viewBox="0 0 ${w} ${h}" width="100%" style="display:block;">
+        <polygon points="${poly.trim()}" fill="${color}" fill-opacity="0.15" stroke="none"/>
+        <polyline points="${base.trim()}" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
+        <polyline points="${inter.trim()}" fill="none" stroke="${color}" stroke-width="2"/>
+        <line x1="${ax}" y1="${plotY0}" x2="${ax}" y2="${plotY1}" stroke="#9e9e96" stroke-dasharray="2,2" opacity="0.5"/>
+        <circle cx="${ax}" cy="${byA}" r="3" fill="#c0392b"/>
+        <circle cx="${ax}" cy="${iyA}" r="3.5" fill="${color}"/>
+        <text x="${plotX0}" y="${plotY0 - 2}" font-size="8" fill="#9e9e96">${maxY.toFixed(0)}</text>
+        <text x="${plotX0}" y="${plotY1 + 9}" font-size="8" fill="#9e9e96">${minY.toFixed(0)}</text>
+        <text x="${plotX0}" y="${h - 3}" font-size="8" fill="#9e9e96">2022</text>
+        <text x="${plotX1 - 20}" y="${h - 3}" font-size="8" fill="#9e9e96">2030</text>
+      </svg>`;
+    }
+
+    function drawSimChart(activeYearIdx) {
+      if (!_simData) return;
+      const { data, color, baselineScores } = _simData;
+      document.getElementById('simChart').innerHTML = buildSimChartSVG(baselineScores, data.scores, color, activeYearIdx);
+    }
+
+    // ── MODAL SIMULATION POPUP ──────────────────────────────────────────
+    let _modalSimData = null;
+
+    function openModalSim(county, type, title) {
+      const intResult = computeInterventionTrajectory(county, type);
+      if (!intResult) return;
+      const baselineScores = computeBaselineTrajectory(county);
+      _modalSimData = { county, type, data: intResult, color: intResult.color, baselineScores };
+
+      document.getElementById('mspTitle').textContent = title;
+      document.getElementById('mspTitle').style.color = intResult.color;
+      document.getElementById('mspLegendLine').style.background = intResult.color;
+      document.getElementById('mspDelta').style.color = intResult.color;
+      document.getElementById('mspInterNum').style.color = intResult.color;
+      document.getElementById('mspScrubber').value = '8';
+      document.getElementById('modalSimPopup').classList.add('open');
+      updateModalSimYear(8);
+    }
+
+    function closeModalSim() {
+      document.getElementById('modalSimPopup').classList.remove('open');
+      _modalSimData = null;
+    }
+
+    function updateModalSimYear(yearIdx) {
+      if (!_modalSimData) return;
+      const { county, type, data, color, baselineScores } = _modalSimData;
+      const year = 2022 + yearIdx;
+      const baselineScore = baselineScores[yearIdx];
+      const intScore = data.scores[yearIdx];
+      const delta = baselineScore - intScore;
+      const deltaStr = delta > 0 ? '−' + delta.toFixed(1) + ' pts' : delta < 0 ? '+' + Math.abs(delta).toFixed(1) + ' pts' : '0 pts';
+      const deltaColor = delta > 0 ? color : 'var(--red)';
+
+      document.getElementById('mspBaseNum').textContent = baselineScore.toFixed(1);
+      document.getElementById('mspInterNum').textContent = intScore.toFixed(1);
+      document.getElementById('mspDelta').textContent = deltaStr;
+      document.getElementById('mspDelta').style.color = deltaColor;
+      document.getElementById('mspIndTitle').textContent = `Affected indicators · ${year}`;
+
+      const affected = data.affected;
+      let rowsHtml = '';
+      affected.forEach(iid => {
+        const meta = DATA.indicators[iid];
+        const lbl = meta ? meta.label : iid;
+        const v0 = county.indicators[iid];
+        const vNow = data.trajectories[iid] ? data.trajectories[iid][yearIdx] : v0;
+        if (v0 === undefined || v0 === null) return;
+        const cfg = EFFECTS[type].indicators[iid];
+        const isImproving = cfg && cfg.direction === 1;
+        const fillPct = Math.min(Math.max(vNow, 0), 100);
+        const diff = vNow - v0;
+        const diffStr = diff >= 0 ? '+' + diff.toFixed(1) : diff.toFixed(1);
+        const diffColor = (isImproving ? diff >= 0 : diff <= 0) ? color : 'var(--red)';
+        rowsHtml += `<div class="sim-ind-row">
+          <div class="sim-ind-name">${lbl}</div>
+          <div class="sim-ind-track"><div class="sim-ind-fill" style="width:${fillPct}%;background:${color};"></div></div>
+          <div class="sim-ind-val" style="color:${color};">${vNow.toFixed(1)}</div>
+          <div class="sim-ind-delta" style="color:${diffColor};">${diffStr}</div>
+        </div>`;
+      });
+      document.getElementById('mspIndRows').innerHTML = rowsHtml;
+      document.getElementById('mspChartWrap').innerHTML = buildSimChartSVG(baselineScores, data.scores, color, yearIdx, 340, 140);
     }
 
     // ── FILTERS & CONTROLS ─────────────────────────────────────────────
@@ -2223,6 +3066,57 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
         map.flyTo([0.5, 37.8], 6, { duration: 0.8 });
       });
 
+      function exitSimulation() {
+        document.getElementById('simPanel').style.display = 'none';
+        document.getElementById('aiBox').style.display = '';
+        document.getElementById('simMapOverlay').style.display = 'none';
+        _simData = null;
+        simMapColor = null;
+        // Restore county drill-down view
+        if (selectedCounty) {
+          showSubcounties = true;
+          renderMap(); // rebuilds with transparent county + sub-county heatmap
+          if (window._selectedGeoLayer) {
+            const bounds = window._selectedGeoLayer.getBounds();
+            map.flyToBounds(bounds, { padding: [50, 50], duration: 0.8 });
+          }
+        }
+      }
+
+      document.getElementById('simBack').addEventListener('click', exitSimulation);
+      document.getElementById('smoExit').addEventListener('click', exitSimulation);
+
+      // Both scrubbers stay in sync
+      document.getElementById('simScrubber').addEventListener('input', function() {
+        document.getElementById('simScrubberMap').value = this.value;
+        updateSimYear(parseInt(this.value));
+      });
+      document.getElementById('simScrubberMap').addEventListener('input', function() {
+        document.getElementById('simScrubber').value = this.value;
+        updateSimYear(parseInt(this.value));
+      });
+
+      // Panel open/close toggle
+      const panel = document.getElementById('panel');
+      const panelOpenBtn = document.getElementById('panelOpenBtn');
+      const mapOverlayTr = document.querySelector('.map-overlay-tr');
+
+      function openPanel() {
+        panel.classList.add('open');
+        panelOpenBtn.classList.remove('visible');
+        if (mapOverlayTr) mapOverlayTr.classList.add('panel-open');
+      }
+      function closePanel() {
+        panel.classList.remove('open');
+        if (selectedCounty) panelOpenBtn.classList.add('visible');
+        if (mapOverlayTr) mapOverlayTr.classList.remove('panel-open');
+      }
+
+      document.getElementById('panelCloseBtn').addEventListener('click', closePanel);
+      panelOpenBtn.addEventListener('click', openPanel);
+      window._openPanel = openPanel;
+      window._closePanel = closePanel;
+
       document.getElementById('btnReport').addEventListener('click', () => {
         if (selectedCounty) openFullReport(selectedCounty);
       });
@@ -2235,7 +3129,21 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
         if (e.target === document.getElementById('modalBackdrop')) closeModal();
       });
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') {
+          if (document.getElementById('modalSimPopup').classList.contains('open')) closeModalSim();
+          else closeModal();
+        }
+      });
+
+      // Modal simulation popup — clicking a priority card in the modal AI box
+      document.getElementById('modalAiContent').addEventListener('click', e => {
+        const card = e.target.closest('.pri-card');
+        if (!card || !selectedCounty) return;
+        openModalSim(selectedCounty, card.dataset.intType, card.dataset.title || card.dataset.intType);
+      });
+      document.getElementById('mspClose').addEventListener('click', closeModalSim);
+      document.getElementById('mspScrubber').addEventListener('input', function() {
+        updateModalSimYear(parseInt(this.value));
       });
     }
 
@@ -2262,6 +3170,15 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
       });
 
       let indHtml = '';
+      // Column header (once, before first category)
+      indHtml += `<div class="modal-col-header">
+        <div style="flex:1;"></div>
+        <div class="modal-col-header-label" style="width:80px;text-align:center;">Bar</div>
+        <div class="modal-col-header-label" style="width:44px;text-align:right;">County</div>
+        <div class="modal-col-header-label" style="width:44px;text-align:right;">National</div>
+        <div class="modal-col-header-label" style="width:62px;text-align:right;">vs National</div>
+      </div>`;
+
       Object.entries(catMap).sort((a, b) => a[0].localeCompare(b[0])).forEach(([cat, inds]) => {
         indHtml += `<div class="modal-ind-category">
           <div class="modal-ind-cat-label">${cat}</div>`;
@@ -2271,16 +3188,32 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
           const pct = Math.min(val, 100);
           const natAvg = DATA.national_averages[ind.id];
           let color = cssVar;
+          let deltaHtml = '';
+          let markerHtml = '';
+
           if (natAvg !== undefined) {
             const gap = ind.higher_is_better ? (val - natAvg) : (natAvg - val);
             color = gap >= 0 ? 'var(--teal)' : gap < -10 ? 'var(--red)' : 'var(--amber)';
+            const sign = gap >= 0 ? '+' : '';
+            const deltaLabel = gap >= 0 ? 'above' : 'below';
+            deltaHtml = `<div class="modal-ind-delta" style="color:${color};">${sign}${gap.toFixed(1)}<span style="font-size:9px;opacity:.7;"> ${deltaLabel}</span></div>`;
+            // Marker on bar at national avg position
+            const natPct = Math.min(natAvg, 100);
+            markerHtml = `<div class="modal-nat-marker" style="left:${natPct}%;"></div>`;
+          } else {
+            deltaHtml = `<div class="modal-ind-delta" style="color:var(--text3);">—</div>`;
           }
-          const benchText = natAvg !== undefined ? `Avg: ${natAvg.toFixed(1)}` : '';
+
+          const natText = natAvg !== undefined ? natAvg.toFixed(1) : '—';
           indHtml += `<div class="modal-ind-row">
             <div class="modal-ind-name">${ind.label}</div>
-            <div class="modal-ind-track"><div class="modal-ind-fill" style="width:${pct}%;background:${color};"></div></div>
+            <div class="modal-ind-track" style="position:relative;">
+              <div class="modal-ind-fill" style="width:${pct}%;background:${color};"></div>
+              ${markerHtml}
+            </div>
             <div class="modal-ind-val" style="color:${color};">${val.toFixed(1)}</div>
-            <div class="modal-ind-bench">${benchText}</div>
+            <div class="modal-ind-nat">${natText}</div>
+            ${deltaHtml}
           </div>`;
         });
         indHtml += '</div>';
@@ -2351,6 +3284,7 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
 
     function closeModal() {
       document.getElementById('modalBackdrop').classList.remove('open');
+      closeModalSim();
       if (_aiSyncObserver) { _aiSyncObserver.disconnect(); _aiSyncObserver = null; }
     }
 
@@ -2379,12 +3313,16 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
           .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
           .section-title { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: #9e9e96; text-transform: uppercase; letter-spacing: .12em; border-bottom: 1px solid #e5e2db; padding-bottom: 5px; margin-bottom: 12px; margin-top: 20px; }
           .cat-label { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: #0d7a5f; text-transform: uppercase; letter-spacing: .1em; margin: 10px 0 4px; font-weight: 500; }
+          .col-hdr { display: flex; align-items: center; gap: 8px; padding: 3px 0 5px; border-bottom: 1px solid #e5e2db; margin-bottom: 3px; }
+          .col-hdr-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 7px; color: #9e9e96; text-transform: uppercase; letter-spacing: .08em; }
           .ind-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid #f0ede8; }
           .ind-name { font-size: 11px; flex: 1; }
-          .track { width: 70px; height: 4px; border-radius: 2px; background: #e5e2db; overflow: hidden; flex-shrink: 0; }
+          .track { width: 60px; height: 4px; border-radius: 2px; background: #e5e2db; overflow: hidden; flex-shrink: 0; position: relative; }
           .fill { height: 100%; border-radius: 2px; }
-          .val { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; width: 42px; text-align: right; flex-shrink: 0; }
-          .bench { font-size: 10px; color: #9e9e96; width: 50px; text-align: right; flex-shrink: 0; }
+          .nat-marker { position: absolute; top: -2px; bottom: -2px; width: 2px; background: #9e9e96; border-radius: 1px; opacity: 0.6; }
+          .val { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; width: 38px; text-align: right; flex-shrink: 0; }
+          .nat { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6b6b65; width: 38px; text-align: right; flex-shrink: 0; }
+          .delta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; width: 58px; text-align: right; flex-shrink: 0; }
           .sdoh-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 16px; }
           .sdoh-card { background: #f5f3ef; border: 1px solid #e5e2db; border-radius: 7px; padding: 9px 11px; }
           .sdoh-lbl { font-family: 'IBM Plex Mono', monospace; font-size: 7.5px; color: #9e9e96; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 3px; }
@@ -2399,7 +3337,8 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
           .ai-box p, .ai-box div { font-size: 12px; color: #6b6b65; line-height: 1.65; }
           .ai-box strong { color: #1a1a18; font-weight: 600; }
           .note { font-size: 9px; color: #9e9e96; font-style: italic; margin-top: 8px; line-height: 1.4; }
-          @media print { body { padding: 16px 20px; } }
+          .page-break { page-break-before: always; break-before: page; height: 0; margin: 0; }
+          @media print { body { padding: 16px 20px; } .page-break { page-break-before: always; break-before: page; } }
         </style>
       </head><body>`);
 
@@ -2417,7 +3356,14 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
           <div>`);
 
       // Health indicators
-      printWin.document.write('<div class="section-title">Health Indicators</div>');
+      printWin.document.write('<div class="section-title">Health Indicators · comparison to Kenya national average</div>');
+      printWin.document.write(`<div class="col-hdr">
+        <div style="flex:1;"></div>
+        <div class="col-hdr-lbl" style="width:60px;text-align:center;">Bar</div>
+        <div class="col-hdr-lbl" style="width:38px;text-align:right;">County</div>
+        <div class="col-hdr-lbl" style="width:38px;text-align:right;">National</div>
+        <div class="col-hdr-lbl" style="width:58px;text-align:right;">vs National</div>
+      </div>`);
       const catMap = {};
       Object.entries(DATA.indicators).forEach(([id, meta]) => {
         if (meta.category === 'Social & Economic') return;
@@ -2431,16 +3377,23 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
           if (val === undefined || val === null) return;
           const natAvg = DATA.national_averages[ind.id];
           let color = cssVar;
+          let deltaHtml = '<div class="delta" style="color:#9e9e96;">—</div>';
+          let markerHtml = '';
           if (natAvg !== undefined) {
             const gap = ind.higher_is_better ? (val - natAvg) : (natAvg - val);
             color = gap >= 0 ? '#0d7a5f' : gap < -10 ? '#c0392b' : '#b85c1a';
+            const sign = gap >= 0 ? '+' : '';
+            const lbl = gap >= 0 ? 'above' : 'below';
+            deltaHtml = `<div class="delta" style="color:${color};">${sign}${gap.toFixed(1)} <span style="font-size:9px;opacity:.7;">${lbl}</span></div>`;
+            markerHtml = `<div class="nat-marker" style="left:${Math.min(natAvg,100)}%;"></div>`;
           }
-          const benchText = natAvg !== undefined ? `Avg: ${natAvg.toFixed(1)}` : '';
+          const natText = natAvg !== undefined ? natAvg.toFixed(1) : '—';
           printWin.document.write(`<div class="ind-row">
             <div class="ind-name">${ind.label}</div>
-            <div class="track"><div class="fill" style="width:${Math.min(val,100)}%;background:${color};"></div></div>
+            <div class="track"><div class="fill" style="width:${Math.min(val,100)}%;background:${color};"></div>${markerHtml}</div>
             <div class="val" style="color:${color};">${val.toFixed(1)}</div>
-            <div class="bench">${benchText}</div>
+            <div class="nat">${natText}</div>
+            ${deltaHtml}
           </div>`);
         });
       });
@@ -2495,14 +3448,106 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
         printWin.document.write('</div>');
       }
 
-      // AI recommendation
-      const aiHtml = document.getElementById('modalAiContent').innerHTML;
-      printWin.document.write(`
-        <div class="section-title">AI Recommendation · Mistral</div>
-        <div class="ai-box">${aiHtml}</div>
-      `);
+      printWin.document.write('</div></div>'); // end right col + cols (page 1)
 
-      printWin.document.write('</div></div>');
+      // ── PRIORITY PAGES ─────────────────────────────────────────────────
+      // Collect priority cards from the modal AI content
+      const priCards = document.querySelectorAll('#modalAiContent .pri-card');
+      priCards.forEach((card, idx) => {
+        const intType = card.dataset.intType;
+        const titleText = card.dataset.title || intType;
+        const descEl = card.querySelector('.pri-card-desc');
+        const desc = descEl ? descEl.textContent.trim() : '';
+        if (!intType || !EFFECTS[intType]) return;
+
+        const effect = EFFECTS[intType];
+        const intColor = effect.color;
+        const intResult = computeInterventionTrajectory(county, intType);
+        const baselineScores = computeBaselineTrajectory(county);
+        if (!intResult) return;
+
+        // Build SVG string (same function, static year = 8 for print)
+        const svgStr = buildSimChartSVG(baselineScores, intResult.scores, intColor, 8, 500, 160);
+
+        // Indicator rows HTML
+        let indRowsHtml = '';
+        intResult.affected.forEach(iid => {
+          const meta = DATA.indicators[iid];
+          const lbl = meta ? meta.label : iid;
+          const v0 = county.indicators[iid];
+          const vNow = intResult.trajectories[iid] ? intResult.trajectories[iid][8] : v0;
+          if (v0 == null || vNow == null) return;
+          const cfg = effect.indicators[iid];
+          const isImproving = cfg && cfg.direction === 1;
+          const diff = vNow - v0;
+          const diffStr = diff >= 0 ? '+' + diff.toFixed(1) : diff.toFixed(1);
+          const color2 = (isImproving ? diff >= 0 : diff <= 0) ? intColor : '#c0392b';
+          indRowsHtml += `<div class="ind-row">
+            <div class="ind-name">${lbl}</div>
+            <div class="track"><div class="fill" style="width:${Math.min(vNow,100).toFixed(1)}%;background:${intColor};"></div></div>
+            <div class="val" style="color:${intColor};">${vNow.toFixed(1)}</div>
+            <div class="val" style="color:#6b6b65;font-size:10px;">(was ${v0.toFixed(1)})</div>
+            <div class="delta" style="color:${color2};">${diffStr}</div>
+          </div>`;
+        });
+
+        const scoreImprovement = (baselineScores[8] - intResult.scores[8]).toFixed(1);
+        const scoreColor2 = parseFloat(scoreImprovement) > 0 ? intColor : '#c0392b';
+
+        printWin.document.write(`<div class="page-break"></div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:${intColor};flex-shrink:0;"></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#9e9e96;text-transform:uppercase;letter-spacing:.12em;">Priority ${idx + 1} · Intervention simulation</div>
+          </div>
+          <h2 style="font-size:20px;font-weight:600;color:${intColor};margin-bottom:6px;">${titleText}</h2>
+          <p style="font-size:12px;color:#6b6b65;line-height:1.6;margin-bottom:18px;">${desc}</p>
+          <div style="display:flex;gap:24px;align-items:center;margin-bottom:16px;">
+            <div style="background:#f5f3ef;border:1px solid #e5e2db;border-radius:8px;padding:12px 18px;text-align:center;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#9e9e96;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Score 2022</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;">${county.score.toFixed(1)}</div>
+            </div>
+            <div style="font-size:22px;color:#9e9e96;">→</div>
+            <div style="background:#f5f3ef;border:1px solid #e5e2db;border-radius:8px;padding:12px 18px;text-align:center;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#9e9e96;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Without action 2030</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:#c0392b;">${baselineScores[8].toFixed(1)}</div>
+            </div>
+            <div style="font-size:22px;color:#9e9e96;">vs</div>
+            <div style="background:${intColor}11;border:1px solid ${intColor}33;border-radius:8px;padding:12px 18px;text-align:center;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#9e9e96;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">With intervention 2030</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:${intColor};">${intResult.scores[8].toFixed(1)}</div>
+            </div>
+            <div style="font-size:22px;color:#9e9e96;">=</div>
+            <div style="background:${intColor}11;border:1px solid ${intColor}33;border-radius:8px;padding:12px 18px;text-align:center;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#9e9e96;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Score improvement</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;color:${scoreColor2};">−${scoreImprovement} pts</div>
+            </div>
+          </div>
+          <div class="section-title">Score trajectory 2022 → 2030</div>
+          <div style="margin-bottom:8px;display:flex;gap:20px;font-size:10px;color:#9e9e96;">
+            <span>— — Baseline (no action)</span>
+            <span style="color:${intColor};">—— With intervention</span>
+          </div>
+          ${svgStr}
+          <div class="section-title" style="margin-top:16px;">Indicators affected by 2030</div>
+          <div class="col-hdr">
+            <div style="flex:1;"></div>
+            <div class="col-hdr-lbl" style="width:60px;text-align:center;">Bar (2030)</div>
+            <div class="col-hdr-lbl" style="width:38px;text-align:right;">2030</div>
+            <div class="col-hdr-lbl" style="width:50px;text-align:right;">Baseline</div>
+            <div class="col-hdr-lbl" style="width:58px;text-align:right;">Change</div>
+          </div>
+          ${indRowsHtml}
+        `);
+      });
+
+      // If no priority cards found, print a plain AI text page
+      if (priCards.length === 0) {
+        const aiHtml = document.getElementById('modalAiContent').innerHTML;
+        printWin.document.write(`<div class="page-break"></div>
+          <div class="section-title">AI Recommendation · Mistral</div>
+          <div class="ai-box">${aiHtml}</div>`);
+      }
+
       printWin.document.write('</body></html>');
       printWin.document.close();
       printWin.onload = () => printWin.print();
@@ -2511,14 +3556,21 @@ Format each as: **Priority N — Title** followed by the recommendation. Keep ea
     function clearCountySelection() {
       selectedCounty = null;
       showSubcounties = false;
+      window._selectedGeoLayer = null;
       if (window._selectedLayer && geoLayer) {
         geoLayer.resetStyle(window._selectedLayer);
         window._selectedLayer = null;
       }
+      _simData = null;
+      simMapColor = null;
       renderMap();
       document.getElementById('panelEmpty').style.display = '';
       document.getElementById('panelContent').style.display = 'none';
+      if (window._closePanel) window._closePanel();
       document.getElementById('btnBack').style.display = 'none';
+      document.getElementById('simPanel').style.display = 'none';
+      document.getElementById('aiBox').style.display = '';
+      document.getElementById('simMapOverlay').style.display = 'none';
     }
 
     // ── BOOT ───────────────────────────────────────────────────────────
