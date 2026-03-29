@@ -120,9 +120,67 @@
       "label": "HIV prevalence (Adults 15-49)",
       "category": "HIV/AIDS",
       "higher_is_better": false
+    },
+    "SDOH_POV_RATE": {
+      "label": "Poverty rate",
+      "category": "Social & Economic",
+      "higher_is_better": false,
+      "unit": "%"
+    },
+    "SDOH_GINI": {
+      "label": "Gini coefficient",
+      "category": "Social & Economic",
+      "higher_is_better": false,
+      "unit": "index"
+    },
+    "SDOH_FOOD_INSEC": {
+      "label": "Food insecurity rate",
+      "category": "Social & Economic",
+      "higher_is_better": false,
+      "unit": "%"
+    },
+    "SDOH_SOC_CAP": {
+      "label": "Social capital index",
+      "category": "Social & Economic",
+      "higher_is_better": true,
+      "unit": "/100"
+    },
+    "SDOH_UNEMP": {
+      "label": "Unemployment rate",
+      "category": "Social & Economic",
+      "higher_is_better": false,
+      "unit": "%"
+    },
+    "SDOH_URBAN": {
+      "label": "Urban population",
+      "category": "Social & Economic",
+      "higher_is_better": null,
+      "unit": "%"
     }
   },
-  "national_averages": {},
+  "national_averages": {
+    "FE_FRTR_W_TFR": 4.0,
+    "FE_TNPG_W_CBR": 15.2,
+    "FP_CUSA_W_MOD": 37.9,
+    "FP_NADA_W_UNT": 11.2,
+    "CM_ECMR_C_NNR": 23.0,
+    "RH_ANCN_W_N4P": 63.3,
+    "RH_DELP_C_DHF": 84.9,
+    "RH_EBCC_W_ECC": 7.1,
+    "CH_VACC_C_DP3": 87.7,
+    "CH_VACC_C_MSL": 87.5,
+    "CH_VACC_C_BAS": 78.2,
+    "CH_FEVR_C_FEV": 16.6,
+    "CH_DIAR_C_DIA": 13.7,
+    "CH_DIAT_C_ORS": 52.0,
+    "CN_NUTS_C_HA2": 18.0,
+    "CN_NUTS_C_WH2": 6.0,
+    "CN_NUTS_C_WA2": 11.4,
+    "ML_NETP_H_IT2": 39.0,
+    "ED_LITR_W_LIT": 84.1,
+    "WS_SRCE_H_IMP": 75.4,
+    "WS_TLET_H_IMP": 64.0
+  },
   "counties": [
     {
       "name": "Baringo",
@@ -155,7 +213,21 @@
         "ML_NETP_H_IT2": 37.6,
         "ED_LITR_W_LIT": 87.6,
         "WS_SRCE_H_IMP": 58.9,
-        "WS_TLET_H_IMP": 65.2
+        "WS_TLET_H_IMP": 65.2,
+        "SDOH_POV_RATE": 51.4,
+        "SDOH_GINI": 38.1,
+        "SDOH_FOOD_INSEC": 42.0,
+        "SDOH_SOC_CAP": 48,
+        "SDOH_UNEMP": 8.2,
+        "SDOH_URBAN": 12.4
+      },
+      "sdoh": {
+        "poverty_rate": 51.4,
+        "gini": 38.1,
+        "food_insecurity": 42.0,
+        "social_capital": 48,
+        "unemployment": 8.2,
+        "urban_pct": 12.4
       }
     },
     {
@@ -189,7 +261,21 @@
         "ML_NETP_H_IT2": 77.3,
         "ED_LITR_W_LIT": 95.9,
         "WS_SRCE_H_IMP": 81.5,
-        "WS_TLET_H_IMP": 95.5
+        "WS_TLET_H_IMP": 95.5,
+        "SDOH_POV_RATE": 38.2,
+        "SDOH_GINI": 34.8,
+        "SDOH_FOOD_INSEC": 31.0,
+        "SDOH_SOC_CAP": 55,
+        "SDOH_UNEMP": 6.1,
+        "SDOH_URBAN": 9.7
+      },
+      "sdoh": {
+        "poverty_rate": 38.2,
+        "gini": 34.8,
+        "food_insecurity": 31.0,
+        "social_capital": 55,
+        "unemployment": 6.1,
+        "urban_pct": 9.7
       }
     },
     {
@@ -223,7 +309,21 @@
         "ML_NETP_H_IT2": 70.6,
         "ED_LITR_W_LIT": 90.6,
         "WS_SRCE_H_IMP": 88.8,
-        "WS_TLET_H_IMP": 59.4
+        "WS_TLET_H_IMP": 59.4,
+        "SDOH_POV_RATE": 47.3,
+        "SDOH_GINI": 36.2,
+        "SDOH_FOOD_INSEC": 37.0,
+        "SDOH_SOC_CAP": 52,
+        "SDOH_UNEMP": 9.8,
+        "SDOH_URBAN": 18.3
+      },
+      "sdoh": {
+        "poverty_rate": 47.3,
+        "gini": 36.2,
+        "food_insecurity": 37.0,
+        "social_capital": 52,
+        "unemployment": 9.8,
+        "urban_pct": 18.3
       }
     },
     {
@@ -257,7 +357,21 @@
         "ML_NETP_H_IT2": 67.4,
         "ED_LITR_W_LIT": 86.5,
         "WS_SRCE_H_IMP": 72.1,
-        "WS_TLET_H_IMP": 58.6
+        "WS_TLET_H_IMP": 58.6,
+        "SDOH_POV_RATE": 52.1,
+        "SDOH_GINI": 37.4,
+        "SDOH_FOOD_INSEC": 40.0,
+        "SDOH_SOC_CAP": 50,
+        "SDOH_UNEMP": 10.5,
+        "SDOH_URBAN": 14.6
+      },
+      "sdoh": {
+        "poverty_rate": 52.1,
+        "gini": 37.4,
+        "food_insecurity": 40.0,
+        "social_capital": 50,
+        "unemployment": 10.5,
+        "urban_pct": 14.6
       }
     },
     {
@@ -291,7 +405,21 @@
         "ML_NETP_H_IT2": 10.1,
         "ED_LITR_W_LIT": 96.6,
         "WS_SRCE_H_IMP": 67.1,
-        "WS_TLET_H_IMP": 43.6
+        "WS_TLET_H_IMP": 43.6,
+        "SDOH_POV_RATE": 45.2,
+        "SDOH_GINI": 35.9,
+        "SDOH_FOOD_INSEC": 36.0,
+        "SDOH_SOC_CAP": 51,
+        "SDOH_UNEMP": 7.4,
+        "SDOH_URBAN": 8.2
+      },
+      "sdoh": {
+        "poverty_rate": 45.2,
+        "gini": 35.9,
+        "food_insecurity": 36.0,
+        "social_capital": 51,
+        "unemployment": 7.4,
+        "urban_pct": 8.2
       }
     },
     {
@@ -325,7 +453,21 @@
         "ML_NETP_H_IT2": 24.1,
         "ED_LITR_W_LIT": 98.3,
         "WS_SRCE_H_IMP": 83.4,
-        "WS_TLET_H_IMP": 63.0
+        "WS_TLET_H_IMP": 63.0,
+        "SDOH_POV_RATE": 28.1,
+        "SDOH_GINI": 33.5,
+        "SDOH_FOOD_INSEC": 22.0,
+        "SDOH_SOC_CAP": 63,
+        "SDOH_UNEMP": 8.9,
+        "SDOH_URBAN": 22.1
+      },
+      "sdoh": {
+        "poverty_rate": 28.1,
+        "gini": 33.5,
+        "food_insecurity": 22.0,
+        "social_capital": 63,
+        "unemployment": 8.9,
+        "urban_pct": 22.1
       }
     },
     {
@@ -359,7 +501,21 @@
         "ML_NETP_H_IT2": 6.8,
         "ED_LITR_W_LIT": 46.5,
         "WS_SRCE_H_IMP": 85.5,
-        "WS_TLET_H_IMP": 80.5
+        "WS_TLET_H_IMP": 80.5,
+        "SDOH_POV_RATE": 54.8,
+        "SDOH_GINI": 44.7,
+        "SDOH_FOOD_INSEC": 57.0,
+        "SDOH_SOC_CAP": 38,
+        "SDOH_UNEMP": 16.2,
+        "SDOH_URBAN": 30.5
+      },
+      "sdoh": {
+        "poverty_rate": 54.8,
+        "gini": 44.7,
+        "food_insecurity": 57.0,
+        "social_capital": 38,
+        "unemployment": 16.2,
+        "urban_pct": 30.5
       }
     },
     {
@@ -393,7 +549,21 @@
         "ML_NETP_H_IT2": 60.2,
         "ED_LITR_W_LIT": 93.8,
         "WS_SRCE_H_IMP": 67.7,
-        "WS_TLET_H_IMP": 51.6
+        "WS_TLET_H_IMP": 51.6,
+        "SDOH_POV_RATE": 45.4,
+        "SDOH_GINI": 39.2,
+        "SDOH_FOOD_INSEC": 38.0,
+        "SDOH_SOC_CAP": 54,
+        "SDOH_UNEMP": 11.3,
+        "SDOH_URBAN": 11.8
+      },
+      "sdoh": {
+        "poverty_rate": 45.4,
+        "gini": 39.2,
+        "food_insecurity": 38.0,
+        "social_capital": 54,
+        "unemployment": 11.3,
+        "urban_pct": 11.8
       }
     },
     {
@@ -427,7 +597,21 @@
         "ML_NETP_H_IT2": 23.4,
         "ED_LITR_W_LIT": 72.4,
         "WS_SRCE_H_IMP": 88.0,
-        "WS_TLET_H_IMP": 64.6
+        "WS_TLET_H_IMP": 64.6,
+        "SDOH_POV_RATE": 53.6,
+        "SDOH_GINI": 41.3,
+        "SDOH_FOOD_INSEC": 52.0,
+        "SDOH_SOC_CAP": 40,
+        "SDOH_UNEMP": 14.7,
+        "SDOH_URBAN": 45.2
+      },
+      "sdoh": {
+        "poverty_rate": 53.6,
+        "gini": 41.3,
+        "food_insecurity": 52.0,
+        "social_capital": 40,
+        "unemployment": 14.7,
+        "urban_pct": 45.2
       }
     },
     {
@@ -461,7 +645,21 @@
         "ML_NETP_H_IT2": 20.9,
         "ED_LITR_W_LIT": 87.2,
         "WS_SRCE_H_IMP": 92.3,
-        "WS_TLET_H_IMP": 84.2
+        "WS_TLET_H_IMP": 84.2,
+        "SDOH_POV_RATE": 23.1,
+        "SDOH_GINI": 40.6,
+        "SDOH_FOOD_INSEC": 28.0,
+        "SDOH_SOC_CAP": 58,
+        "SDOH_UNEMP": 6.8,
+        "SDOH_URBAN": 36.4
+      },
+      "sdoh": {
+        "poverty_rate": 23.1,
+        "gini": 40.6,
+        "food_insecurity": 28.0,
+        "social_capital": 58,
+        "unemployment": 6.8,
+        "urban_pct": 36.4
       }
     },
     {
@@ -495,7 +693,21 @@
         "ML_NETP_H_IT2": 66.9,
         "ED_LITR_W_LIT": 93.6,
         "WS_SRCE_H_IMP": 87.5,
-        "WS_TLET_H_IMP": 46.8
+        "WS_TLET_H_IMP": 46.8,
+        "SDOH_POV_RATE": 45.1,
+        "SDOH_GINI": 36.8,
+        "SDOH_FOOD_INSEC": 36.0,
+        "SDOH_SOC_CAP": 55,
+        "SDOH_UNEMP": 10.1,
+        "SDOH_URBAN": 13.2
+      },
+      "sdoh": {
+        "poverty_rate": 45.1,
+        "gini": 36.8,
+        "food_insecurity": 36.0,
+        "social_capital": 55,
+        "unemployment": 10.1,
+        "urban_pct": 13.2
       }
     },
     {
@@ -529,7 +741,21 @@
         "ML_NETP_H_IT2": 65.9,
         "ED_LITR_W_LIT": 98.6,
         "WS_SRCE_H_IMP": 71.4,
-        "WS_TLET_H_IMP": 49.2
+        "WS_TLET_H_IMP": 49.2,
+        "SDOH_POV_RATE": 29.3,
+        "SDOH_GINI": 33.2,
+        "SDOH_FOOD_INSEC": 21.0,
+        "SDOH_SOC_CAP": 61,
+        "SDOH_UNEMP": 5.8,
+        "SDOH_URBAN": 20.7
+      },
+      "sdoh": {
+        "poverty_rate": 29.3,
+        "gini": 33.2,
+        "food_insecurity": 21.0,
+        "social_capital": 61,
+        "unemployment": 5.8,
+        "urban_pct": 20.7
       }
     },
     {
@@ -563,7 +789,21 @@
         "ML_NETP_H_IT2": 16.0,
         "ED_LITR_W_LIT": 98.2,
         "WS_SRCE_H_IMP": 96.6,
-        "WS_TLET_H_IMP": 93.1
+        "WS_TLET_H_IMP": 93.1,
+        "SDOH_POV_RATE": 17.9,
+        "SDOH_GINI": 38.5,
+        "SDOH_FOOD_INSEC": 12.0,
+        "SDOH_SOC_CAP": 70,
+        "SDOH_UNEMP": 7.1,
+        "SDOH_URBAN": 58.3
+      },
+      "sdoh": {
+        "poverty_rate": 17.9,
+        "gini": 38.5,
+        "food_insecurity": 12.0,
+        "social_capital": 70,
+        "unemployment": 7.1,
+        "urban_pct": 58.3
       }
     },
     {
@@ -597,7 +837,21 @@
         "ML_NETP_H_IT2": 48.2,
         "ED_LITR_W_LIT": 81.0,
         "WS_SRCE_H_IMP": 81.4,
-        "WS_TLET_H_IMP": 65.0
+        "WS_TLET_H_IMP": 65.0,
+        "SDOH_POV_RATE": 58.9,
+        "SDOH_GINI": 42.1,
+        "SDOH_FOOD_INSEC": 48.0,
+        "SDOH_SOC_CAP": 43,
+        "SDOH_UNEMP": 13.6,
+        "SDOH_URBAN": 18.9
+      },
+      "sdoh": {
+        "poverty_rate": 58.9,
+        "gini": 42.1,
+        "food_insecurity": 48.0,
+        "social_capital": 43,
+        "unemployment": 13.6,
+        "urban_pct": 18.9
       }
     },
     {
@@ -631,7 +885,21 @@
         "ML_NETP_H_IT2": 47.4,
         "ED_LITR_W_LIT": 97.1,
         "WS_SRCE_H_IMP": 80.9,
-        "WS_TLET_H_IMP": 95.8
+        "WS_TLET_H_IMP": 95.8,
+        "SDOH_POV_RATE": 19.1,
+        "SDOH_GINI": 31.7,
+        "SDOH_FOOD_INSEC": 14.0,
+        "SDOH_SOC_CAP": 72,
+        "SDOH_UNEMP": 6.4,
+        "SDOH_URBAN": 25.8
+      },
+      "sdoh": {
+        "poverty_rate": 19.1,
+        "gini": 31.7,
+        "food_insecurity": 14.0,
+        "social_capital": 72,
+        "unemployment": 6.4,
+        "urban_pct": 25.8
       }
     },
     {
@@ -665,7 +933,21 @@
         "ML_NETP_H_IT2": 67.4,
         "ED_LITR_W_LIT": 96.5,
         "WS_SRCE_H_IMP": 70.3,
-        "WS_TLET_H_IMP": 46.8
+        "WS_TLET_H_IMP": 46.8,
+        "SDOH_POV_RATE": 36.3,
+        "SDOH_GINI": 35.1,
+        "SDOH_FOOD_INSEC": 28.0,
+        "SDOH_SOC_CAP": 59,
+        "SDOH_UNEMP": 8.6,
+        "SDOH_URBAN": 16.4
+      },
+      "sdoh": {
+        "poverty_rate": 36.3,
+        "gini": 35.1,
+        "food_insecurity": 28.0,
+        "social_capital": 59,
+        "unemployment": 8.6,
+        "urban_pct": 16.4
       }
     },
     {
@@ -699,7 +981,21 @@
         "ML_NETP_H_IT2": 47.0,
         "ED_LITR_W_LIT": 98.0,
         "WS_SRCE_H_IMP": 83.1,
-        "WS_TLET_H_IMP": 70.4
+        "WS_TLET_H_IMP": 70.4,
+        "SDOH_POV_RATE": 32.2,
+        "SDOH_GINI": 43.8,
+        "SDOH_FOOD_INSEC": 26.0,
+        "SDOH_SOC_CAP": 62,
+        "SDOH_UNEMP": 13.9,
+        "SDOH_URBAN": 48.7
+      },
+      "sdoh": {
+        "poverty_rate": 32.2,
+        "gini": 43.8,
+        "food_insecurity": 26.0,
+        "social_capital": 62,
+        "unemployment": 13.9,
+        "urban_pct": 48.7
       }
     },
     {
@@ -733,7 +1029,21 @@
         "ML_NETP_H_IT2": 15.1,
         "ED_LITR_W_LIT": 94.8,
         "WS_SRCE_H_IMP": 43.1,
-        "WS_TLET_H_IMP": 66.0
+        "WS_TLET_H_IMP": 66.0,
+        "SDOH_POV_RATE": 54.1,
+        "SDOH_GINI": 37.9,
+        "SDOH_FOOD_INSEC": 46.0,
+        "SDOH_SOC_CAP": 47,
+        "SDOH_UNEMP": 9.4,
+        "SDOH_URBAN": 9.3
+      },
+      "sdoh": {
+        "poverty_rate": 54.1,
+        "gini": 37.9,
+        "food_insecurity": 46.0,
+        "social_capital": 47,
+        "unemployment": 9.4,
+        "urban_pct": 9.3
       }
     },
     {
@@ -766,7 +1076,21 @@
         "ML_NETP_H_IT2": 47.5,
         "ED_LITR_W_LIT": 81.7,
         "WS_SRCE_H_IMP": 67.5,
-        "WS_TLET_H_IMP": 57.8
+        "WS_TLET_H_IMP": 57.8,
+        "SDOH_POV_RATE": 61.3,
+        "SDOH_GINI": 41.5,
+        "SDOH_FOOD_INSEC": 51.0,
+        "SDOH_SOC_CAP": 41,
+        "SDOH_UNEMP": 14.2,
+        "SDOH_URBAN": 12.7
+      },
+      "sdoh": {
+        "poverty_rate": 61.3,
+        "gini": 41.5,
+        "food_insecurity": 51.0,
+        "social_capital": 41,
+        "unemployment": 14.2,
+        "urban_pct": 12.7
       }
     },
     {
@@ -800,7 +1124,21 @@
         "ML_NETP_H_IT2": 15.9,
         "ED_LITR_W_LIT": 91.5,
         "WS_SRCE_H_IMP": 77.0,
-        "WS_TLET_H_IMP": 52.7
+        "WS_TLET_H_IMP": 52.7,
+        "SDOH_POV_RATE": 36.1,
+        "SDOH_GINI": 42.4,
+        "SDOH_FOOD_INSEC": 30.0,
+        "SDOH_SOC_CAP": 57,
+        "SDOH_UNEMP": 8.8,
+        "SDOH_URBAN": 27.3
+      },
+      "sdoh": {
+        "poverty_rate": 36.1,
+        "gini": 42.4,
+        "food_insecurity": 30.0,
+        "social_capital": 57,
+        "unemployment": 8.8,
+        "urban_pct": 27.3
       }
     },
     {
@@ -834,7 +1172,21 @@
         "ML_NETP_H_IT2": 43.3,
         "ED_LITR_W_LIT": 84.1,
         "WS_SRCE_H_IMP": 82.5,
-        "WS_TLET_H_IMP": 60.7
+        "WS_TLET_H_IMP": 60.7,
+        "SDOH_POV_RATE": 48.9,
+        "SDOH_GINI": 40.8,
+        "SDOH_FOOD_INSEC": 44.0,
+        "SDOH_SOC_CAP": 45,
+        "SDOH_UNEMP": 12.1,
+        "SDOH_URBAN": 32.6
+      },
+      "sdoh": {
+        "poverty_rate": 48.9,
+        "gini": 40.8,
+        "food_insecurity": 44.0,
+        "social_capital": 45,
+        "unemployment": 12.1,
+        "urban_pct": 32.6
       }
     },
     {
@@ -868,7 +1220,21 @@
         "ML_NETP_H_IT2": 38.8,
         "ED_LITR_W_LIT": 99.1,
         "WS_SRCE_H_IMP": 82.3,
-        "WS_TLET_H_IMP": 85.2
+        "WS_TLET_H_IMP": 85.2,
+        "SDOH_POV_RATE": 35.2,
+        "SDOH_GINI": 38.3,
+        "SDOH_FOOD_INSEC": 28.0,
+        "SDOH_SOC_CAP": 60,
+        "SDOH_UNEMP": 9.7,
+        "SDOH_URBAN": 30.1
+      },
+      "sdoh": {
+        "poverty_rate": 35.2,
+        "gini": 38.3,
+        "food_insecurity": 28.0,
+        "social_capital": 60,
+        "unemployment": 9.7,
+        "urban_pct": 30.1
       }
     },
     {
@@ -901,7 +1267,21 @@
         "ML_NETP_H_IT2": 25.8,
         "ED_LITR_W_LIT": 98.1,
         "WS_SRCE_H_IMP": 64.7,
-        "WS_TLET_H_IMP": 69.7
+        "WS_TLET_H_IMP": 69.7,
+        "SDOH_POV_RATE": 45.3,
+        "SDOH_GINI": 36.9,
+        "SDOH_FOOD_INSEC": 40.0,
+        "SDOH_SOC_CAP": 53,
+        "SDOH_UNEMP": 8.3,
+        "SDOH_URBAN": 10.2
+      },
+      "sdoh": {
+        "poverty_rate": 45.3,
+        "gini": 36.9,
+        "food_insecurity": 40.0,
+        "social_capital": 53,
+        "unemployment": 8.3,
+        "urban_pct": 10.2
       }
     },
     {
@@ -935,7 +1315,21 @@
         "ML_NETP_H_IT2": 4.8,
         "ED_LITR_W_LIT": 26.9,
         "WS_SRCE_H_IMP": 73.4,
-        "WS_TLET_H_IMP": 69.1
+        "WS_TLET_H_IMP": 69.1,
+        "SDOH_POV_RATE": 76.1,
+        "SDOH_GINI": 46.2,
+        "SDOH_FOOD_INSEC": 72.0,
+        "SDOH_SOC_CAP": 29,
+        "SDOH_UNEMP": 22.4,
+        "SDOH_URBAN": 23.1
+      },
+      "sdoh": {
+        "poverty_rate": 76.1,
+        "gini": 46.2,
+        "food_insecurity": 72.0,
+        "social_capital": 29,
+        "unemployment": 22.4,
+        "urban_pct": 23.1
       }
     },
     {
@@ -969,7 +1363,21 @@
         "ML_NETP_H_IT2": 7.4,
         "ED_LITR_W_LIT": 34.2,
         "WS_SRCE_H_IMP": 86.3,
-        "WS_TLET_H_IMP": 50.7
+        "WS_TLET_H_IMP": 50.7,
+        "SDOH_POV_RATE": 70.3,
+        "SDOH_GINI": 44.9,
+        "SDOH_FOOD_INSEC": 67.0,
+        "SDOH_SOC_CAP": 32,
+        "SDOH_UNEMP": 19.8,
+        "SDOH_URBAN": 18.6
+      },
+      "sdoh": {
+        "poverty_rate": 70.3,
+        "gini": 44.9,
+        "food_insecurity": 67.0,
+        "social_capital": 32,
+        "unemployment": 19.8,
+        "urban_pct": 18.6
       }
     },
     {
@@ -1003,7 +1411,21 @@
         "ML_NETP_H_IT2": 16.8,
         "ED_LITR_W_LIT": 86.2,
         "WS_SRCE_H_IMP": 82.4,
-        "WS_TLET_H_IMP": 62.4
+        "WS_TLET_H_IMP": 62.4,
+        "SDOH_POV_RATE": 30.2,
+        "SDOH_GINI": 34.1,
+        "SDOH_FOOD_INSEC": 23.0,
+        "SDOH_SOC_CAP": 64,
+        "SDOH_UNEMP": 7.2,
+        "SDOH_URBAN": 19.4
+      },
+      "sdoh": {
+        "poverty_rate": 30.2,
+        "gini": 34.1,
+        "food_insecurity": 23.0,
+        "social_capital": 64,
+        "unemployment": 7.2,
+        "urban_pct": 19.4
       }
     },
     {
@@ -1037,7 +1459,21 @@
         "ML_NETP_H_IT2": 54.2,
         "ED_LITR_W_LIT": 86.6,
         "WS_SRCE_H_IMP": 59.0,
-        "WS_TLET_H_IMP": 39.2
+        "WS_TLET_H_IMP": 39.2,
+        "SDOH_POV_RATE": 41.2,
+        "SDOH_GINI": 38.7,
+        "SDOH_FOOD_INSEC": 35.0,
+        "SDOH_SOC_CAP": 53,
+        "SDOH_UNEMP": 10.8,
+        "SDOH_URBAN": 10.6
+      },
+      "sdoh": {
+        "poverty_rate": 41.2,
+        "gini": 38.7,
+        "food_insecurity": 35.0,
+        "social_capital": 53,
+        "unemployment": 10.8,
+        "urban_pct": 10.6
       }
     },
     {
@@ -1071,7 +1507,21 @@
         "ML_NETP_H_IT2": 45.5,
         "ED_LITR_W_LIT": 90.2,
         "WS_SRCE_H_IMP": 58.4,
-        "WS_TLET_H_IMP": 95.8
+        "WS_TLET_H_IMP": 95.8,
+        "SDOH_POV_RATE": 20.1,
+        "SDOH_GINI": 44.5,
+        "SDOH_FOOD_INSEC": 17.0,
+        "SDOH_SOC_CAP": 61,
+        "SDOH_UNEMP": 15.8,
+        "SDOH_URBAN": 99.8
+      },
+      "sdoh": {
+        "poverty_rate": 20.1,
+        "gini": 44.5,
+        "food_insecurity": 17.0,
+        "social_capital": 61,
+        "unemployment": 15.8,
+        "urban_pct": 99.8
       }
     },
     {
@@ -1105,7 +1555,21 @@
         "ML_NETP_H_IT2": 22.0,
         "ED_LITR_W_LIT": 97.6,
         "WS_SRCE_H_IMP": 83.5,
-        "WS_TLET_H_IMP": 84.2
+        "WS_TLET_H_IMP": 84.2,
+        "SDOH_POV_RATE": 23.4,
+        "SDOH_GINI": 33.8,
+        "SDOH_FOOD_INSEC": 16.0,
+        "SDOH_SOC_CAP": 68,
+        "SDOH_UNEMP": 6.8,
+        "SDOH_URBAN": 18.7
+      },
+      "sdoh": {
+        "poverty_rate": 23.4,
+        "gini": 33.8,
+        "food_insecurity": 16.0,
+        "social_capital": 68,
+        "unemployment": 6.8,
+        "urban_pct": 18.7
       }
     },
     {
@@ -1139,7 +1603,21 @@
         "ML_NETP_H_IT2": 14.3,
         "ED_LITR_W_LIT": 96.9,
         "WS_SRCE_H_IMP": 100.0,
-        "WS_TLET_H_IMP": 93.9
+        "WS_TLET_H_IMP": 93.9,
+        "SDOH_POV_RATE": 17.2,
+        "SDOH_GINI": 51.3,
+        "SDOH_FOOD_INSEC": 14.0,
+        "SDOH_SOC_CAP": 56,
+        "SDOH_UNEMP": 16.4,
+        "SDOH_URBAN": 99.9
+      },
+      "sdoh": {
+        "poverty_rate": 17.2,
+        "gini": 51.3,
+        "food_insecurity": 14.0,
+        "social_capital": 56,
+        "unemployment": 16.4,
+        "urban_pct": 99.9
       }
     },
     {
@@ -1173,7 +1651,21 @@
         "ML_NETP_H_IT2": 15.3,
         "ED_LITR_W_LIT": 96.8,
         "WS_SRCE_H_IMP": 82.3,
-        "WS_TLET_H_IMP": 78.4
+        "WS_TLET_H_IMP": 78.4,
+        "SDOH_POV_RATE": 25.4,
+        "SDOH_GINI": 40.1,
+        "SDOH_FOOD_INSEC": 19.0,
+        "SDOH_SOC_CAP": 65,
+        "SDOH_UNEMP": 9.3,
+        "SDOH_URBAN": 42.6
+      },
+      "sdoh": {
+        "poverty_rate": 25.4,
+        "gini": 40.1,
+        "food_insecurity": 19.0,
+        "social_capital": 65,
+        "unemployment": 9.3,
+        "urban_pct": 42.6
       }
     },
     {
@@ -1207,7 +1699,21 @@
         "ML_NETP_H_IT2": 69.0,
         "ED_LITR_W_LIT": 97.5,
         "WS_SRCE_H_IMP": 54.2,
-        "WS_TLET_H_IMP": 62.7
+        "WS_TLET_H_IMP": 62.7,
+        "SDOH_POV_RATE": 35.1,
+        "SDOH_GINI": 34.5,
+        "SDOH_FOOD_INSEC": 27.0,
+        "SDOH_SOC_CAP": 58,
+        "SDOH_UNEMP": 6.9,
+        "SDOH_URBAN": 10.8
+      },
+      "sdoh": {
+        "poverty_rate": 35.1,
+        "gini": 34.5,
+        "food_insecurity": 27.0,
+        "social_capital": 58,
+        "unemployment": 6.9,
+        "urban_pct": 10.8
       }
     },
     {
@@ -1241,7 +1747,21 @@
         "ML_NETP_H_IT2": 54.0,
         "ED_LITR_W_LIT": 80.5,
         "WS_SRCE_H_IMP": 64.4,
-        "WS_TLET_H_IMP": 52.2
+        "WS_TLET_H_IMP": 52.2,
+        "SDOH_POV_RATE": 54.8,
+        "SDOH_GINI": 45.6,
+        "SDOH_FOOD_INSEC": 47.0,
+        "SDOH_SOC_CAP": 42,
+        "SDOH_UNEMP": 10.2,
+        "SDOH_URBAN": 14.3
+      },
+      "sdoh": {
+        "poverty_rate": 54.8,
+        "gini": 45.6,
+        "food_insecurity": 47.0,
+        "social_capital": 42,
+        "unemployment": 10.2,
+        "urban_pct": 14.3
       }
     },
     {
@@ -1275,7 +1795,21 @@
         "ML_NETP_H_IT2": 80.0,
         "ED_LITR_W_LIT": 99.0,
         "WS_SRCE_H_IMP": 76.6,
-        "WS_TLET_H_IMP": 38.7
+        "WS_TLET_H_IMP": 38.7,
+        "SDOH_POV_RATE": 33.8,
+        "SDOH_GINI": 33.9,
+        "SDOH_FOOD_INSEC": 26.0,
+        "SDOH_SOC_CAP": 60,
+        "SDOH_UNEMP": 8.1,
+        "SDOH_URBAN": 8.1
+      },
+      "sdoh": {
+        "poverty_rate": 33.8,
+        "gini": 33.9,
+        "food_insecurity": 26.0,
+        "social_capital": 60,
+        "unemployment": 8.1,
+        "urban_pct": 8.1
       }
     },
     {
@@ -1308,7 +1842,21 @@
         "ML_NETP_H_IT2": 5.8,
         "ED_LITR_W_LIT": 97.5,
         "WS_SRCE_H_IMP": 93.1,
-        "WS_TLET_H_IMP": 50.0
+        "WS_TLET_H_IMP": 50.0,
+        "SDOH_POV_RATE": 27.3,
+        "SDOH_GINI": 34.2,
+        "SDOH_FOOD_INSEC": 20.0,
+        "SDOH_SOC_CAP": 66,
+        "SDOH_UNEMP": 7.5,
+        "SDOH_URBAN": 14.9
+      },
+      "sdoh": {
+        "poverty_rate": 27.3,
+        "gini": 34.2,
+        "food_insecurity": 20.0,
+        "social_capital": 66,
+        "unemployment": 7.5,
+        "urban_pct": 14.9
       }
     },
     {
@@ -1342,7 +1890,21 @@
         "ML_NETP_H_IT2": 12.1,
         "ED_LITR_W_LIT": 98.2,
         "WS_SRCE_H_IMP": 91.5,
-        "WS_TLET_H_IMP": 79.2
+        "WS_TLET_H_IMP": 79.2,
+        "SDOH_POV_RATE": 23.6,
+        "SDOH_GINI": 32.8,
+        "SDOH_FOOD_INSEC": 15.0,
+        "SDOH_SOC_CAP": 71,
+        "SDOH_UNEMP": 7.3,
+        "SDOH_URBAN": 29.3
+      },
+      "sdoh": {
+        "poverty_rate": 23.6,
+        "gini": 32.8,
+        "food_insecurity": 15.0,
+        "social_capital": 71,
+        "unemployment": 7.3,
+        "urban_pct": 29.3
       }
     },
     {
@@ -1376,7 +1938,21 @@
         "ML_NETP_H_IT2": 7.4,
         "ED_LITR_W_LIT": 45.3,
         "WS_SRCE_H_IMP": 46.5,
-        "WS_TLET_H_IMP": 42.7
+        "WS_TLET_H_IMP": 42.7,
+        "SDOH_POV_RATE": 73.8,
+        "SDOH_GINI": 43.2,
+        "SDOH_FOOD_INSEC": 68.0,
+        "SDOH_SOC_CAP": 31,
+        "SDOH_UNEMP": 18.6,
+        "SDOH_URBAN": 12.4
+      },
+      "sdoh": {
+        "poverty_rate": 73.8,
+        "gini": 43.2,
+        "food_insecurity": 68.0,
+        "social_capital": 31,
+        "unemployment": 18.6,
+        "urban_pct": 12.4
       }
     },
     {
@@ -1409,7 +1985,21 @@
         "ML_NETP_H_IT2": 58.6,
         "ED_LITR_W_LIT": 90.8,
         "WS_SRCE_H_IMP": 58.5,
-        "WS_TLET_H_IMP": 57.1
+        "WS_TLET_H_IMP": 57.1,
+        "SDOH_POV_RATE": 44.9,
+        "SDOH_GINI": 39.1,
+        "SDOH_FOOD_INSEC": 37.0,
+        "SDOH_SOC_CAP": 55,
+        "SDOH_UNEMP": 11.7,
+        "SDOH_URBAN": 9.8
+      },
+      "sdoh": {
+        "poverty_rate": 44.9,
+        "gini": 39.1,
+        "food_insecurity": 37.0,
+        "social_capital": 55,
+        "unemployment": 11.7,
+        "urban_pct": 9.8
       }
     },
     {
@@ -1442,7 +2032,21 @@
         "ML_NETP_H_IT2": 74.3,
         "ED_LITR_W_LIT": 95.5,
         "WS_SRCE_H_IMP": 82.5,
-        "WS_TLET_H_IMP": 80.0
+        "WS_TLET_H_IMP": 80.0,
+        "SDOH_POV_RATE": 43.2,
+        "SDOH_GINI": 39.7,
+        "SDOH_FOOD_INSEC": 38.0,
+        "SDOH_SOC_CAP": 50,
+        "SDOH_UNEMP": 11.4,
+        "SDOH_URBAN": 22.5
+      },
+      "sdoh": {
+        "poverty_rate": 43.2,
+        "gini": 39.7,
+        "food_insecurity": 38.0,
+        "social_capital": 50,
+        "unemployment": 11.4,
+        "urban_pct": 22.5
       }
     },
     {
@@ -1476,7 +2080,21 @@
         "ML_NETP_H_IT2": 34.3,
         "ED_LITR_W_LIT": 50.6,
         "WS_SRCE_H_IMP": 60.7,
-        "WS_TLET_H_IMP": 38.4
+        "WS_TLET_H_IMP": 38.4,
+        "SDOH_POV_RATE": 66.4,
+        "SDOH_GINI": 43.8,
+        "SDOH_FOOD_INSEC": 62.0,
+        "SDOH_SOC_CAP": 35,
+        "SDOH_UNEMP": 16.9,
+        "SDOH_URBAN": 16.2
+      },
+      "sdoh": {
+        "poverty_rate": 66.4,
+        "gini": 43.8,
+        "food_insecurity": 62.0,
+        "social_capital": 35,
+        "unemployment": 16.9,
+        "urban_pct": 16.2
       }
     },
     {
@@ -1510,7 +2128,21 @@
         "ML_NETP_H_IT2": 34.7,
         "ED_LITR_W_LIT": 93.3,
         "WS_SRCE_H_IMP": 70.5,
-        "WS_TLET_H_IMP": 68.0
+        "WS_TLET_H_IMP": 68.0,
+        "SDOH_POV_RATE": 43.1,
+        "SDOH_GINI": 35.6,
+        "SDOH_FOOD_INSEC": 35.0,
+        "SDOH_SOC_CAP": 54,
+        "SDOH_UNEMP": 8.0,
+        "SDOH_URBAN": 8.4
+      },
+      "sdoh": {
+        "poverty_rate": 43.1,
+        "gini": 35.6,
+        "food_insecurity": 35.0,
+        "social_capital": 54,
+        "unemployment": 8.0,
+        "urban_pct": 8.4
       }
     },
     {
@@ -1544,7 +2176,21 @@
         "ML_NETP_H_IT2": 69.3,
         "ED_LITR_W_LIT": 92.1,
         "WS_SRCE_H_IMP": 86.6,
-        "WS_TLET_H_IMP": 90.0
+        "WS_TLET_H_IMP": 90.0,
+        "SDOH_POV_RATE": 44.2,
+        "SDOH_GINI": 36.3,
+        "SDOH_FOOD_INSEC": 34.0,
+        "SDOH_SOC_CAP": 53,
+        "SDOH_UNEMP": 9.2,
+        "SDOH_URBAN": 20.6
+      },
+      "sdoh": {
+        "poverty_rate": 44.2,
+        "gini": 36.3,
+        "food_insecurity": 34.0,
+        "social_capital": 53,
+        "unemployment": 9.2,
+        "urban_pct": 20.6
       }
     },
     {
@@ -1578,7 +2224,21 @@
         "ML_NETP_H_IT2": 18.8,
         "ED_LITR_W_LIT": 35.8,
         "WS_SRCE_H_IMP": 67.7,
-        "WS_TLET_H_IMP": 27.4
+        "WS_TLET_H_IMP": 27.4,
+        "SDOH_POV_RATE": 79.4,
+        "SDOH_GINI": 47.1,
+        "SDOH_FOOD_INSEC": 75.0,
+        "SDOH_SOC_CAP": 28,
+        "SDOH_UNEMP": 24.1,
+        "SDOH_URBAN": 17.8
+      },
+      "sdoh": {
+        "poverty_rate": 79.4,
+        "gini": 47.1,
+        "food_insecurity": 75.0,
+        "social_capital": 28,
+        "unemployment": 24.1,
+        "urban_pct": 17.8
       }
     },
     {
@@ -1612,7 +2272,21 @@
         "ML_NETP_H_IT2": 56.8,
         "ED_LITR_W_LIT": 95.9,
         "WS_SRCE_H_IMP": 86.1,
-        "WS_TLET_H_IMP": 79.4
+        "WS_TLET_H_IMP": 79.4,
+        "SDOH_POV_RATE": 30.1,
+        "SDOH_GINI": 38.9,
+        "SDOH_FOOD_INSEC": 22.0,
+        "SDOH_SOC_CAP": 62,
+        "SDOH_UNEMP": 8.7,
+        "SDOH_URBAN": 40.2
+      },
+      "sdoh": {
+        "poverty_rate": 30.1,
+        "gini": 38.9,
+        "food_insecurity": 22.0,
+        "social_capital": 62,
+        "unemployment": 8.7,
+        "urban_pct": 40.2
       }
     },
     {
@@ -1646,7 +2320,21 @@
         "ML_NETP_H_IT2": 75.8,
         "ED_LITR_W_LIT": 96.4,
         "WS_SRCE_H_IMP": 85.6,
-        "WS_TLET_H_IMP": 78.7
+        "WS_TLET_H_IMP": 78.7,
+        "SDOH_POV_RATE": 41.4,
+        "SDOH_GINI": 35.7,
+        "SDOH_FOOD_INSEC": 33.0,
+        "SDOH_SOC_CAP": 57,
+        "SDOH_UNEMP": 10.3,
+        "SDOH_URBAN": 11.2
+      },
+      "sdoh": {
+        "poverty_rate": 41.4,
+        "gini": 35.7,
+        "food_insecurity": 33.0,
+        "social_capital": 57,
+        "unemployment": 10.3,
+        "urban_pct": 11.2
       }
     },
     {
@@ -1680,7 +2368,21 @@
         "ML_NETP_H_IT2": 15.5,
         "ED_LITR_W_LIT": 34.9,
         "WS_SRCE_H_IMP": 77.6,
-        "WS_TLET_H_IMP": 31.7
+        "WS_TLET_H_IMP": 31.7,
+        "SDOH_POV_RATE": 73.9,
+        "SDOH_GINI": 45.8,
+        "SDOH_FOOD_INSEC": 70.0,
+        "SDOH_SOC_CAP": 30,
+        "SDOH_UNEMP": 21.3,
+        "SDOH_URBAN": 27.4
+      },
+      "sdoh": {
+        "poverty_rate": 73.9,
+        "gini": 45.8,
+        "food_insecurity": 70.0,
+        "social_capital": 30,
+        "unemployment": 21.3,
+        "urban_pct": 27.4
       }
     },
     {
@@ -1714,7 +2416,21 @@
         "ML_NETP_H_IT2": 41.5,
         "ED_LITR_W_LIT": 65.2,
         "WS_SRCE_H_IMP": 43.4,
-        "WS_TLET_H_IMP": 32.2
+        "WS_TLET_H_IMP": 32.2,
+        "SDOH_POV_RATE": 71.2,
+        "SDOH_GINI": 44.1,
+        "SDOH_FOOD_INSEC": 65.0,
+        "SDOH_SOC_CAP": 33,
+        "SDOH_UNEMP": 20.1,
+        "SDOH_URBAN": 11.3
+      },
+      "sdoh": {
+        "poverty_rate": 71.2,
+        "gini": 44.1,
+        "food_insecurity": 65.0,
+        "social_capital": 33,
+        "unemployment": 20.1,
+        "urban_pct": 11.3
       }
     }
   ],
